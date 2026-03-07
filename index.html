@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axel LOUKOU | Contrôle de gestion & Data Analyst</title>
+  <meta name="description" content="Profil d'Axel LOUKOU, orienté contrôle de gestion et data analysis. Expériences, projets, compétences et contact sur une seule page claire pour recruteur.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --ink: #0f172a;
+      --muted: #4b5563;
+      --line: #d9e3f0;
+      --brand: #0f4c81;
+      --brand-soft: #e7f0f8;
+      --brand-strong: #0b3a62;
+      --ok: #0f766e;
+      --radius: 14px;
+      --shadow: 0 8px 26px rgba(12, 35, 59, 0.08);
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(15, 76, 129, 0.1), transparent 34%),
+        radial-gradient(circle at 0% 20%, rgba(15, 76, 129, 0.08), transparent 26%),
+        var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(100% - 40px, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      width: min(100% - 40px, var(--max));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 800;
+      font-size: 17px;
+      letter-spacing: 0.01em;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(145deg, var(--brand), var(--brand-strong));
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .nav-toggle {
+      display: none;
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 10px;
+      padding: 8px 11px;
+      font-size: 18px;
+      cursor: pointer;
+      color: var(--brand);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .nav a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      padding: 8px 11px;
+      border-radius: 9px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .nav a:hover,
+    .nav a.is-active {
+      background: var(--brand-soft);
+      color: var(--brand);
+    }
+
+    .cv-btn {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+      background: var(--brand);
+      border-radius: 10px;
+      padding: 10px 14px;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+    }
+
+    .cv-btn:hover {
+      background: var(--brand-strong);
+    }
+
+    .hero {
+      padding: 42px 0 22px;
+    }
+
+    .hero-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 4px);
+      box-shadow: var(--shadow);
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1.35fr 0.95fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .kicker {
+      display: inline-flex;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--brand);
+      background: var(--brand-soft);
+      border-radius: 999px;
+      padding: 6px 10px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 4vw, 41px);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 65ch;
+      margin-bottom: 22px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 11px 14px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--brand);
+      color: white;
+    }
+
+    .btn-secondary {
+      background: var(--brand-soft);
+      color: var(--brand);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .quick-info {
+      background: #fbfdff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+
+    .quick-title {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .facts {
+      display: grid;
+      gap: 8px;
+    }
+
+    .fact {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: white;
+      padding: 10px;
+    }
+
+    .fact strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .fact span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    main {
+      padding-bottom: 40px;
+    }
+
+    section {
+      padding: 18px 0;
+    }
+
+    .section-head {
+      margin-bottom: 14px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(24px, 3vw, 30px);
+      margin-bottom: 4px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-left: 4px solid #b8d0e8;
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      font-size: 19px;
+      margin-bottom: 4px;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 12px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .bullets {
+      padding-left: 18px;
+      display: grid;
+      gap: 8px;
+      color: #1f2937;
+      font-size: 14px;
+    }
+
+    .profile-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .profile-block {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fbfdff;
+      padding: 14px;
+    }
+
+    .profile-block h3 {
+      font-size: 16px;
+      color: var(--brand);
+      margin-bottom: 8px;
+    }
+
+    .profile-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      font-size: 14px;
+      color: #1f2937;
+    }
+
+    .experience-meta {
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+    }
+
+    .experience-section {
+      margin-top: 10px;
+      padding-left: 14px;
+      border-left: 3px solid var(--line);
+    }
+
+    .experience-section h4 {
+      font-size: 15px;
+      color: var(--brand);
+      margin-bottom: 6px;
+    }
+
+    .project-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .project {
+      border: 1px solid var(--line);
+      border-left: 4px solid #b8d0e8;
+      border-radius: 12px;
+      background: var(--panel);
+      padding: 16px;
+    }
+
+    .project h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .project p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      font-size: 12px;
+      color: var(--brand-strong);
+      background: var(--brand-soft);
+      border-radius: 999px;
+      padding: 5px 9px;
+      font-weight: 600;
+    }
+
+    .project-actions {
+      margin-top: 10px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .projects-toggle-wrap {
+      margin-top: 12px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .project-btn {
+      border: 0;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 9px;
+      padding: 8px 10px;
+    }
+
+    .project-btn.primary {
+      background: var(--brand);
+      color: white;
+    }
+
+    .project-btn.ghost {
+      background: var(--brand-soft);
+      color: var(--brand);
+    }
+
+    .project-btn:hover {
+      filter: brightness(0.97);
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 16, 27, 0.58);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 60;
+      padding: 18px;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-panel {
+      width: min(960px, 100%);
+      max-height: 88vh;
+      overflow: auto;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 24px 50px rgba(8, 22, 38, 0.35);
+      padding: 20px;
+    }
+
+    .modal-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: start;
+      margin-bottom: 12px;
+    }
+
+    .modal-head h3 {
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .modal-close {
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--muted);
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .modal-meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .modal-content p {
+      font-size: 14px;
+      color: #1f2937;
+      margin-bottom: 8px;
+    }
+
+    .modal-content ul {
+      padding-left: 18px;
+      display: grid;
+      gap: 6px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #1f2937;
+    }
+
+    .modal-links {
+      margin-bottom: 10px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: white;
+      padding: 12px 14px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--brand);
+    }
+
+    details[open] summary {
+      margin-bottom: 12px;
+    }
+
+    .skills-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .skill-block {
+      border: 2px solid #1b456c;
+      border-radius: 12px;
+      background: white;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .skill-block h3 {
+      font-size: 14px;
+      margin: 0;
+      padding: 10px 14px;
+      color: #123c62;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      background: #eef5fc;
+      border-bottom: 2px solid #1b456c;
+    }
+
+    .skill-block .skill-subgroup {
+      padding: 0 14px;
+    }
+
+    .skill-block .skill-subgroup:first-of-type {
+      margin-top: 12px;
+    }
+
+    .skill-block .skill-subgroup:last-of-type {
+      margin-bottom: 12px;
+    }
+
+    .skill-block p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .skill-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .skill-chip {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid #cfe0f3;
+      background: #f7fbff;
+      color: #0f3254;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .formation-toggle-wrap {
+      margin-top: 10px;
+    }
+
+    .skill-subgroup {
+      margin-bottom: 10px;
+    }
+
+    .skill-subgroup:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-subtitle {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #7a2e0d;
+      background: #fff4ec;
+      border: 1px solid #f3cfb9;
+      border-radius: 999px;
+      padding: 4px 9px;
+      width: fit-content;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .edu-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .formation-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .formation-card {
+      border-left: 4px solid #b8d0e8;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .formation-card h3 {
+      font-size: 16px;
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+
+    .formation-card .meta {
+      margin-bottom: 10px;
+    }
+
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .cert-card {
+      border-left: 4px solid #b8d0e8;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cert-card[data-cert-featured="true"] {
+      order: -1;
+    }
+
+    .cert-card.strategic {
+      border-left-color: var(--brand);
+      background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
+      border-top: 1px solid #d4e6f8;
+    }
+
+    .cert-badge-inline {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      border: 1px solid #cfe0f3;
+      background: #f7fbff;
+      color: var(--brand);
+      padding: 4px 9px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 8px;
+    }
+
+    .cert-card h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+      line-height: 1.35;
+    }
+
+    .cert-card h3 a {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    .cert-card h3 a:hover {
+      text-decoration: underline;
+    }
+
+    .edu-item {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: white;
+      padding: 13px;
+    }
+
+    .edu-item strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .edu-item span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .cert-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 9px;
+      margin-top: 10px;
+    }
+
+    .cert {
+      border: 1px dashed #b7c8de;
+      border-radius: 10px;
+      background: #f9fcff;
+      padding: 10px;
+      font-size: 13px;
+    }
+
+    .cert strong {
+      display: block;
+      margin-bottom: 2px;
+      color: #0f3254;
+    }
+
+    footer {
+      margin-top: 16px;
+      border-top: 1px solid var(--line);
+      background: #0f2032;
+      color: #d4dde8;
+      padding: 30px 0;
+    }
+
+    .footer-grid {
+      width: min(100% - 40px, var(--max));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 18px;
+    }
+
+    .footer-block h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 7px;
+      color: #a8bfd8;
+    }
+
+    .footer-block p,
+    .footer-block a,
+    .footer-block li {
+      font-size: 14px;
+      color: #d4dde8;
+      text-decoration: none;
+      list-style: none;
+    }
+
+    .footer-block ul {
+      display: grid;
+      gap: 6px;
+    }
+
+    .footer-block a:hover {
+      color: white;
+    }
+
+    .footer-note {
+      width: min(100% - 40px, var(--max));
+      margin: 18px auto 0;
+      border-top: 1px solid rgba(212, 221, 232, 0.22);
+      padding-top: 12px;
+      font-size: 12px;
+      color: #9db1c7;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .hero-card,
+      .grid-2,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cert-list {
+        grid-template-columns: 1fr;
+      }
+
+      .formation-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .certifications-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-wrap {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .profile-columns {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    @media (max-width: 860px) {
+      .topbar-inner {
+        flex-wrap: wrap;
+        padding: 10px 0;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+      }
+
+      .nav-wrap {
+        width: 100%;
+        display: none;
+      }
+
+      .nav-wrap.open {
+        display: block;
+      }
+
+      .nav {
+        width: 100%;
+        flex-wrap: wrap;
+        border-top: 1px solid var(--line);
+        padding-top: 10px;
+        margin-top: 8px;
+      }
+
+      .hero-card {
+        padding: 22px;
+      }
+
+      .skills-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#top" class="brand" aria-label="Retour en haut">
+        <span class="brand-mark">AL</span>
+        <span>Axel LOUKOU</span>
+      </a>
+
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="siteNav">☰</button>
+
+      <nav id="siteNav" class="nav-wrap" aria-label="Navigation principale">
+        <ul class="nav">
+          <li><a href="#profil">Profil</a></li>
+          <li><a href="#experiences">Expériences</a></li>
+          <li><a href="#projets">Projets</a></li>
+          <li><a href="#competences">Compétences</a></li>
+          <li><a href="#formation">Formation</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-card">
+        <div>
+          <span class="kicker">DISPONIBLE POUR UN CDI</span>
+          <h1 id="hero-title">Contrôleur de gestion et Data Analyst junior : je transforme la donnée en pilotage fiable, lisible et utile à la décision.</h1>
+          <p class="lead">Jeune diplômé, je recherche un poste où je peux sécuriser la qualité des données, fiabiliser les reportings et produire des analyses exploitables pour les équipes métiers, les managers et la direction.</p>
+          <div class="hero-cta">
+            <a href="#experiences" class="btn btn-primary">Voir l’expérience clé</a>
+            <a href="#projets" class="btn btn-secondary">Voir les projets</a>
+          </div>
+        </div>
+
+        <aside class="quick-info" aria-label="Informations rapides">
+          <p class="quick-title">Informations clés pour le recrutement</p>
+          <div class="facts">
+            <div class="fact">
+              <strong>Cible de poste</strong>
+              <span>Contrôleur de Gestion • Data Analyst • Chargé d'Études • Consultant Data • Analyst Financier</span>
+            </div>
+            <div class="fact">
+              <strong>Disponibilité & mobilité</strong>
+              <span>Disponibilité immédiate - Dans toute la France</span>
+            </div>
+            <div class="fact">
+              <strong>Compétences techniques clés</strong>
+              <span>Power BI, Excel/VBA, Python, R, SQL / NoSQL, Snowflake, Dataiku, Hadoop, Azure, Access</span>
+            </div>
+            <div class="fact">
+              <strong>Environnements métiers</strong>
+              <span>Assurance, finance, banque, pilotage commercial et opérationnel</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="profil" class="container" aria-labelledby="profil-title">
+      <div class="section-head">
+        <h2 id="profil-title">Profil</h2>
+        <p>En tant que profil junior, ce que je peux apporter concrètement à une équipe est :</p>
+      </div>
+      <div class="card">
+        <div class="profile-columns">
+          <div class="profile-block">
+            <h3>Volet Contrôle de gestion</h3>
+            <ul class="bullets">
+              <li>Suivre les résultats et analyser les coûts par activité pour mesurer la performance financière et opérationnelle.</li>
+              <li>Construire et fiabiliser le contrôle budgétaire: suivi des écarts, prévisions, alertes et propositions d’actions correctives.</li>
+              <li>Mettre en place des tableaux de bord de pilotage avec des KPI utiles aux managers et à la direction.</li>
+              <li>Traduire les données chiffrées en recommandations business claires pour faciliter les arbitrages.</li>
+            </ul>
+          </div>
+          <div class="profile-block">
+            <h3>Volet Data Analyse</h3>
+            <ul class="bullets">
+              <li>Collecter, nettoyer et structurer les données pour garantir une base d’analyse fiable.</li>
+              <li>Transformer les données en indicateurs exploitables et en visualisations orientées décision.</li>
+              <li>Automatiser les traitements et reportings récurrents pour gagner du temps et limiter les erreurs.</li>
+              <li>Restituer les analyses de façon simple, pédagogique et actionnable pour des publics non techniques.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="profile-note"><strong>En résumé:</strong> je peux contribuer à fiabiliser le pilotage de la performance, améliorer la qualité des analyses et fournir des supports d’aide à la décision utiles aux équipes, aux managers et à la direction.</p>
+      </div>
+    </section>
+
+    <section id="experiences" class="container" aria-labelledby="experiences-title">
+      <div class="section-head">
+        <h2 id="experiences-title">Expérience professionnelle</h2>
+        <p>Expérience récente avec impacts concrets sur le pilotage.</p>
+      </div>
+
+      <article class="card">
+        <h3>Contrôleur de gestion / Data Analyst - Generali France</h3>
+        <p class="meta experience-meta">
+          <span>Direction Financière, Direction Réseau Agents Généraux (IRAG) - Avril 2025 à Octobre 2025</span>
+        </p>
+        <section class="experience-section">
+          <h4>Analyse de données & reporting décisionnel</h4>
+          <ul class="bullets">
+            <li>Extraction, préparation et fiabilisation des données (Snowflake, Dataiku, CRM, SharePoint, SAP, Business Objects, Portail BI) pour alimenter des reportings fiables et exploitables.</li>
+            <li>Structuration des jeux de données et contrôle qualité pour sécuriser les indicateurs suivis par les managers et la direction.</li>
+            <li>Conception de tableaux de bord Power BI consolidant les KPIs IARD et Vie (commissions, couverture, leads, résiliations, portefeuille) avec filtres dynamiques.</li>
+            <li>Production d’analyses comparatives et de synthèses visuelles facilitant la prise de décision opérationnelle et stratégique.</li>
+          </ul>
+        </section>
+        <section class="experience-section">
+          <h4>Pilotage de performance & contrôle de gestion</h4>
+          <ul class="bullets">
+            <li>Suivi mensuel et contrôle de cohérence des indicateurs clés du réseau (couverture, activation, leads, GRC, multi-équipement).</li>
+            <li>Refonte d’un formulaire d’aide financière sous Excel/VBA afin de sécuriser les calculs et réduire les erreurs de traitement.</li>
+            <li>Analyse de la performance des nouveaux agents (activité, portefeuille, résiliations, commissions) avec synthèses de suivi et lecture des tendances.</li>
+            <li>Contribution au pilotage budgétaire et commercial via l’identification d’écarts, l’analyse des causes et la formulation de recommandations.</li>
+          </ul>
+        </section>
+        <section class="experience-section">
+          <h4>Conduite du changement & accompagnement utilisateurs</h4>
+          <ul class="bullets">
+            <li>Animation d’ateliers de recueil de besoins avec les utilisateurs pour cadrer les attentes métier avant les développements.</li>
+            <li>Restitution des analyses et présentation des outils aux équipes pour valider les choix fonctionnels.</li>
+            <li>Formation des utilisateurs à la prise en main des outils (Power BI, Excel/VBA) afin de renforcer l’autonomie des équipes.</li>
+            <li>Rédaction de documentation et de supports pédagogiques (guides, modes opératoires) pour faciliter l’adoption durable des solutions.</li>
+          </ul>
+        </section>
+      </article>
+    </section>
+
+    <section id="projets" class="container" aria-labelledby="projets-title">
+      <div class="section-head">
+        <h2 id="projets-title">Projets</h2>
+        <p id="projectsIntro">Chargement des projets...</p>
+      </div>
+      <div id="projectsGrid" class="project-list"></div>
+      <div class="projects-toggle-wrap">
+        <button id="projectsToggleBtn" class="project-btn ghost" type="button">Afficher les autres projets</button>
+      </div>
+    </section>
+
+    <section id="competences" class="container" aria-labelledby="competences-title">
+      <div class="section-head">
+        <h2 id="competences-title">Compétences</h2>
+        <p>Compétences techniques et professionnelles</p>
+      </div>
+
+      <div class="skills-wrap">
+        <article class="skill-block">
+          <h3>Outils et environnements</h3>
+          <div class="skill-subgroup">
+            <span class="skill-subtitle">BI & reporting</span>
+            <div class="skill-chips">
+              <span class="skill-chip">Power BI</span>
+              <span class="skill-chip">DAX</span>
+              <span class="skill-chip">Power Query</span>
+              <span class="skill-chip">Excel avancé</span>
+              <span class="skill-chip">VBA</span>
+              <span class="skill-chip">SAP BO WebI</span>
+              <span class="skill-chip">Access</span>
+            </div>
+          </div>
+          <div class="skill-subgroup">
+            <span class="skill-subtitle">Data & programmation</span>
+            <div class="skill-chips">
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">R</span>
+              <span class="skill-chip">SQL / NoSQL</span>
+              <span class="skill-chip">SAS</span>
+              <span class="skill-chip">ETL / ELT</span>
+            </div>
+          </div>
+          <div class="skill-subgroup">
+            <span class="skill-subtitle">Plateformes & SI</span>
+            <div class="skill-chips">
+              <span class="skill-chip">Snowflake</span>
+              <span class="skill-chip">Dataiku</span>
+              <span class="skill-chip">Hadoop</span>
+              <span class="skill-chip">SharePoint</span>
+              <span class="skill-chip">Power Automate</span>
+              <span class="skill-chip">Power Apps</span>
+            </div>
+          </div>
+          <div class="skill-subgroup">
+            <span class="skill-subtitle">Environnements métiers</span>
+            <div class="skill-chips">
+              <span class="skill-chip">Assurance</span>
+              <span class="skill-chip">Finance</span>
+              <span class="skill-chip">Banque</span>
+              <span class="skill-chip">Gestion des risques</span>
+            </div>
+          </div>
+        </article>
+        <article class="skill-block">
+          <h3>Savoir-faire - Contrôle de gestion</h3>
+          <div class="skill-subgroup">
+            <span class="skill-subtitle">Pilotage financier</span>
+            <div class="skill-chips">
+              <span class="skill-chip">Gestion budgétaire</span>
+              <span class="skill-chip">Prévisions / reforecasts</span>
+              <span class="skill-chip">Analyse d’écarts</span>
+              <span class="skill-chip">Pilotage financier et opérationnel</span>
+            </div>
+          </div>
+          <div class="skill-subgroup">
+            <span class="skill-subtitle">Analyse & contrôle</span>
+            <div class="skill-chips">
+              <span class="skill-chip">Analyse économique et comptable</span>
+              <span class="skill-chip">Techniques comptables et financières</span>
+              <span class="skill-chip">Contrôle de cohérence</span>
+              <span class="skill-chip">Fiabilisation des données</span>
+            </div>
+          </div>
+          <div class="skill-subgroup">
+            <span class="skill-subtitle">Restitution & posture</span>
+            <div class="skill-chips">
+              <span class="skill-chip">Synthèse pour managers et direction</span>
+              <span class="skill-chip">Communication professionnelle</span>
+              <span class="skill-chip">Rigueur</span>
+            </div>
+          </div>
+        </article>
+        <article class="skill-block">
+          <h3>Savoir-faire - Data Analyst</h3>
+          <div class="skill-subgroup">
+            <span class="skill-subtitle">Préparation des données</span>
+            <div class="skill-chips">
+              <span class="skill-chip">Collecte multi-sources</span>
+              <span class="skill-chip">Qualité des données</span>
+              <span class="skill-chip">Structuration des jeux de données</span>
+            </div>
+          </div>
+          <div class="skill-subgroup">
+            <span class="skill-subtitle">Analyse statistique</span>
+            <div class="skill-chips">
+              <span class="skill-chip">Tests statistiques</span>
+              <span class="skill-chip">Segmentation</span>
+              <span class="skill-chip">Régression</span>
+              <span class="skill-chip">Econometrie</span>
+              <span class="skill-chip">Machine learning</span>
+            </div>
+          </div>
+          <div class="skill-subgroup">
+            <span class="skill-subtitle">Visualisation & reporting</span>
+            <div class="skill-chips">
+              <span class="skill-chip">Data visualisation</span>
+              <span class="skill-chip">Tableaux de bord KPI</span>
+              <span class="skill-chip">Automatisation reporting</span>
+              <span class="skill-chip">Restitution des analyses</span>
+            </div>
+          </div>
+          <div class="skill-subgroup">
+            <span class="skill-subtitle">Cadrage métier</span>
+            <div class="skill-chips">
+              <span class="skill-chip">Ateliers d’expression de besoins</span>
+              <span class="skill-chip">Traduction métier -> analytique</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="formation" class="container" aria-labelledby="formation-title">
+      <div class="section-head">
+        <h2 id="formation-title">Formations</h2>
+        <p>3 formations universitaires</p>
+      </div>
+
+      <div class="formation-grid">
+        <article class="card formation-card" data-featured-count="5">
+          <h3>Master MBFA - Risque, Assurance et Décision</h3>
+          <p class="meta"><span>2023 - 2025 | Université Sorbonne Paris Nord</span></p>
+          <div class="skill-chips formation-chips">
+            <span class="skill-chip">Économie de l’assurance</span>
+            <span class="skill-chip">Actuariat vie / non-vie</span>
+            <span class="skill-chip">Économétrie (avancée & séries temporelles)</span>
+            <span class="skill-chip">Python & gestion de bases de données</span>
+            <span class="skill-chip">VBA sous Excel (avancé)</span>
+            <span class="skill-chip">Modèles d’évaluation d’actifs et de portefeuille</span>
+            <span class="skill-chip">R & Data Viz</span>
+            <span class="skill-chip">Processus stochastiques</span>
+            <span class="skill-chip">Probabilités appliquées à la finance et aux risques</span>
+            <span class="skill-chip">Simulation Monte-Carlo (Python / Excel)</span>
+            <span class="skill-chip">Solvabilité II</span>
+            <span class="skill-chip">Risque crédit, réassurance, produits dérivés</span>
+          </div>
+          <div class="formation-toggle-wrap">
+            <button class="project-btn ghost formation-toggle-btn" type="button"></button>
+          </div>
+        </article>
+
+        <article class="card formation-card" data-featured-count="5">
+          <h3>Licence MIASHS</h3>
+          <p class="meta"><span>2020 - 2023 | Université Paris 1 Panthéon-Sorbonne</span></p>
+          <div class="skill-chips formation-chips">
+            <span class="skill-chip">Banque et marchés</span>
+            <span class="skill-chip">Assurance: théorie & pratique</span>
+            <span class="skill-chip">Modèles mathématiques en finance</span>
+            <span class="skill-chip">Probabilités</span>
+            <span class="skill-chip">Statistiques</span>
+            <span class="skill-chip">Fondements des mathématiques</span>
+            <span class="skill-chip">Algèbre linéaire</span>
+            <span class="skill-chip">Analyse réelle / analyse dans Rn</span>
+            <span class="skill-chip">Optimisation</span>
+            <span class="skill-chip">Méthodes numériques</span>
+            <span class="skill-chip">Informatique</span>
+            <span class="skill-chip">Programmation orientée objet</span>
+            <span class="skill-chip">Développement Web</span>
+            <span class="skill-chip">Microéconomie / macroéconomie</span>
+          </div>
+          <div class="formation-toggle-wrap">
+            <button class="project-btn ghost formation-toggle-btn" type="button"></button>
+          </div>
+        </article>
+
+        <article class="card formation-card" data-featured-count="4">
+          <h3>Licence MIAGE</h3>
+          <p class="meta"><span>2017 - 2020 | Institut Universitaire d’Abidjan</span></p>
+          <div class="skill-chips formation-chips">
+            <span class="skill-chip">Audit et contrôle de gestion</span>
+            <span class="skill-chip">Gestion de projet (Agile, MS Project)</span>
+            <span class="skill-chip">Big Data & Cloud Computing</span>
+            <span class="skill-chip">Gestion financière & comptabilité analytique</span>
+            <span class="skill-chip">Analyse</span>
+            <span class="skill-chip">Algèbre</span>
+            <span class="skill-chip">Combinatoire & probabilités</span>
+            <span class="skill-chip">Statistique descriptive</span>
+            <span class="skill-chip">Analyse et modélisation de données</span>
+            <span class="skill-chip">Mathématique financière</span>
+            <span class="skill-chip">Algorithmique</span>
+            <span class="skill-chip">Bases de données & SQL / MS SQL Server</span>
+            <span class="skill-chip">Programmation orientée objet & UML</span>
+            <span class="skill-chip">Informatique décisionnelle</span>
+            <span class="skill-chip">Machine Learning</span>
+            <span class="skill-chip">Programmation C / Python / Java</span>
+          </div>
+          <div class="formation-toggle-wrap">
+            <button class="project-btn ghost formation-toggle-btn" type="button"></button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="certifications" class="container" aria-labelledby="certifications-title">
+      <div class="section-head">
+        <h2 id="certifications-title">Certifications</h2>
+        <p>9 certifications au total, dont 2 affichées par défaut.</p>
+      </div>
+
+      <div class="certifications-grid">
+        <article class="card cert-card strategic" data-cert-featured="true">
+          <span class="cert-badge-inline">Data science</span>
+          <h3><a href="https://verify.skilljar.com/c/kdbtzbznsk7c" target="_blank" rel="noopener">Dataiku Core Designer</a></h3>
+          <p class="meta"><span>Dataiku</span><span>Émise en mars 2026</span></p>
+          <ul class="bullets">
+            <li>Conception de workflows data dans le Flow (datasets, recipes, dépendances).</li>
+            <li>Préparation et fiabilisation des données (nettoyage, standardisation, contrôles qualité).</li>
+            <li>Transformation avec recettes visuelles (Prepare, Join, Group, Pivot, Window).</li>
+            <li>Structuration des données pour l’analyse et le feature engineering.</li>
+            <li>Restitution et collaboration (dashboards, documentation, partage avec les équipes).</li>
+          </ul>
+        </article>
+
+        <article class="card cert-card">
+          <span class="cert-badge-inline">Business Intelligence</span>
+          <h3>Réalisez des dashboards avec Power BI</h3>
+          <p class="meta"><span>OpenClassrooms</span></p>
+          <ul class="bullets">
+            <li>Création de tableaux de bord interactifs</li>
+            <li>Utilisation de DAX et Power Query</li>
+            <li>Visualisation de données avancée</li>
+          </ul>
+        </article>
+
+        <article class="card cert-card">
+          <span class="cert-badge-inline">Bases de données</span>
+          <h3>Implémentez vos bases de données relationnelles avec SQL</h3>
+          <p class="meta"><span>OpenClassrooms</span></p>
+          <ul class="bullets">
+            <li>Conception de bases de données</li>
+            <li>Requêtes SQL avancées</li>
+            <li>Optimisation des performances</li>
+          </ul>
+        </article>
+
+        <article class="card cert-card">
+          <span class="cert-badge-inline">Excel &amp; VBA</span>
+          <h3>Perfectionnez-vous sur Excel &amp; VBA</h3>
+          <p class="meta"><span>OpenClassrooms</span></p>
+          <ul class="bullets">
+            <li>Fonctions avancées Excel</li>
+            <li>Automatisation avec VBA</li>
+            <li>Tableaux croisés dynamiques</li>
+          </ul>
+        </article>
+
+        <article class="card cert-card">
+          <span class="cert-badge-inline">Programmation</span>
+          <h3>SAS Certification : SAS 9.4 Advanced Programming Performance</h3>
+          <p class="meta"><span>SAS Institute</span></p>
+          <ul class="bullets">
+            <li>Étape DATA pour résoudre des problèmes complexes</li>
+            <li>Code SAS SQL</li>
+          </ul>
+        </article>
+
+        <article class="card cert-card" data-cert-featured="true">
+          <span class="cert-badge-inline">Statistiques</span>
+          <h3><a href="https://openbadgefactory.com/v1/assertion/4df6f923afa78f6211913717e7fb2ea9c143d69f" target="_blank" rel="noopener">Introduction à la statistique avec R</a></h3>
+          <p class="meta"><span>Université Paris-Saclay</span></p>
+          <ul class="bullets">
+            <li>Tests statistiques</li>
+            <li>ACP et classification</li>
+            <li>Régression linéaire, multiple et logistique</li>
+          </ul>
+        </article>
+
+        <article class="card cert-card">
+          <span class="cert-badge-inline">Data Analysis</span>
+          <h3>Python pour l'analyse de données</h3>
+          <p class="meta"><span>OpenClassrooms</span></p>
+          <ul class="bullets">
+            <li>Pandas et NumPy</li>
+            <li>Nettoyage et manipulation de données</li>
+            <li>Visualisation avec Matplotlib et Seaborn</li>
+          </ul>
+        </article>
+
+        <article class="card cert-card">
+          <span class="cert-badge-inline">Data Science</span>
+          <h3>Python pour la Data Science</h3>
+          <p class="meta"><span>OpenClassrooms</span></p>
+          <ul class="bullets">
+            <li>Machine Learning avec Scikit-learn</li>
+            <li>Modèles prédictifs</li>
+            <li>Évaluation et optimisation des modèles</li>
+          </ul>
+        </article>
+
+        <article class="card cert-card">
+          <span class="cert-badge-inline">Langues</span>
+          <h3><a href="https://openbadgefactory.com/v1/assertion/0ba2cc2c10761e8283ae96a543f5787d5c9ca9ed" target="_blank" rel="noopener">Unlock Your English</a></h3>
+          <p class="meta"><span>Institut Mines-Télécom - IMT</span></p>
+          <ul class="bullets">
+            <li>Certification en anglais professionnel</li>
+          </ul>
+        </article>
+      </div>
+      <div class="projects-toggle-wrap">
+        <button id="certsToggleBtn" class="project-btn ghost" type="button">Voir plus</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="projectModal" class="modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <h3 id="modalTitle"></h3>
+        <button id="modalClose" class="modal-close" aria-label="Fermer">x</button>
+      </div>
+      <div id="modalLinks" class="modal-links"></div>
+      <p id="modalMeta" class="modal-meta"></p>
+      <div id="modalBody" class="modal-content"></div>
+    </div>
+  </div>
+
+  <footer id="contact" aria-labelledby="contact-title">
+    <div class="footer-grid">
+      <section class="footer-block">
+        <h3 id="contact-title">Contact</h3>
+        <p>Disponible pour un entretien et un demarrage rapide.</p>
+      </section>
+      <section class="footer-block">
+        <h3>Coordonnees</h3>
+        <ul>
+          <li><a href="mailto:axeloukou@gmail.com">axeloukou@gmail.com</a></li>
+          <li><a href="tel:+33766029171">+33 7 66 02 91 71</a></li>
+          <li><a href="http://www.linkedin.com/in/axel-loukou" target="_blank" rel="noopener">linkedin.com/in/axel-loukou</a></li>
+        </ul>
+      </section>
+      <section class="footer-block">
+        <h3>Positionnement</h3>
+        <ul>
+          <li>Controle de gestion</li>
+          <li>Data analysis</li>
+          <li>Reporting & pilotage</li>
+        </ul>
+      </section>
+    </div>
+    <p class="footer-note">© 2026 Axel LOUKOU | Tous droits réservés</p>
+  </footer>
+
+  <script>
+    const projectsData = [
+      {
+        title: "Reporting KPIs - Power BI",
+        cardSummary: "Mise en place d’un reporting Power BI pour suivre les performances commerciales IARD & Vie avec des données fiabilisées.",
+        detailedDescription: "🧩 <strong>Contexte :</strong><br>Dans le cadre de mon expérience chez Generali France, j’ai mis en place et automatisé un <strong>reporting stratégique</strong> destiné au <strong>pilotage de la performance du Réseau des Agents Généraux</strong>, sur les périmètres IARD et Vie. Les données présentées ont été anonymisées pour des raisons de confidentialité.<br><br>🎯 <strong>Objectifs :</strong><ul><li>Centraliser les indicateurs clés de performance (KPIs) dans un tableau de bord unique</li><li>Faciliter le pilotage commercial et managérial</li><li>Améliorer la lisibilité des performances et le suivi des écarts aux objectifs.</li></ul> <br>📊 <strong>Données & indicateurs suivis :</strong><ul><li>Taux de couverture</li><li>Taux d'activation d'espaces clients</li><li>Taux de Transformation des leads</li><li>Taux de Multi-équipement</li><li>Durabilité</li><li>Taux d'utilisation GRC</li><li>Plan de rappel</li><li>Indicateurs d’activité et portefeuille IARD et Vie</li><li>Suivi des commissions et évolutions pluriannuelles.</li></ul><br>🛠️ <strong>Méthodologie & outils :</strong><ul><li><strong>Power BI :</strong> conception du tableau de bord interactif</li><li><strong>Power Query :</strong> nettoyage, transformation et consolidation des données</li><li><strong>DAX :</strong> calcul des indicateurs, ratios, écarts vs cibles</li><li><strong>Snowflake & BO :</strong> source de données</li><li><strong>SharePoint :</strong> centralisation et diffusion des reportings.</li></ul><br>",
+        tags: ["DAX", "SharePoint", "Snowflake", "Excel", "Assurance"],
+        stack: ["Power BI", "Power Query", "BO"],
+        company: "Generali France",
+        impact: "Un tableau de bord unique, plus simple à mettre à jour et à partager avec les équipes.",
+        pdf: "reporting-impulso.pdf"
+      },
+      {
+        title: "Gestion de portefeuille sous contrainte de risque — CAC 40",
+        cardSummary: "Projet d’optimisation d’un portefeuille CAC 40 sous contrainte de risque avec une approche CVaR.",
+        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 2) visant à construire un <strong>portefeuille d’actions du CAC40</strong> et à l’optimiser selon une approche <strong>rendement / risque</strong>, avec une logique proche de la gestion d’actifs : mesurer le risque, comparer des allocations et sélectionner la meilleure combinaison possible.<br><br>🎯 <strong>Objectifs :</strong><ul><li>Calculer les rendements et la volatilité des actifs (et du portefeuille)</li><li>Modéliser le comportement des rendements (hypothèse de loi normale multivariée)</li><li>Optimiser l’allocation sous contrainte de risque via la <strong>CVaR (Conditional Value at Risk)</strong></li><li>Visualiser et interpréter les résultats pour justifier le portefeuille retenu</li></ul><br>📊 <strong>Données utilisées :</strong><ul><li>Séries de prix / rendements d’actions du CAC40 (période d’observation)</li><li>Rendements journaliers (ou périodiques) et statistiques associées (moyennes, volatilités)</li><li>Matrice de covariance / corrélation pour modéliser la dépendance entre actifs</li><li>Paramètres de risque (niveau de confiance) pour le calcul de la CVaR</li></ul><br>🛠️ <strong>Méthodologie & outils :</strong><ul><li><strong>Préparation :</strong> nettoyage, calcul des rendements, statistiques descriptives</li><li><strong>Mesure du risque :</strong> estimation de la covariance et modélisation via <strong>normale multivariée</strong></li><li><strong>Optimisation :</strong> résolution numérique avec <strong>SciPy</strong> pour minimiser la <strong>CVaR</strong> sous contraintes (poids, budget, etc.)</li><li><strong>Visualisation :</strong> graphiques d’allocation et comparaison avant/après optimisation (<strong>Matplotlib / Seaborn</strong>)</li></ul><br>",
+        tags: ["Finance", "Python"],
+        stack: ["Gestion des risques"],
+        company: "Projet universitaire - Master 2",
+        impact: "Ce projet m’a permis d’appliquer concrètement les notions de rendement/risque et de gestion du risque extrême.",
+        github: "https://github.com/axeloukou/axel-notebook/blob/main/CVaR_optimisation.ipynb"
+      },
+      {
+        title: "Modélisation Solvabilité 2 — BE, SCR et VaR",
+        cardSummary: "Construction d’un modèle Excel Solvabilité II pour le calcul du Best Estimate, du SCR et de la VaR, avec prise en compte de la diversification des risques.",
+        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 2 Actuariat) : construction d’un <strong>modèle Excel complet</strong> conforme à la logique Solvabilité II pour estimer les <strong>provisions techniques (Best Estimate)</strong>, calculer le <strong>SCR</strong> via la <strong>matrice de corrélation</strong>, et simuler la <strong>VaR 99,5%</strong>. Le modèle sert aussi à tester la <strong>sensibilité au taux d’actualisation</strong> et analyser la <strong>duration</strong> du portefeuille.<br><br>🎯 <strong>Objectifs :</strong><ul><li>Calculer le <strong>Best Estimate</strong> à partir des flux projetés et actualisés (avec scénarios de taux)</li><li>Calculer le <strong>SCR</strong> par module de risque et mesurer l’effet <strong>diversification vs corrélation parfaite</strong></li><li>Estimer une <strong>VaR</strong> au niveau réglementaire (≈ 99,5%) via une distribution simulée</li><li>Produire un outil <strong>paramétrable</strong> (taux, hypothèses, tables, charges…) et exploitable pour des analyses “what-if”</li></ul><br>📊 <strong>Données utilisées :</strong><ul><li><strong>Flux futurs</strong> projetés (rentes / prestations) + <strong>hypothèses</strong> (charges, frais, paramètres techniques)</li><li><strong>Tables de mortalité</strong> (ex : TGH/TGF) + structure portefeuille (ex : mix homme/femme)</li><li><strong>Courbe de taux / RFR spot</strong> utilisée pour l’actualisation</li><li><strong>Modules SCR</strong> et <strong>matrice de corrélation</strong> pour l’agrégation du capital (diversification)</li><li>Séries simulées/observations pour construire une <strong>distribution</strong> et lire la <strong>VaR</strong> (quantile)</li></ul><br>🛠️ <strong>Méthodologie & outils :</strong><ul><li><strong>Best Estimate (BE)</strong> : projection des flux, actualisation, calcul BE central + BE ajusté (sensibilité au taux), mesure de la <strong>duration</strong></li><li><strong>SCR</strong> : calcul par modules (marché, défaut, vie, santé, non-vie selon le modèle), puis <strong>agrégation</strong> via matrice de corrélation (comparaison “après diversification / sans diversification / corrélation parfaite”)</li><li><strong>VaR</strong> : construction d’une distribution (fréquences cumulées / histogramme) et extraction du quantile <strong>99,5%</strong> (ou 99,96% selon l’exemple)</li><li><strong>Outil</strong> : Excel (modèle multi-feuilles, formules, tableaux de synthèse, graphiques)</li></ul><br>",
+        tags: ["Solvabilité 2", "Actuariat", "Excel", "Gestion des risques"],
+        stack: ["VBA"],
+        company: "Projet universitaire — Master 2 (Actuariat)",
+        impact: "Une bonne mise en pratique de Solvabilité II avec un fichier exploitable pour tester différents scénarios.",
+        images: ["image3.png", "image4.png", "image5.png", "image6.png"]
+      },
+      {
+        title: "Tarification auto et impact de la réassurance",
+        cardSummary: "Calcul de la prime pure, ratio S/P, GLM fréquence/sévérité et Burning-Cost.",
+        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire réalisé dans le cadre du Master 2, visant à reproduire une démarche actuarielle complète de <strong>tarification automobile</strong> et à analyser l’impact d’un programme de <strong>réassurance</strong> sur le risque et la rentabilité du portefeuille.<br><br>🎯 <strong>Objectifs :</strong><ul><li>Calculer la <strong>prime pure</strong> et analyser la performance technique (ratio S/P)</li><li>Modéliser la <strong>fréquence</strong> et la <strong>sévérité</strong> des sinistres via des modèles statistiques</li><li>Prédire les <strong>tarifs par profil de risque</strong></li><li>Évaluer l’impact de la <strong>réassurance</strong> sur la volatilité et le coût du risque</li></ul><br>📊 <strong>Données utilisées :</strong><ul><li>Base automobile consolidée : <strong>16&nbsp;181</strong> observations</li><li><strong>13</strong> variables explicatives (profil assuré, exposition, sinistres, montants)</li><li>Revalorisation des montants historiques et statistiques <strong>“as-if” 2025</strong></li><li>Séparation fréquence / sévérité pour une modélisation actuarielle standard</li></ul><br>🛠️ <strong>Méthodologie & outils :</strong><ul><li><strong>Analyse actuarielle :</strong> calcul de la prime pure (2 méthodes) et analyse du ratio <strong>Sinistre/Prime</strong></li><li><strong>GLM :</strong> Poisson pour la fréquence (offset <em>log(Exposure)</em>) et Gamma pour la sévérité (lien log)</li><li><strong>Tarification :</strong> prédiction de tarifs par profil de risque</li><li><strong>Réassurance :</strong> traité <strong>XL (Excess of Loss)</strong> et calcul du <strong>Burning-Cost</strong></li><li><strong>Outil :</strong> <strong>R</strong> (statistiques, GLM)</li></ul><br>",
+        tags: ["Assurance", "Risque", "R"],
+        stack: ["GLM"],
+        company: "Projet universitaire — Master 2 (Actuariat)",
+        impact: "Une meilleure compréhension de l’effet de la réassurance sur le compromis coût/volatilité.",
+        pdf: "projet_reassurance_code.html"
+      },
+      {
+        title: "Analyse de survie",
+        cardSummary: "Analyse de survie pour étudier le temps avant événement, comparer des populations et modéliser les facteurs de risque à l’aide des méthodes Kaplan–Meier et du modèle de Cox.",
+        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 2) visant à présenter une démarche complète d’<strong>analyse de survie sous R</strong> avec le package <strong>survival</strong> (et <strong>survminer</strong>), incluant la gestion de la <strong>censure</strong>, la visualisation et la modélisation semi-paramétrique sur le dataset <strong>lung</strong>.<br><br>🎯 <strong>Objectifs :</strong><ul><li>Gérer des <strong>données censurées</strong> et construire l’objet <code>Surv(time, status)</code></li><li>Estimer et comparer des courbes <strong>Kaplan–Meier</strong> (par groupe) et réaliser un <strong>test log-rank</strong></li><li>Ajuster un <strong>modèle de Cox</strong> et interpréter les <strong>hazard ratios</strong></li><li>Vérifier l’hypothèse des <strong>risques proportionnels</strong> et produire un rendu clair (risk table / forest plot)</li></ul><br>📊 <strong>Données utilisées :</strong><ul><li>Dataset <strong>lung</strong> (package survival)</li><li><strong>time</strong> : temps de survie (jours)</li><li><strong>status</strong> recodé en <strong>0 = censuré</strong> / <strong>1 = décès</strong></li><li>Variables explicatives : <strong>age</strong>, <strong>sex</strong> (+ scores cliniques disponibles)</li></ul><br>🛠️ <strong>Méthodologie & outils :</strong><ul><li><strong>Préparation / censure :</strong> recodage de <code>status</code> puis création de <code>Surv(time, status)</code></li><li><strong>Kaplan–Meier :</strong> <code>survfit()</code> + visualisation <code>ggsurvplot()</code> (IC, p-value, table des sujets à risque, médiane)</li><li><strong>Comparaison :</strong> <code>survdiff()</code> (log-rank) pour tester la différence entre groupes</li><li><strong>Modèle de Cox :</strong> <code>coxph(Surv(time,status) ~ age + sex)</code> + interprétation des HR</li><li><strong>Validation :</strong> <code>cox.zph()</code> (risques proportionnels) + forest plot via <code>ggforest()</code></li><li><strong>Outils :</strong> <strong>R</strong> (survival, survminer)</li></ul><br>",
+        tags: ["R", "Statistiques"],
+        stack: ["Survival Analysis"],
+        company: "Projet universitaire — Master 2",
+        impact: "Un workflow reproductible sous R pour analyser et comparer des courbes de survie.",
+        pdf: "s_survival.pdf"
+      },
+      {
+        title: "Scoring de crédit — Régression logistique et interprétation du risque",
+        cardSummary: "Scoring de crédit par régression logistique avec analyse des performances et interprétation des variables.",
+        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire visant à construire un <strong>modèle de scoring de crédit</strong> pour estimer le <strong>risque de défaut</strong> à partir de variables socio-économiques et contractuelles, en utilisant une <strong>régression logistique (Logit)</strong> sous R.<br><br>🎯 <strong>Objectifs :</strong><ul><li>Préparer les données (variables catégorielles → facteurs + dummies)</li><li>Entraîner un modèle Logit et produire des <strong>probabilités de défaut</strong></li><li>Évaluer la performance (train/test, accuracy, matrices de confusion)</li><li>Interpréter le modèle via <strong>effets marginaux</strong> et <strong>odds ratios</strong></li></ul><br>📊 <strong>Données utilisées :</strong><ul><li>Dataset <strong>German Credit</strong> : <strong>1 000</strong> observations et <strong>21</strong> variables (montant, durée, historique de crédit, épargne, emploi…)</li><li>Variable cible : <code>credit_risk</code></li><li>Découpage <strong>70% train / 30% test</strong></li></ul><br>🛠️ <strong>Méthodologie & outils :</strong><ul><li><strong>R</strong> (packages : <code>dplyr</code>, <code>ggplot2</code>, <code>MASS</code>, <code>margins</code>)</li><li>Pré-traitement : facteurs + création de dummies via <code>model.matrix()</code></li><li>Modélisation : <code>glm(..., family = binomial())</code></li><li>Évaluation : prédictions + seuil 0,5, accuracy (≈ $0.72$ train ; ≈ $0.717$ test) + matrices de confusion</li><li>Interprétation : effets marginaux (<code>margins</code>) et odds ratios (<code>exp(coef)</code>) + visualisation </li></ul><br>",
+        tags: ["R", "Machine Learning"],
+        stack: ["Régression Logistique"],
+        company: "Projet universitaire — Master 1",
+        impact: "Une première expérience complète de scoring crédit, de la préparation des données à l’interprétation du modèle.",
+        pdf: "scoring-credit.pdf"
+      },
+      {
+        title: "Valorisation d’options — Arbres binomiaux & trinominiaux, convergence vers Black-Scholes",
+        cardSummary: "Implémentation sous Excel/VBA des modèles d’arbres binomiaux et trinominaux pour la valorisation d’options, avec étude de la convergence vers Black–Scholes.",
+        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire réalisé en Master 1 visant à implémenter sous <strong>Excel/VBA</strong> des modèles discrets de valorisation d’options financières, à savoir les <strong>arbres binomiaux</strong> (Cox-Ross-Rubinstein) et <strong>trinominaux</strong>, et à analyser leur convergence vers le modèle continu de <strong>Black–Scholes</strong>.<br><br>🎯 <strong>Objectifs :</strong><ul><li>Construire un outil complet de valorisation d’options européennes et américaines</li><li>Comparer les résultats des approches binomiale et trinominiale</li><li>Étudier la convergence des modèles discrets vers Black–Scholes lorsque le nombre de pas augmente</li><li>Automatiser les calculs et les visualisations via VBA</li></ul><br>📊 <strong>Données utilisées :</strong><ul><li>Paramètres de marché : prix du sous-jacent, strike, maturité, taux sans risque et volatilité</li><li>Nombre de pas de discrétisation des arbres</li><li>Prix théorique issu du modèle de Black–Scholes pour la comparaison</li></ul><br>🛠️ <strong>Méthodologie & outils :</strong><ul><li><strong>Arbre binomial (CRR)</strong> : génération des nœuds, calcul des probabilités risque-neutre et valorisation backward</li><li><strong>Arbre trinomial</strong> : extension à trois branches (up / middle / down)</li><li><strong>Analyse de convergence</strong> : calculs pour différents nombres de pas et représentation graphique</li><li><strong>Excel & VBA</strong> : automatisation de la génération des arbres, des calculs et des graphiques</li></ul><br>",
+        tags: ["Finance", "Excel"],
+        stack: ["VBA"],
+        company: "Projet universitaire — Master 1",
+        impact: "Ce projet m’a aidé à mieux comprendre la valorisation d’options et la logique de convergence vers Black-Scholes.",
+        images: ["image1.png", "image2.png"]
+      },
+      {
+        title: "Analyse et réglementation des produits bancaires",
+        cardSummary: "Panorama structuré des produits bancaires : épargne, crédits et assurances.",
+        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 1 MBFA) réalisé dans le cadre d’un module de <strong>réglementation bancaire</strong>, visant à structurer et vulgariser le fonctionnement et le cadre réglementaire des principaux <strong>produits bancaires</strong> (épargne, crédit, assurance).<br><br>🎯 <strong>Objectifs :</strong><ul><li>Classer et présenter les produits par grandes familles : <strong>épargne court/moyen/long terme</strong>, <strong>crédit</strong> et <strong>assurance</strong></li><li>Décrire pour chaque produit : <strong>caractéristiques</strong>, <strong>avantages</strong>, <strong>inconvénients</strong> et <strong>fiscalité</strong> (approche « fiche produit »)</li><li>Construire une base claire pour <strong>comparer</strong> et <strong>orienter</strong> vers une solution selon l’objectif (liquidité, rendement, horizon, protection)</li></ul><br>📊 <strong>Données utilisées :</strong><ul><li>Support de cours et <strong>synthèse documentaire</strong> sur la réglementation et les caractéristiques produits</li><li>Périmètre : épargne (Livret A/LDDS/LEP, CAT, PEL/CEL, PEA/PEA-PME…), placements long terme (assurance-vie, PER, SCPI, actions/obligations, fonds…), crédits (amortissable, in fine, relais, conso, PTZ…), assurances (emprunteur, MRH, RC, GAV, santé…)</li></ul><br>🛠️ <strong>Méthodologie & outils :</strong><ul><li>Approche « <strong>catalogue produit</strong> » : une fiche standard par produit (fonctionnement, conditions, fiscalité, points de vigilance)</li><li>Organisation par <strong>usage</strong> : horizon d’investissement, liquidité, risque, objectif client</li><li>Outils : <strong>Suite Office</strong> (structuration, mise en forme, synthèse pédagogique)</li></ul><br>",
+        tags: ["Finance", "Banque", "Assurance", "PowerPoint"],
+        stack: ["Synthèse documentaire"],
+        company: "Projet universitaire — Master 1",
+        impact: "Une base claire pour comparer des produits bancaires selon les usages, la fiscalité et les contraintes réglementaires.",
+        pdf: "Produits_bancaires.pdf"
+      },
+      {
+        title: "Eco Connect — Application RSE & pilotage de l’engagement collaborateurs",
+        cardSummary: "Conception d’une application mobile RSE intégrant gamification, KPI d’engagement et suivi de la participation.",
+        detailedDescription: "🧩 <strong>Contexte :</strong><br>Dans le cadre d’un <strong>projet universitaire (Concours RSE)</strong>, nous avons conçu <strong>EcoConnect</strong>, une application mobile destinée à sensibiliser et impliquer les collaborateurs (cas d’usage : <strong>Carsat MP</strong>) via une approche <strong>ludique</strong> et engageante (gamification). L’objectif est d’activer des mécaniques inspirées d’applications à forte rétention (progression, défis, récompenses, social).<br><br>🎯 <strong>Objectifs :</strong><ul><li>Inciter les collaborateurs à <strong>tester</strong> l’application et à adopter des pratiques responsables</li><li><strong>Maintenir l’engagement</strong> dans le temps grâce à des missions quotidiennes et des défis long terme</li><li>Créer une dynamique collective via <strong>classements</strong>, <strong>interaction sociale</strong> et <strong>récompenses</strong></li></ul><br>📊 <strong>Données / KPI utilisés :</strong><ul><li>Définition d’indicateurs de suivi : <strong>adoption</strong>, <strong>participation</strong>, <strong>engagement</strong>, <strong>communication</strong>, <strong>reconnaissance / récompenses</strong></li><li>Analyse de benchmarks d’applications gamifiées pour structurer les parcours utilisateurs</li></ul><br>🛠️ <strong>Méthodologie & outils :</strong><ul><li><strong>Gamification :</strong> conception des mécaniques (missions, points, badges, classements, communauté)</li><li><strong>Conception produit :</strong> définition des parcours utilisateurs et des règles fonctionnelles</li><li><strong>Prototype / maquettes :</strong> proposition d’écrans clés et d’une interface utilisateur</li><li><strong>Plan de déploiement :</strong> conception → développement → lancement → suivi et amélioration continue</li></ul><br>",
+        tags: ["RSE", "Communication"],
+        stack: ["Application mobile"],
+        company: "Concours RSE",
+        impact: "Une réflexion concrète sur la façon de suivre l’engagement RSE avec des indicateurs simples et des mécaniques de participation.",
+        pdf: "RSE-projet.pdf"
+      }
+    ];
+
+    const projectsGrid = document.getElementById('projectsGrid');
+    const projectsToggleBtn = document.getElementById('projectsToggleBtn');
+    const projectsIntro = document.getElementById('projectsIntro');
+    const projectModal = document.getElementById('projectModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalMeta = document.getElementById('modalMeta');
+    const modalBody = document.getElementById('modalBody');
+    const modalLinks = document.getElementById('modalLinks');
+    const modalClose = document.getElementById('modalClose');
+
+    const featuredProjectTitles = new Set([
+      "Reporting KPIs - Power BI",
+      "Modélisation Solvabilité 2 — BE, SCR et VaR",
+      "Scoring de crédit — Régression logistique et interprétation du risque"
+    ]);
+
+    let showAllProjects = false;
+
+    function renderProjects() {
+      projectsGrid.innerHTML = "";
+      const featured = [];
+      const others = [];
+
+      projectsData.forEach((project, index) => {
+        if (featuredProjectTitles.has(project.title)) {
+          featured.push({ project, index });
+        } else {
+          others.push({ project, index });
+        }
+      });
+
+      const listToRender = showAllProjects ? [...featured, ...others] : featured;
+
+      listToRender.forEach(({ project, index }) => {
+        const card = document.createElement('article');
+        card.className = 'project';
+        card.innerHTML = `
+          <h3>${project.title}</h3>
+          <p>${project.cardSummary || project.summary || ""}</p>
+          <div class="tags">${[...(project.stack || []), ...(project.tags || [])].slice(0, 6).map((tag) => `<span class="tag">${tag}</span>`).join('')}</div>
+          <div class="project-actions">
+            <button class="project-btn primary" data-index="${index}">Voir le detail</button>
+          </div>
+        `;
+        projectsGrid.appendChild(card);
+      });
+
+      if (projectsIntro) {
+        projectsIntro.textContent = `${projectsData.length} projets au total, dont ${featured.length} affichés par défaut.`;
+      }
+
+      if (projectsToggleBtn) {
+        projectsToggleBtn.textContent = showAllProjects ? "Masquer les autres projets" : "Afficher les autres projets";
+      }
+    }
+
+    function openProjectModal(index) {
+      const project = projectsData[index];
+      if (!project) return;
+      modalTitle.textContent = project.title;
+      modalMeta.textContent = project.company;
+      const detailed = project.detailedDescription || project.details || "";
+      const resultBlock = project.impact
+        ? `<p><strong>Resultat :</strong> ${project.impact}</p>`
+        : "";
+      modalBody.innerHTML = `${detailed}${resultBlock}`;
+      modalLinks.innerHTML = "";
+      const docLink = project.documentUrl || project.pdf;
+      if (docLink) {
+        modalLinks.innerHTML += `<a class="project-btn primary" href="${docLink}" target="_blank" rel="noopener">Voir le document</a>`;
+      }
+      if (project.github) {
+        modalLinks.innerHTML += `<a class="project-btn ghost" href="${project.github}" target="_blank" rel="noopener">Voir sur GitHub</a>`;
+      }
+      if (project.demo) {
+        modalLinks.innerHTML += `<a class="project-btn ghost" href="${project.demo}" target="_blank" rel="noopener">Voir la démo</a>`;
+      }
+      modalLinks.style.display = modalLinks.innerHTML ? 'flex' : 'none';
+      projectModal.classList.add('open');
+      projectModal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeProjectModal() {
+      projectModal.classList.remove('open');
+      projectModal.setAttribute('aria-hidden', 'true');
+    }
+
+    renderProjects();
+
+    if (projectsToggleBtn) {
+      projectsToggleBtn.addEventListener('click', () => {
+        showAllProjects = !showAllProjects;
+        renderProjects();
+      });
+    }
+
+    document.querySelectorAll('.formation-card').forEach((card) => {
+      const chips = Array.from(card.querySelectorAll('.formation-chips .skill-chip'));
+      const toggleBtn = card.querySelector('.formation-toggle-btn');
+      const featuredCount = Number(card.dataset.featuredCount || 5);
+      if (!toggleBtn || chips.length <= featuredCount) {
+        if (toggleBtn) toggleBtn.style.display = 'none';
+        return;
+      }
+
+      const extraChips = chips.slice(featuredCount);
+      extraChips.forEach((chip) => chip.style.display = 'none');
+      toggleBtn.textContent = `Voir les autres matières (${extraChips.length})`;
+
+      let isExpanded = false;
+      toggleBtn.addEventListener('click', () => {
+        isExpanded = !isExpanded;
+        extraChips.forEach((chip) => {
+          chip.style.display = isExpanded ? 'inline-flex' : 'none';
+        });
+        toggleBtn.textContent = isExpanded
+          ? 'Masquer les matières'
+          : `Voir les autres matières (${extraChips.length})`;
+      });
+    });
+
+    const certsGrid = document.querySelector('.certifications-grid');
+    const certsToggleBtn = document.getElementById('certsToggleBtn');
+    if (certsGrid && certsToggleBtn) {
+      const certCards = Array.from(certsGrid.querySelectorAll('.cert-card'));
+      const hiddenCards = certCards.filter((card) => card.dataset.certFeatured !== 'true');
+
+      hiddenCards.forEach((card) => {
+        card.style.display = 'none';
+      });
+      certsToggleBtn.textContent = `Voir plus (${hiddenCards.length})`;
+
+      let certsExpanded = false;
+      certsToggleBtn.addEventListener('click', () => {
+        certsExpanded = !certsExpanded;
+        hiddenCards.forEach((card) => {
+          card.style.display = certsExpanded ? 'flex' : 'none';
+        });
+        certsToggleBtn.textContent = certsExpanded
+          ? 'Masquer'
+          : `Voir plus (${hiddenCards.length})`;
+      });
+
+      if (hiddenCards.length === 0) {
+        certsToggleBtn.style.display = 'none';
+      }
+    }
+
+    projectsGrid.addEventListener('click', (event) => {
+      const btn = event.target.closest('button[data-index]');
+      if (!btn) return;
+      openProjectModal(Number(btn.dataset.index));
+    });
+
+    modalClose.addEventListener('click', closeProjectModal);
+    projectModal.addEventListener('click', (event) => {
+      if (event.target === projectModal) closeProjectModal();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeProjectModal();
+    });
+
+    const navToggle = document.getElementById('navToggle');
+    const navWrap = document.getElementById('siteNav');
+    const navLinks = Array.from(document.querySelectorAll('.nav a'));
+    const sections = navLinks
+      .map((link) => document.querySelector(link.getAttribute('href')))
+      .filter(Boolean);
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navWrap.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        navWrap.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const id = `#${entry.target.id}`;
+        navLinks.forEach((link) => {
+          link.classList.toggle('is-active', link.getAttribute('href') === id);
+        });
+      });
+    }, { threshold: 0.35 });
+
+    sections.forEach((section) => observer.observe(section));
+  </script>
+</body>
+</html>
