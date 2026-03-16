@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Axel LOUKOU | Contrôle de gestion & Data Analyst</title>
-  <meta name="description" content="Profil d'Axel LOUKOU, orienté contrôle de gestion et data analysis. Expériences, projets, compétences et contact sur une seule page claire pour recruteur.">
+  <title>Axel LOUKOU | Data Analyst — Finance & Assurance</title>
+  <meta name="description" content="Axel LOUKOU, Data Analyst spécialisé en Finance & Assurance. Power BI, SQL, Python, Excel/VBA. Expérience chez Generali France. Disponible pour CDI.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -125,22 +125,6 @@
     .nav a.is-active {
       background: var(--brand-soft);
       color: var(--brand);
-    }
-
-    .cv-btn {
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 700;
-      color: white;
-      background: var(--brand);
-      border-radius: 10px;
-      padding: 10px 14px;
-      white-space: nowrap;
-      transition: background 0.2s ease;
-    }
-
-    .cv-btn:hover {
-      background: var(--brand-strong);
     }
 
     .hero {
@@ -545,92 +529,52 @@
 
     .skills-wrap {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      align-items: stretch;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      align-items: start;
     }
 
     .skill-block {
-      border: 2px solid #1b456c;
-      border-radius: 12px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
       background: white;
-      padding: 0;
+      padding: 20px;
       height: 100%;
-      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(12, 35, 59, 0.05);
     }
 
     .skill-block h3 {
-      font-size: 14px;
-      margin: 0;
-      padding: 10px 14px;
+      font-size: 19px;
+      margin-bottom: 16px;
       color: #123c62;
+      line-height: 1.3;
+    }
+
+    .skill-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .skill-item strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--brand);
       text-transform: uppercase;
-      letter-spacing: 0.03em;
-      background: #eef5fc;
-      border-bottom: 2px solid #1b456c;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
     }
 
-    .skill-block .skill-subgroup {
-      padding: 0 14px;
-    }
-
-    .skill-block .skill-subgroup:first-of-type {
-      margin-top: 12px;
-    }
-
-    .skill-block .skill-subgroup:last-of-type {
-      margin-bottom: 12px;
-    }
-
-    .skill-block p {
+    .skill-item span {
+      display: block;
       font-size: 14px;
       color: var(--muted);
-    }
-
-    .skill-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-    }
-
-    .skill-chip {
-      display: inline-flex;
-      align-items: center;
-      border: 1px solid #cfe0f3;
-      background: #f7fbff;
-      color: #0f3254;
-      border-radius: 999px;
-      padding: 5px 10px;
-      font-size: 12px;
-      font-weight: 600;
-      line-height: 1.2;
+      line-height: 1.55;
     }
 
     .formation-toggle-wrap {
       margin-top: 10px;
-    }
-
-    .skill-subgroup {
-      margin-bottom: 10px;
-    }
-
-    .skill-subgroup:last-child {
-      margin-bottom: 0;
-    }
-
-    .skill-subtitle {
-      display: block;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      color: #7a2e0d;
-      background: #fff4ec;
-      border: 1px solid #f3cfb9;
-      border-radius: 999px;
-      padding: 4px 9px;
-      width: fit-content;
-      margin-bottom: 6px;
-      text-transform: uppercase;
     }
 
     .edu-list {
@@ -650,16 +594,40 @@
       height: 100%;
       display: flex;
       flex-direction: column;
+      padding: 18px;
     }
 
     .formation-card h3 {
-      font-size: 16px;
+      font-size: 18px;
       line-height: 1.35;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .formation-card .meta {
-      margin-bottom: 10px;
+      margin-bottom: 14px;
+    }
+
+    .formation-card .meta span {
+      font-size: 14px;
+    }
+
+    .formation-list {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .formation-subject {
+      display: block;
+      border: 1px solid #d9e3f0;
+      border-radius: 10px;
+      background: #f8fbff;
+      padding: 9px 11px;
+      font-size: 14px;
+      color: #163454;
+      line-height: 1.45;
     }
 
     .certifications-grid {
@@ -806,6 +774,10 @@
       text-align: center;
     }
 
+    .cv-print {
+      display: none;
+    }
+
     @media (max-width: 980px) {
       .hero-card,
       .grid-2,
@@ -870,6 +842,64 @@
         grid-template-columns: 1fr;
       }
     }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 10mm;
+      }
+
+      body {
+        background: #fff;
+        color: #111;
+      }
+
+      header,
+      main,
+      footer,
+      #projectModal {
+        display: none !important;
+      }
+
+      .cv-print {
+        display: block !important;
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+        font-size: 11px;
+        line-height: 1.35;
+      }
+
+      .cv-print h1 {
+        font-size: 21px;
+        line-height: 1.15;
+        margin-bottom: 4px;
+      }
+
+      .cv-print h2 {
+        font-size: 12px;
+        margin: 8px 0 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        border-bottom: 1px solid #cbd5e1;
+      }
+
+      .cv-print p {
+        margin: 0 0 4px;
+      }
+
+      .cv-print ul {
+        margin: 0;
+        padding-left: 15px;
+      }
+
+      .cv-print li {
+        margin-bottom: 2px;
+      }
+
+      .cv-print a {
+        color: #0f4c81;
+        text-decoration: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -902,8 +932,8 @@
       <div class="hero-card">
         <div>
           <span class="kicker">DISPONIBLE POUR UN CDI</span>
-          <h1 id="hero-title">Contrôleur de gestion et Data Analyst junior : je transforme la donnée en pilotage fiable, lisible et utile à la décision.</h1>
-          <p class="lead">Jeune diplômé, je recherche un poste où je peux sécuriser la qualité des données, fiabiliser les reportings et produire des analyses exploitables pour les équipes métiers, les managers et la direction.</p>
+          <h1 id="hero-title">Data Analyst Finance & Assurance — je traduis la donnée brute en décisions claires, pour les managers et la direction.</h1>
+          <p class="lead">Jeune diplômé en Risque & Assurance avec une expérience concrète chez Generali France, je combine culture finance, maîtrise des outils BI et capacité à livrer des analyses exploitables rapidement.</p>
           <div class="hero-cta">
             <a href="#experiences" class="btn btn-primary">Voir l’expérience clé</a>
             <a href="#projets" class="btn btn-secondary">Voir les projets</a>
@@ -915,19 +945,19 @@
           <div class="facts">
             <div class="fact">
               <strong>Cible de poste</strong>
-              <span>Contrôleur de Gestion • Data Analyst • Chargé d'Études • Consultant Data • Analyst Financier</span>
+              <span>Data Analyst | Finance & Assurance</span>
             </div>
             <div class="fact">
               <strong>Disponibilité & mobilité</strong>
-              <span>Disponibilité immédiate - Dans toute la France</span>
+              <span>Disponibilité immédiate · Toute la France</span>
             </div>
             <div class="fact">
               <strong>Compétences techniques clés</strong>
-              <span>Power BI, Excel/VBA, Python, R, SQL / NoSQL, Snowflake, Dataiku, Hadoop, Azure, Access</span>
+              <span>Power BI (DAX, Power Query), Excel/VBA, SQL, Snowflake, Python, R</span>
             </div>
             <div class="fact">
               <strong>Environnements métiers</strong>
-              <span>Assurance, finance, banque, pilotage commercial et opérationnel</span>
+              <span>Assurance, Finance, Banque — pilotage de la performance</span>
             </div>
           </div>
         </aside>
@@ -937,60 +967,67 @@
     <section id="profil" class="container" aria-labelledby="profil-title">
       <div class="section-head">
         <h2 id="profil-title">Profil</h2>
-        <p>En tant que profil junior, ce que je peux apporter concrètement à une équipe est :</p>
+        <p>Data Analyst junior — voici ce que je peux apporter à votre équipe :</p>
       </div>
       <div class="card">
         <div class="profile-columns">
           <div class="profile-block">
-            <h3>Volet Contrôle de gestion</h3>
+            <h3>Données & Reporting</h3>
             <ul class="bullets">
-              <li>Suivre les résultats et analyser les coûts par activité pour mesurer la performance financière et opérationnelle.</li>
-              <li>Construire et fiabiliser le contrôle budgétaire: suivi des écarts, prévisions, alertes et propositions d’actions correctives.</li>
-              <li>Mettre en place des tableaux de bord de pilotage avec des KPI utiles aux managers et à la direction.</li>
-              <li>Traduire les données chiffrées en recommandations business claires pour faciliter les arbitrages.</li>
+              <li><li>Construire des pipelines de données propres depuis des sources hétérogènes (SQL, Snowflake, Excel) jusqu’à des reportings fiables et à jour.</li>
+              <li>Concevoir des tableaux de bord Power BI lisibles et actionnables — DAX, modélisation, filtres dynamiques — pour que les décideurs aient l’information au bon moment.</li>
+              <li>Automatiser les traitements répétitifs (Python, VBA, Power Query) pour fiabiliser les processus et réduire les erreurs.</li>
+              <li>Restituer des analyses complexes de façon claire et pédagogique pour des interlocuteurs non techniques.</li>
             </ul>
           </div>
           <div class="profile-block">
-            <h3>Volet Data Analyse</h3>
+            <h3>Finance & Assurance</h3>
             <ul class="bullets">
-              <li>Collecter, nettoyer et structurer les données pour garantir une base d’analyse fiable.</li>
-              <li>Transformer les données en indicateurs exploitables et en visualisations orientées décision.</li>
-              <li>Automatiser les traitements et reportings récurrents pour gagner du temps et limiter les erreurs.</li>
-              <li>Restituer les analyses de façon simple, pédagogique et actionnable pour des publics non techniques.</li>
+              <li>Lire et construire des KPIs métiers (taux de couverture, TCAM, COR, portefeuille IARD/Vie) sans avoir besoin qu’on m’explique ce qu’ils mesurent.</li>
+              <li>Mobiliser des notions solides d’actuariat, de Solvabilité II et de modélisation du risque sur des problématiques financières ou assurantielles.</li>
+              <li>Identifier les anomalies dans les données et alerter les équipes métier avant qu’elles impactent les décisions.</li>
+              <li>M’intégrer rapidement dans un environnement Finance ou Assurance, grâce à ma formation et mon expérience du secteur.</li>
             </ul>
           </div>
         </div>
-        <p class="profile-note"><strong>En résumé:</strong> je peux contribuer à fiabiliser le pilotage de la performance, améliorer la qualité des analyses et fournir des supports d’aide à la décision utiles aux équipes, aux managers et à la direction.</p>
+        <p class="profile-note"><strong>En résumé :</strong> Je suis un profil Data Analyst avec une vraie culture Finance & Assurance, capable de prendre en charge la donnée de bout en bout, de l’extraction à la restitution visuelle pour la direction.</p>
+      </div>
+
+      <div class="card" style="margin-top: 14px; border-left: 4px solid var(--brand); background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);">
+        <p style="font-size: 15px; font-style: italic; color: #1f2937; line-height: 1.7; margin-bottom: 10px;">
+          « Dès son arrivée, Axel s’est distingué par sa curiosité intellectuelle, son esprit d’initiative et sa capacité à être force de proposition. Il a mené à bien l’ensemble des tâches confiées, en particulier dans la création et l’automatisation d’outils. Axel a piloté ses projets de bout en bout, assurant une coordination fluide avec les différentes directions du groupe. Son autonomie, sa rigueur et sa capacité à collaborer témoignent d’une réelle maturité professionnelle. Il possède toutes les compétences nécessaires pour intégrer le monde professionnel, et nous espérons vivement qu’il poursuivra son parcours au sein de Generali, où il représente une véritable valeur ajoutée. »
+        </p>
+        <p style="font-size: 13px; color: var(--muted); font-weight: 700;">— Alice Erdogan, Responsable de mission &middot; Generali France &middot; Évaluation de stage, Octobre 2025</p>
       </div>
     </section>
 
     <section id="experiences" class="container" aria-labelledby="experiences-title">
       <div class="section-head">
         <h2 id="experiences-title">Expérience professionnelle</h2>
-        <p>Expérience récente avec impacts concrets sur le pilotage.</p>
+        <p>Une expérience terrain chez Generali France — BI, automatisation et analyse de performance.</p>
       </div>
 
       <article class="card">
-        <h3>Contrôleur de gestion / Data Analyst - Generali France</h3>
+        <h3>Data Analyst — Generali France</h3>
         <p class="meta experience-meta">
-          <span>Direction Financière, Direction Réseau Agents Généraux (IRAG) - Avril 2025 à Octobre 2025</span>
+          <span>Direction Réseau Agents Généraux (IRAG) · Generali France · Avril – Octobre 2025</span>
         </p>
         <section class="experience-section">
           <h4>Analyse de données & reporting décisionnel</h4>
           <ul class="bullets">
-            <li>Extraction, préparation et fiabilisation des données (Snowflake, Dataiku, CRM, SharePoint, SAP, Business Objects, Portail BI) pour alimenter des reportings fiables et exploitables.</li>
+            <li>Extraction et consolidation de données multi-sources (Snowflake, Portail BI, SharePoint, Excel) pour alimenter des reportings fiables à destination des managers et de la direction.</li>
             <li>Structuration des jeux de données et contrôle qualité pour sécuriser les indicateurs suivis par les managers et la direction.</li>
-            <li>Conception de tableaux de bord Power BI consolidant les KPIs IARD et Vie (commissions, couverture, leads, résiliations, portefeuille) avec filtres dynamiques.</li>
-            <li>Production d’analyses comparatives et de synthèses visuelles facilitant la prise de décision opérationnelle et stratégique.</li>
+            <li>Conception d’un tableau de bord Power BI complet (DAX, Power Query, modélisation multi-sources) centralisant les KPIs IARD et Vie — commissions, couverture, leads, résiliations, portefeuille — avec filtres dynamiques par région, IDA et période.</li>
+            <li>Production d’analyses comparatives (agents vs moyenne nationale, TCAM fixe et dynamique) et de synthèses visuelles pour les responsables de région et la direction.</li>
           </ul>
         </section>
         <section class="experience-section">
-          <h4>Pilotage de performance & contrôle de gestion</h4>
+          <h4>Analyse de performance & KPIs financiers</h4>
           <ul class="bullets">
             <li>Suivi mensuel et contrôle de cohérence des indicateurs clés du réseau (couverture, activation, leads, GRC, multi-équipement).</li>
-            <li>Refonte d’un formulaire d’aide financière sous Excel/VBA afin de sécuriser les calculs et réduire les erreurs de traitement.</li>
-            <li>Analyse de la performance des nouveaux agents (activité, portefeuille, résiliations, commissions) avec synthèses de suivi et lecture des tendances.</li>
-            <li>Contribution au pilotage budgétaire et commercial via l’identification d’écarts, l’analyse des causes et la formulation de recommandations.</li>
+            <li>Refonte complète d’un formulaire Excel/VBA : réduction de 19 à 7 modules VBA, élimination des bugs récurrents, interface simplifiée — gain de temps significatif pour l’équipe SAI sur le traitement des demandes.</li>
+            <li>Analyse de la performance des nouveaux agents sur N années : taux d’activité, résiliations, TCAM, multi-équipement, commissions — avec benchmark national et rapport de synthèse pour la direction.</li>
+            <li>Automatisation du reporting mensuel Impulso (suivi de 10+ KPIs stratégiques sur l’ensemble du réseau) — livraison accélérée et suppression des mises à jour manuelles mensuelles.</li>
           </ul>
         </section>
         <section class="experience-section">
@@ -1019,120 +1056,74 @@
     <section id="competences" class="container" aria-labelledby="competences-title">
       <div class="section-head">
         <h2 id="competences-title">Compétences</h2>
-        <p>Compétences techniques et professionnelles</p>
+        <p>Outils maîtrisés, savoir-faire métier et posture analytique.</p>
       </div>
 
       <div class="skills-wrap">
         <article class="skill-block">
           <h3>Outils et environnements</h3>
-          <div class="skill-subgroup">
-            <span class="skill-subtitle">BI & reporting</span>
-            <div class="skill-chips">
-              <span class="skill-chip">Power BI</span>
-              <span class="skill-chip">DAX</span>
-              <span class="skill-chip">Power Query</span>
-              <span class="skill-chip">Excel avancé</span>
-              <span class="skill-chip">VBA</span>
-              <span class="skill-chip">SAP BO WebI</span>
-              <span class="skill-chip">Access</span>
-            </div>
-          </div>
-          <div class="skill-subgroup">
-            <span class="skill-subtitle">Data & programmation</span>
-            <div class="skill-chips">
-              <span class="skill-chip">Python</span>
-              <span class="skill-chip">R</span>
-              <span class="skill-chip">SQL / NoSQL</span>
-              <span class="skill-chip">SAS</span>
-              <span class="skill-chip">ETL / ELT</span>
-            </div>
-          </div>
-          <div class="skill-subgroup">
-            <span class="skill-subtitle">Plateformes & SI</span>
-            <div class="skill-chips">
-              <span class="skill-chip">Snowflake</span>
-              <span class="skill-chip">Dataiku</span>
-              <span class="skill-chip">Hadoop</span>
-              <span class="skill-chip">SharePoint</span>
-              <span class="skill-chip">Power Automate</span>
-              <span class="skill-chip">Power Apps</span>
-            </div>
-          </div>
-          <div class="skill-subgroup">
-            <span class="skill-subtitle">Environnements métiers</span>
-            <div class="skill-chips">
-              <span class="skill-chip">Assurance</span>
-              <span class="skill-chip">Finance</span>
-              <span class="skill-chip">Banque</span>
-              <span class="skill-chip">Gestion des risques</span>
-            </div>
-          </div>
+          <ul class="skill-list">
+            <li class="skill-item">
+              <strong>BI et reporting</strong>
+              <span>Power BI, DAX, Power Query, Excel avancé, VBA</span>
+            </li>
+            <li class="skill-item">
+              <strong>Data et programmation</strong>
+              <span>Python, R, SQL, SAS</span>
+            </li>
+            <li class="skill-item">
+              <strong>Plateformes</strong>
+              <span>Snowflake, SharePoint</span>
+            </li>
+            <li class="skill-item">
+              <strong>Notions</strong>
+              <span>Dataiku, Git / GitHub</span>
+            </li>
+          </ul>
         </article>
+
         <article class="skill-block">
-          <h3>Savoir-faire - Contrôle de gestion</h3>
-          <div class="skill-subgroup">
-            <span class="skill-subtitle">Pilotage financier</span>
-            <div class="skill-chips">
-              <span class="skill-chip">Gestion budgétaire</span>
-              <span class="skill-chip">Prévisions / reforecasts</span>
-              <span class="skill-chip">Analyse d’écarts</span>
-              <span class="skill-chip">Pilotage financier et opérationnel</span>
-            </div>
-          </div>
-          <div class="skill-subgroup">
-            <span class="skill-subtitle">Analyse & contrôle</span>
-            <div class="skill-chips">
-              <span class="skill-chip">Analyse économique et comptable</span>
-              <span class="skill-chip">Techniques comptables et financières</span>
-              <span class="skill-chip">Contrôle de cohérence</span>
-              <span class="skill-chip">Fiabilisation des données</span>
-            </div>
-          </div>
-          <div class="skill-subgroup">
-            <span class="skill-subtitle">Restitution & posture</span>
-            <div class="skill-chips">
-              <span class="skill-chip">Synthèse pour managers et direction</span>
-              <span class="skill-chip">Communication professionnelle</span>
-              <span class="skill-chip">Rigueur</span>
-            </div>
-          </div>
+          <h3>Savoir-faire — Finance & Assurance</h3>
+          <ul class="skill-list">
+            <li class="skill-item">
+              <strong>KPIs et performance</strong>
+              <span>Construction de KPIs, analyse d’écarts, taux de couverture, TCAM, COR, portefeuille IARD et Vie</span>
+            </li>
+            <li class="skill-item">
+              <strong>Domaine assurance</strong>
+              <span>Économie de l’assurance, actuariat vie et non-vie, Solvabilité II, risque crédit, réassurance</span>
+            </li>
+            <li class="skill-item">
+              <strong>Environnements métier</strong>
+              <span>Assurance, finance, banque, gestion des risques</span>
+            </li>
+            <li class="skill-item">
+              <strong>Restitution</strong>
+              <span>Fiabilisation des données, synthèse pour managers et direction, documentation, formation utilisateurs</span>
+            </li>
+          </ul>
         </article>
+
         <article class="skill-block">
-          <h3>Savoir-faire - Data Analyst</h3>
-          <div class="skill-subgroup">
-            <span class="skill-subtitle">Préparation des données</span>
-            <div class="skill-chips">
-              <span class="skill-chip">Collecte multi-sources</span>
-              <span class="skill-chip">Qualité des données</span>
-              <span class="skill-chip">Structuration des jeux de données</span>
-            </div>
-          </div>
-          <div class="skill-subgroup">
-            <span class="skill-subtitle">Analyse statistique</span>
-            <div class="skill-chips">
-              <span class="skill-chip">Tests statistiques</span>
-              <span class="skill-chip">Segmentation</span>
-              <span class="skill-chip">Régression</span>
-              <span class="skill-chip">Econometrie</span>
-              <span class="skill-chip">Machine learning</span>
-            </div>
-          </div>
-          <div class="skill-subgroup">
-            <span class="skill-subtitle">Visualisation & reporting</span>
-            <div class="skill-chips">
-              <span class="skill-chip">Data visualisation</span>
-              <span class="skill-chip">Tableaux de bord KPI</span>
-              <span class="skill-chip">Automatisation reporting</span>
-              <span class="skill-chip">Restitution des analyses</span>
-            </div>
-          </div>
-          <div class="skill-subgroup">
-            <span class="skill-subtitle">Cadrage métier</span>
-            <div class="skill-chips">
-              <span class="skill-chip">Ateliers d’expression de besoins</span>
-              <span class="skill-chip">Traduction métier -> analytique</span>
-            </div>
-          </div>
+          <h3>Savoir-faire — Data Analyst</h3>
+          <ul class="skill-list">
+            <li class="skill-item">
+              <strong>Préparation des données</strong>
+              <span>Collecte multi-sources, contrôle qualité, structuration des jeux de données</span>
+            </li>
+            <li class="skill-item">
+              <strong>Analyse statistique</strong>
+              <span>Tests statistiques, segmentation, régression, économétrie, machine learning</span>
+            </li>
+            <li class="skill-item">
+              <strong>Visualisation</strong>
+              <span>Data visualisation, tableaux de bord KPI, automatisation de reporting, restitution des analyses</span>
+            </li>
+            <li class="skill-item">
+              <strong>Cadrage métier</strong>
+              <span>Expression de besoin, traduction métier vers analytique</span>
+            </li>
+          </ul>
         </article>
       </div>
     </section>
@@ -1147,20 +1138,20 @@
         <article class="card formation-card" data-featured-count="5">
           <h3>Master MBFA - Risque, Assurance et Décision</h3>
           <p class="meta"><span>2023 - 2025 | Université Sorbonne Paris Nord</span></p>
-          <div class="skill-chips formation-chips">
-            <span class="skill-chip">Économie de l’assurance</span>
-            <span class="skill-chip">Actuariat vie / non-vie</span>
-            <span class="skill-chip">Économétrie (avancée & séries temporelles)</span>
-            <span class="skill-chip">Python & gestion de bases de données</span>
-            <span class="skill-chip">VBA sous Excel (avancé)</span>
-            <span class="skill-chip">Modèles d’évaluation d’actifs et de portefeuille</span>
-            <span class="skill-chip">R & Data Viz</span>
-            <span class="skill-chip">Processus stochastiques</span>
-            <span class="skill-chip">Probabilités appliquées à la finance et aux risques</span>
-            <span class="skill-chip">Simulation Monte-Carlo (Python / Excel)</span>
-            <span class="skill-chip">Solvabilité II</span>
-            <span class="skill-chip">Risque crédit, réassurance, produits dérivés</span>
-          </div>
+          <ul class="formation-list">
+            <li class="formation-subject">Économie de l’assurance</li>
+            <li class="formation-subject">Actuariat vie / non-vie</li>
+            <li class="formation-subject">Économétrie avancée et séries temporelles</li>
+            <li class="formation-subject">Python et gestion de bases de données</li>
+            <li class="formation-subject">VBA sous Excel (avancé)</li>
+            <li class="formation-subject">Modèles d’évaluation d’actifs et de portefeuille</li>
+            <li class="formation-subject">R et data visualisation</li>
+            <li class="formation-subject">Processus stochastiques</li>
+            <li class="formation-subject">Probabilités appliquées à la finance et aux risques</li>
+            <li class="formation-subject">Simulation Monte-Carlo (Python / Excel)</li>
+            <li class="formation-subject">Solvabilité II</li>
+            <li class="formation-subject">Risque crédit, réassurance, produits dérivés</li>
+          </ul>
           <div class="formation-toggle-wrap">
             <button class="project-btn ghost formation-toggle-btn" type="button"></button>
           </div>
@@ -1169,22 +1160,22 @@
         <article class="card formation-card" data-featured-count="5">
           <h3>Licence MIASHS</h3>
           <p class="meta"><span>2020 - 2023 | Université Paris 1 Panthéon-Sorbonne</span></p>
-          <div class="skill-chips formation-chips">
-            <span class="skill-chip">Banque et marchés</span>
-            <span class="skill-chip">Assurance: théorie & pratique</span>
-            <span class="skill-chip">Modèles mathématiques en finance</span>
-            <span class="skill-chip">Probabilités</span>
-            <span class="skill-chip">Statistiques</span>
-            <span class="skill-chip">Fondements des mathématiques</span>
-            <span class="skill-chip">Algèbre linéaire</span>
-            <span class="skill-chip">Analyse réelle / analyse dans Rn</span>
-            <span class="skill-chip">Optimisation</span>
-            <span class="skill-chip">Méthodes numériques</span>
-            <span class="skill-chip">Informatique</span>
-            <span class="skill-chip">Programmation orientée objet</span>
-            <span class="skill-chip">Développement Web</span>
-            <span class="skill-chip">Microéconomie / macroéconomie</span>
-          </div>
+          <ul class="formation-list">
+            <li class="formation-subject">Banque et marchés</li>
+            <li class="formation-subject">Assurance : théorie et pratique</li>
+            <li class="formation-subject">Modèles mathématiques en finance</li>
+            <li class="formation-subject">Probabilités</li>
+            <li class="formation-subject">Statistiques</li>
+            <li class="formation-subject">Fondements des mathématiques</li>
+            <li class="formation-subject">Algèbre linéaire</li>
+            <li class="formation-subject">Analyse réelle / analyse dans Rn</li>
+            <li class="formation-subject">Optimisation</li>
+            <li class="formation-subject">Méthodes numériques</li>
+            <li class="formation-subject">Informatique</li>
+            <li class="formation-subject">Programmation orientée objet</li>
+            <li class="formation-subject">Développement web</li>
+            <li class="formation-subject">Microéconomie / macroéconomie</li>
+          </ul>
           <div class="formation-toggle-wrap">
             <button class="project-btn ghost formation-toggle-btn" type="button"></button>
           </div>
@@ -1193,24 +1184,24 @@
         <article class="card formation-card" data-featured-count="4">
           <h3>Licence MIAGE</h3>
           <p class="meta"><span>2017 - 2020 | Institut Universitaire d’Abidjan</span></p>
-          <div class="skill-chips formation-chips">
-            <span class="skill-chip">Audit et contrôle de gestion</span>
-            <span class="skill-chip">Gestion de projet (Agile, MS Project)</span>
-            <span class="skill-chip">Big Data & Cloud Computing</span>
-            <span class="skill-chip">Gestion financière & comptabilité analytique</span>
-            <span class="skill-chip">Analyse</span>
-            <span class="skill-chip">Algèbre</span>
-            <span class="skill-chip">Combinatoire & probabilités</span>
-            <span class="skill-chip">Statistique descriptive</span>
-            <span class="skill-chip">Analyse et modélisation de données</span>
-            <span class="skill-chip">Mathématique financière</span>
-            <span class="skill-chip">Algorithmique</span>
-            <span class="skill-chip">Bases de données & SQL / MS SQL Server</span>
-            <span class="skill-chip">Programmation orientée objet & UML</span>
-            <span class="skill-chip">Informatique décisionnelle</span>
-            <span class="skill-chip">Machine Learning</span>
-            <span class="skill-chip">Programmation C / Python / Java</span>
-          </div>
+          <ul class="formation-list">
+            <li class="formation-subject">Audit et contrôle de gestion</li>
+            <li class="formation-subject">Gestion de projet (Agile, MS Project)</li>
+            <li class="formation-subject">Big Data et Cloud Computing</li>
+            <li class="formation-subject">Gestion financière et comptabilité analytique</li>
+            <li class="formation-subject">Analyse</li>
+            <li class="formation-subject">Algèbre</li>
+            <li class="formation-subject">Combinatoire et probabilités</li>
+            <li class="formation-subject">Statistique descriptive</li>
+            <li class="formation-subject">Analyse et modélisation de données</li>
+            <li class="formation-subject">Mathématique financière</li>
+            <li class="formation-subject">Algorithmique</li>
+            <li class="formation-subject">Bases de données et SQL / MS SQL Server</li>
+            <li class="formation-subject">Programmation orientée objet et UML</li>
+            <li class="formation-subject">Informatique décisionnelle</li>
+            <li class="formation-subject">Machine learning</li>
+            <li class="formation-subject">Programmation C / Python / Java</li>
+          </ul>
           <div class="formation-toggle-wrap">
             <button class="project-btn ghost formation-toggle-btn" type="button"></button>
           </div>
@@ -1329,6 +1320,43 @@
     </section>
   </main>
 
+  <section class="cv-print" aria-hidden="true">
+    <h1>Axel LOUKOU</h1>
+    <p>Data Analyst | Finance & Assurance</p>
+    <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="26475e434a49534d495366414b474f4a0845494b">[email&#160;protected]</a> | +33 7 66 02 91 71 | linkedin.com/in/axel-loukou</p>
+    <p>Mobilité: toute la France | Disponibilité: immédiate</p>
+
+    <h2>Profil</h2>
+    <p>Data Analyst spécialisé en Finance & Assurance. Expérience chez Generali France sur Power BI, SQL et l'analyse de performance IARD/Vie.</p>
+
+    <h2>Expérience clé</h2>
+    <p><strong>Generali France</strong> - Gestionnaire de données (Direction Financière / IRAG), avril 2025 à septembre 2025</p>
+    <ul>
+      <li>Automatisation et fiabilisation du reporting de performance (Power BI, Excel/VBA, Snowflake).</li>
+      <li>Suivi des KPI commerciaux et financiers, analyse d’écarts et synthèse pour le pilotage.</li>
+      <li>Animation d’ateliers besoins utilisateurs, formation et documentation des outils.</li>
+    </ul>
+
+    <h2>Compétences clés</h2>
+    <p><strong>Data & BI:</strong> Power BI, DAX, Power Query, SQL, Snowflake, Dataiku, ETL/ELT</p>
+    <p><strong>Contrôle de gestion:</strong> reporting, analyse d’écarts, suivi de performance, prévisions</p>
+    <p><strong>Outils:</strong> Power BI (DAX, Power Query), Excel avancé, VBA, Python, R, SQL, Snowflake</p>
+
+    <h2>Formation</h2>
+    <p><strong>Master MBFA</strong> - Université Sorbonne Paris Nord (2023-2025)</p>
+    <p><strong>Licence MIASHS</strong> - Université Paris 1 Panthéon-Sorbonne (2020-2023)</p>
+    <p><strong>Licence MIAGE</strong> - Institut Universitaire d’Abidjan (2017-2020)</p>
+
+    <h2>Certifications</h2>
+    <p>Dataiku Core Designer (2026), Introduction à la statistique avec R, Power BI, SQL, Excel/VBA, Python.</p>
+
+    <h2>Projets (liens)</h2>
+    <ul>
+      <li><a href="https://axeloukou.github.io/portfolio/#projets">Voir tous les projets</a></li>
+      <li><a href="https://axeloukou.github.io/portfolio/">Portfolio complet</a></li>
+    </ul>
+  </section>
+
   <div id="projectModal" class="modal" aria-hidden="true">
     <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <div class="modal-head">
@@ -1350,7 +1378,7 @@
       <section class="footer-block">
         <h3>Coordonnees</h3>
         <ul>
-          <li><a href="mailto:axeloukou@gmail.com">axeloukou@gmail.com</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#d0b1a8b5bcbfa5bbbfa590b7bdb1b9bcfeb3bfbd"><span class="__cf_email__" data-cfemail="fe9f869b92918b95918bbe99939f9792d09d9193">[email&#160;protected]</span></a></li>
           <li><a href="tel:+33766029171">+33 7 66 02 91 71</a></li>
           <li><a href="http://www.linkedin.com/in/axel-loukou" target="_blank" rel="noopener">linkedin.com/in/axel-loukou</a></li>
         </ul>
@@ -1358,31 +1386,31 @@
       <section class="footer-block">
         <h3>Positionnement</h3>
         <ul>
-          <li>Controle de gestion</li>
-          <li>Data analysis</li>
-          <li>Reporting & pilotage</li>
+          <li>Data Analyst</li>
+          <li>Finance &amp; Assurance</li>
+          <li>Reporting &amp; BI</li>
         </ul>
       </section>
     </div>
     <p class="footer-note">© 2026 Axel LOUKOU | Tous droits réservés</p>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const projectsData = [
       {
         title: "Reporting KPIs - Power BI",
         cardSummary: "Mise en place d’un reporting Power BI pour suivre les performances commerciales IARD & Vie avec des données fiabilisées.",
-        detailedDescription: "🧩 <strong>Contexte :</strong><br>Dans le cadre de mon expérience chez Generali France, j’ai mis en place et automatisé un <strong>reporting stratégique</strong> destiné au <strong>pilotage de la performance du Réseau des Agents Généraux</strong>, sur les périmètres IARD et Vie. Les données présentées ont été anonymisées pour des raisons de confidentialité.<br><br>🎯 <strong>Objectifs :</strong><ul><li>Centraliser les indicateurs clés de performance (KPIs) dans un tableau de bord unique</li><li>Faciliter le pilotage commercial et managérial</li><li>Améliorer la lisibilité des performances et le suivi des écarts aux objectifs.</li></ul> <br>📊 <strong>Données & indicateurs suivis :</strong><ul><li>Taux de couverture</li><li>Taux d'activation d'espaces clients</li><li>Taux de Transformation des leads</li><li>Taux de Multi-équipement</li><li>Durabilité</li><li>Taux d'utilisation GRC</li><li>Plan de rappel</li><li>Indicateurs d’activité et portefeuille IARD et Vie</li><li>Suivi des commissions et évolutions pluriannuelles.</li></ul><br>🛠️ <strong>Méthodologie & outils :</strong><ul><li><strong>Power BI :</strong> conception du tableau de bord interactif</li><li><strong>Power Query :</strong> nettoyage, transformation et consolidation des données</li><li><strong>DAX :</strong> calcul des indicateurs, ratios, écarts vs cibles</li><li><strong>Snowflake & BO :</strong> source de données</li><li><strong>SharePoint :</strong> centralisation et diffusion des reportings.</li></ul><br>",
+        detailedDescription: "🧩 <strong>Contexte :</strong><br>Chez Generali France, la Direction Réseau Agents Généraux suivait sa performance commerciale via un reporting Excel manuel mis à jour chaque mois — un processus long, source d'erreurs et peu lisible pour les décideurs.<br><br>🛠️ <strong>Ce que j'ai fait :</strong><ul><li>Conception d'un tableau de bord Power BI complet (DAX, Power Query, modélisation multi-sources) centralisant 10+ KPIs stratégiques IARD et Vie — taux de couverture, commissions, résiliations, portefeuille, leads</li><li>Connexion aux sources de données (Snowflake, Portail BI, SharePoint) et fiabilisation des flux via Power Query</li><li>Mise en place de filtres dynamiques par région, IDA, EVA et période pour adapter la vue à chaque utilisateur</li><li>Formation des équipes et rédaction du guide d'utilisation pour assurer la prise en main autonome</li></ul><br>✅ <strong>Résultat :</strong> Un reporting stratégique en production, consulté par les responsables de région et la direction — réduction significative du temps de mise à jour mensuelle et fiabilisation des indicateurs de pilotage.<br>",
         tags: ["DAX", "SharePoint", "Snowflake", "Excel", "Assurance"],
         stack: ["Power BI", "Power Query", "BO"],
         company: "Generali France",
-        impact: "Un tableau de bord unique, plus simple à mettre à jour et à partager avec les équipes.",
+        impact: "Un reporting stratégique en production, consulté par les responsables de région et la direction — réduction significative du temps de mise à jour mensuelle et fiabilisation des indicateurs de pilotage.",
         pdf: "reporting-impulso.pdf"
       },
       {
         title: "Gestion de portefeuille sous contrainte de risque — CAC 40",
         cardSummary: "Projet d’optimisation d’un portefeuille CAC 40 sous contrainte de risque avec une approche CVaR.",
-        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 2) visant à construire un <strong>portefeuille d’actions du CAC40</strong> et à l’optimiser selon une approche <strong>rendement / risque</strong>, avec une logique proche de la gestion d’actifs : mesurer le risque, comparer des allocations et sélectionner la meilleure combinaison possible.<br><br>🎯 <strong>Objectifs :</strong><ul><li>Calculer les rendements et la volatilité des actifs (et du portefeuille)</li><li>Modéliser le comportement des rendements (hypothèse de loi normale multivariée)</li><li>Optimiser l’allocation sous contrainte de risque via la <strong>CVaR (Conditional Value at Risk)</strong></li><li>Visualiser et interpréter les résultats pour justifier le portefeuille retenu</li></ul><br>📊 <strong>Données utilisées :</strong><ul><li>Séries de prix / rendements d’actions du CAC40 (période d’observation)</li><li>Rendements journaliers (ou périodiques) et statistiques associées (moyennes, volatilités)</li><li>Matrice de covariance / corrélation pour modéliser la dépendance entre actifs</li><li>Paramètres de risque (niveau de confiance) pour le calcul de la CVaR</li></ul><br>🛠️ <strong>Méthodologie & outils :</strong><ul><li><strong>Préparation :</strong> nettoyage, calcul des rendements, statistiques descriptives</li><li><strong>Mesure du risque :</strong> estimation de la covariance et modélisation via <strong>normale multivariée</strong></li><li><strong>Optimisation :</strong> résolution numérique avec <strong>SciPy</strong> pour minimiser la <strong>CVaR</strong> sous contraintes (poids, budget, etc.)</li><li><strong>Visualisation :</strong> graphiques d’allocation et comparaison avant/après optimisation (<strong>Matplotlib / Seaborn</strong>)</li></ul><br>",
+        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 2) visant à construire et optimiser un portefeuille d'actions CAC 40 selon une approche rendement/risque, en utilisant la CVaR comme mesure de risque extrême.<br><br>🛠️ <strong>Ce que j'ai fait :</strong><ul><li>Calcul des rendements journaliers, volatilités et matrice de covariance sur les actions du CAC 40</li><li>Modélisation des rendements via loi normale multivariée</li><li>Optimisation numérique de l'allocation sous contrainte CVaR avec SciPy</li><li>Visualisation comparative des allocations avant/après optimisation (Matplotlib, Seaborn)</li></ul><br>✅ <strong>Résultat :</strong> Un modèle d'optimisation fonctionnel sous Python, avec allocation CVaR minimisée et comparaison graphique des portefeuilles — applicable à une logique de gestion d'actifs sous contrainte réglementaire.<br>",
         tags: ["Finance", "Python"],
         stack: ["Gestion des risques"],
         company: "Projet universitaire - Master 2",
@@ -1392,17 +1420,17 @@
       {
         title: "Modélisation Solvabilité 2 — BE, SCR et VaR",
         cardSummary: "Construction d’un modèle Excel Solvabilité II pour le calcul du Best Estimate, du SCR et de la VaR, avec prise en compte de la diversification des risques.",
-        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 2 Actuariat) : construction d’un <strong>modèle Excel complet</strong> conforme à la logique Solvabilité II pour estimer les <strong>provisions techniques (Best Estimate)</strong>, calculer le <strong>SCR</strong> via la <strong>matrice de corrélation</strong>, et simuler la <strong>VaR 99,5%</strong>. Le modèle sert aussi à tester la <strong>sensibilité au taux d’actualisation</strong> et analyser la <strong>duration</strong> du portefeuille.<br><br>🎯 <strong>Objectifs :</strong><ul><li>Calculer le <strong>Best Estimate</strong> à partir des flux projetés et actualisés (avec scénarios de taux)</li><li>Calculer le <strong>SCR</strong> par module de risque et mesurer l’effet <strong>diversification vs corrélation parfaite</strong></li><li>Estimer une <strong>VaR</strong> au niveau réglementaire (≈ 99,5%) via une distribution simulée</li><li>Produire un outil <strong>paramétrable</strong> (taux, hypothèses, tables, charges…) et exploitable pour des analyses “what-if”</li></ul><br>📊 <strong>Données utilisées :</strong><ul><li><strong>Flux futurs</strong> projetés (rentes / prestations) + <strong>hypothèses</strong> (charges, frais, paramètres techniques)</li><li><strong>Tables de mortalité</strong> (ex : TGH/TGF) + structure portefeuille (ex : mix homme/femme)</li><li><strong>Courbe de taux / RFR spot</strong> utilisée pour l’actualisation</li><li><strong>Modules SCR</strong> et <strong>matrice de corrélation</strong> pour l’agrégation du capital (diversification)</li><li>Séries simulées/observations pour construire une <strong>distribution</strong> et lire la <strong>VaR</strong> (quantile)</li></ul><br>🛠️ <strong>Méthodologie & outils :</strong><ul><li><strong>Best Estimate (BE)</strong> : projection des flux, actualisation, calcul BE central + BE ajusté (sensibilité au taux), mesure de la <strong>duration</strong></li><li><strong>SCR</strong> : calcul par modules (marché, défaut, vie, santé, non-vie selon le modèle), puis <strong>agrégation</strong> via matrice de corrélation (comparaison “après diversification / sans diversification / corrélation parfaite”)</li><li><strong>VaR</strong> : construction d’une distribution (fréquences cumulées / histogramme) et extraction du quantile <strong>99,5%</strong> (ou 99,96% selon l’exemple)</li><li><strong>Outil</strong> : Excel (modèle multi-feuilles, formules, tableaux de synthèse, graphiques)</li></ul><br>",
+        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 2 Actuariat) visant à construire un modèle Excel complet conforme au cadre Solvabilité II, couvrant les trois piliers techniques : provisions, capital de solvabilité et mesure du risque extrême.<br><br>🛠️ <strong>Ce que j'ai fait :</strong><ul><li>Calcul du Best Estimate à partir de flux projetés et actualisés — avec scénarios de sensibilité au taux</li><li>Calcul du SCR par module de risque (marché, vie, défaut) et agrégation via matrice de corrélation</li><li>Quantification de l'effet diversification vs corrélation parfaite</li><li>Estimation de la VaR réglementaire à 99,5% par simulation de distribution</li></ul><br>✅ <strong>Résultat :</strong> Un outil paramétrable et exploitable pour simuler différents scénarios de taux, mesurer l'effet diversification et comparer les exigences en capital selon les hypothèses retenues.<br>",
         tags: ["Solvabilité 2", "Actuariat", "Excel", "Gestion des risques"],
         stack: ["VBA"],
         company: "Projet universitaire — Master 2 (Actuariat)",
-        impact: "Une bonne mise en pratique de Solvabilité II avec un fichier exploitable pour tester différents scénarios.",
+        impact: "Un outil paramétrable et exploitable pour simuler différents scénarios de taux, mesurer l'effet diversification et comparer les exigences en capital selon les hypothèses retenues.",
         images: ["image3.png", "image4.png", "image5.png", "image6.png"]
       },
       {
         title: "Tarification auto et impact de la réassurance",
-        cardSummary: "Calcul de la prime pure, ratio S/P, GLM fréquence/sévérité et Burning-Cost.",
-        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire réalisé dans le cadre du Master 2, visant à reproduire une démarche actuarielle complète de <strong>tarification automobile</strong> et à analyser l’impact d’un programme de <strong>réassurance</strong> sur le risque et la rentabilité du portefeuille.<br><br>🎯 <strong>Objectifs :</strong><ul><li>Calculer la <strong>prime pure</strong> et analyser la performance technique (ratio S/P)</li><li>Modéliser la <strong>fréquence</strong> et la <strong>sévérité</strong> des sinistres via des modèles statistiques</li><li>Prédire les <strong>tarifs par profil de risque</strong></li><li>Évaluer l’impact de la <strong>réassurance</strong> sur la volatilité et le coût du risque</li></ul><br>📊 <strong>Données utilisées :</strong><ul><li>Base automobile consolidée : <strong>16&nbsp;181</strong> observations</li><li><strong>13</strong> variables explicatives (profil assuré, exposition, sinistres, montants)</li><li>Revalorisation des montants historiques et statistiques <strong>“as-if” 2025</strong></li><li>Séparation fréquence / sévérité pour une modélisation actuarielle standard</li></ul><br>🛠️ <strong>Méthodologie & outils :</strong><ul><li><strong>Analyse actuarielle :</strong> calcul de la prime pure (2 méthodes) et analyse du ratio <strong>Sinistre/Prime</strong></li><li><strong>GLM :</strong> Poisson pour la fréquence (offset <em>log(Exposure)</em>) et Gamma pour la sévérité (lien log)</li><li><strong>Tarification :</strong> prédiction de tarifs par profil de risque</li><li><strong>Réassurance :</strong> traité <strong>XL (Excess of Loss)</strong> et calcul du <strong>Burning-Cost</strong></li><li><strong>Outil :</strong> <strong>R</strong> (statistiques, GLM)</li></ul><br>",
+        cardSummary: "Démarche actuarielle complète de tarification automobile — prime pure, GLM fréquence/sévérité et analyse de l'impact d'un traité de réassurance XL sur la rentabilité du portefeuille.",
+        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 2 Actuariat) visant à reproduire une démarche complète de tarification automobile et à mesurer l'impact d'un traité de réassurance sur la rentabilité et la volatilité du portefeuille.<br><br>🛠️ <strong>Ce que j'ai fait :</strong><ul><li>Calcul de la prime pure et analyse du ratio Sinistre/Prime sur une base de 16 181 observations</li><li>Modélisation GLM fréquence/sévérité : Poisson pour la fréquence, Gamma pour la sévérité</li><li>Prédiction de tarifs par profil de risque</li><li>Simulation d'un traité XL (Excess of Loss) et calcul du Burning-Cost</li></ul><br>✅ <strong>Résultat :</strong> Une tarification par profil de risque avec quantification concrète de l'effet de la réassurance sur le compromis coût/volatilité du portefeuille.<br>",
         tags: ["Assurance", "Risque", "R"],
         stack: ["GLM"],
         company: "Projet universitaire — Master 2 (Actuariat)",
@@ -1412,17 +1440,17 @@
       {
         title: "Analyse de survie",
         cardSummary: "Analyse de survie pour étudier le temps avant événement, comparer des populations et modéliser les facteurs de risque à l’aide des méthodes Kaplan–Meier et du modèle de Cox.",
-        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 2) visant à présenter une démarche complète d’<strong>analyse de survie sous R</strong> avec le package <strong>survival</strong> (et <strong>survminer</strong>), incluant la gestion de la <strong>censure</strong>, la visualisation et la modélisation semi-paramétrique sur le dataset <strong>lung</strong>.<br><br>🎯 <strong>Objectifs :</strong><ul><li>Gérer des <strong>données censurées</strong> et construire l’objet <code>Surv(time, status)</code></li><li>Estimer et comparer des courbes <strong>Kaplan–Meier</strong> (par groupe) et réaliser un <strong>test log-rank</strong></li><li>Ajuster un <strong>modèle de Cox</strong> et interpréter les <strong>hazard ratios</strong></li><li>Vérifier l’hypothèse des <strong>risques proportionnels</strong> et produire un rendu clair (risk table / forest plot)</li></ul><br>📊 <strong>Données utilisées :</strong><ul><li>Dataset <strong>lung</strong> (package survival)</li><li><strong>time</strong> : temps de survie (jours)</li><li><strong>status</strong> recodé en <strong>0 = censuré</strong> / <strong>1 = décès</strong></li><li>Variables explicatives : <strong>age</strong>, <strong>sex</strong> (+ scores cliniques disponibles)</li></ul><br>🛠️ <strong>Méthodologie & outils :</strong><ul><li><strong>Préparation / censure :</strong> recodage de <code>status</code> puis création de <code>Surv(time, status)</code></li><li><strong>Kaplan–Meier :</strong> <code>survfit()</code> + visualisation <code>ggsurvplot()</code> (IC, p-value, table des sujets à risque, médiane)</li><li><strong>Comparaison :</strong> <code>survdiff()</code> (log-rank) pour tester la différence entre groupes</li><li><strong>Modèle de Cox :</strong> <code>coxph(Surv(time,status) ~ age + sex)</code> + interprétation des HR</li><li><strong>Validation :</strong> <code>cox.zph()</code> (risques proportionnels) + forest plot via <code>ggforest()</code></li><li><strong>Outils :</strong> <strong>R</strong> (survival, survminer)</li></ul><br>",
+        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 2) visant à maîtriser les méthodes d'analyse de survie sous R — applicables à des problématiques d'attrition, de résiliation ou de durée de vie d'un contrat en assurance.<br><br>🛠️ <strong>Ce que j'ai fait :</strong><ul><li>Gestion des données censurées et construction de l'objet Surv(time, status)</li><li>Estimation et comparaison de courbes Kaplan-Meier par groupe avec test log-rank</li><li>Ajustement d'un modèle de Cox et interprétation des hazard ratios</li><li>Validation de l'hypothèse des risques proportionnels via cox.zph() et forest plot</li></ul><br>✅ <strong>Résultat :</strong> Un workflow complet et reproductible sous R — de la gestion de la censure à l'interprétation des hazard ratios, applicable à des problématiques de résiliation ou d'attrition en assurance.<br>",
         tags: ["R", "Statistiques"],
         stack: ["Survival Analysis"],
         company: "Projet universitaire — Master 2",
-        impact: "Un workflow reproductible sous R pour analyser et comparer des courbes de survie.",
+        impact: "Un workflow complet et reproductible sous R, de la gestion de la censure à l'interprétation des hazard ratios — applicable à des problématiques d'attrition ou de résiliation en assurance.",
         pdf: "s_survival.pdf"
       },
       {
         title: "Scoring de crédit — Régression logistique et interprétation du risque",
-        cardSummary: "Scoring de crédit par régression logistique avec analyse des performances et interprétation des variables.",
-        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire visant à construire un <strong>modèle de scoring de crédit</strong> pour estimer le <strong>risque de défaut</strong> à partir de variables socio-économiques et contractuelles, en utilisant une <strong>régression logistique (Logit)</strong> sous R.<br><br>🎯 <strong>Objectifs :</strong><ul><li>Préparer les données (variables catégorielles → facteurs + dummies)</li><li>Entraîner un modèle Logit et produire des <strong>probabilités de défaut</strong></li><li>Évaluer la performance (train/test, accuracy, matrices de confusion)</li><li>Interpréter le modèle via <strong>effets marginaux</strong> et <strong>odds ratios</strong></li></ul><br>📊 <strong>Données utilisées :</strong><ul><li>Dataset <strong>German Credit</strong> : <strong>1 000</strong> observations et <strong>21</strong> variables (montant, durée, historique de crédit, épargne, emploi…)</li><li>Variable cible : <code>credit_risk</code></li><li>Découpage <strong>70% train / 30% test</strong></li></ul><br>🛠️ <strong>Méthodologie & outils :</strong><ul><li><strong>R</strong> (packages : <code>dplyr</code>, <code>ggplot2</code>, <code>MASS</code>, <code>margins</code>)</li><li>Pré-traitement : facteurs + création de dummies via <code>model.matrix()</code></li><li>Modélisation : <code>glm(..., family = binomial())</code></li><li>Évaluation : prédictions + seuil 0,5, accuracy (≈ $0.72$ train ; ≈ $0.717$ test) + matrices de confusion</li><li>Interprétation : effets marginaux (<code>margins</code>) et odds ratios (<code>exp(coef)</code>) + visualisation </li></ul><br>",
+        cardSummary: "Construction d'un modèle de scoring de crédit par régression logistique sur 1 000 observations — de la préparation des données à l'interprétation des probabilités de défaut.",
+        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 2) visant à construire un modèle de scoring de crédit opérationnel pour estimer le risque de défaut à partir de données socio-économiques et contractuelles.<br><br>🛠️ <strong>Ce que j'ai fait :</strong><ul><li>Préparation et structuration du dataset German Credit (1 000 observations, 21 variables) — encodage, dummies, découpage 70/30</li><li>Entraînement d'un modèle de régression logistique (Logit) et production de probabilités de défaut par profil</li><li>Évaluation des performances : accuracy de 72% sur données de test, matrices de confusion train/test</li><li>Interprétation complète via effets marginaux et odds ratios pour identifier les variables les plus discriminantes</li></ul><br>✅ <strong>Résultat :</strong> Un modèle opérationnel avec une accuracy de 72% sur données de test — interprétation complète des variables discriminantes, applicable à une problématique réelle de risque crédit.<br>",
         tags: ["R", "Machine Learning"],
         stack: ["Régression Logistique"],
         company: "Projet universitaire — Master 1",
@@ -1432,7 +1460,7 @@
       {
         title: "Valorisation d’options — Arbres binomiaux & trinominiaux, convergence vers Black-Scholes",
         cardSummary: "Implémentation sous Excel/VBA des modèles d’arbres binomiaux et trinominaux pour la valorisation d’options, avec étude de la convergence vers Black–Scholes.",
-        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire réalisé en Master 1 visant à implémenter sous <strong>Excel/VBA</strong> des modèles discrets de valorisation d’options financières, à savoir les <strong>arbres binomiaux</strong> (Cox-Ross-Rubinstein) et <strong>trinominaux</strong>, et à analyser leur convergence vers le modèle continu de <strong>Black–Scholes</strong>.<br><br>🎯 <strong>Objectifs :</strong><ul><li>Construire un outil complet de valorisation d’options européennes et américaines</li><li>Comparer les résultats des approches binomiale et trinominiale</li><li>Étudier la convergence des modèles discrets vers Black–Scholes lorsque le nombre de pas augmente</li><li>Automatiser les calculs et les visualisations via VBA</li></ul><br>📊 <strong>Données utilisées :</strong><ul><li>Paramètres de marché : prix du sous-jacent, strike, maturité, taux sans risque et volatilité</li><li>Nombre de pas de discrétisation des arbres</li><li>Prix théorique issu du modèle de Black–Scholes pour la comparaison</li></ul><br>🛠️ <strong>Méthodologie & outils :</strong><ul><li><strong>Arbre binomial (CRR)</strong> : génération des nœuds, calcul des probabilités risque-neutre et valorisation backward</li><li><strong>Arbre trinomial</strong> : extension à trois branches (up / middle / down)</li><li><strong>Analyse de convergence</strong> : calculs pour différents nombres de pas et représentation graphique</li><li><strong>Excel & VBA</strong> : automatisation de la génération des arbres, des calculs et des graphiques</li></ul><br>",
+        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 1) visant à implémenter des modèles discrets de valorisation d'options sous Excel/VBA et à analyser leur convergence vers le modèle continu de Black-Scholes.<br><br>🛠️ <strong>Ce que j'ai fait :</strong><ul><li>Implémentation des arbres binomiaux (Cox-Ross-Rubinstein) et trinomiaux sous VBA</li><li>Valorisation d'options européennes et américaines avec calcul des probabilités risque-neutre</li><li>Analyse graphique de la convergence vers Black-Scholes en fonction du nombre de pas</li><li>Automatisation complète des calculs et des visualisations</li></ul><br>✅ <strong>Résultat :</strong> Un outil de valorisation automatisé sous VBA, avec convergence démontrée graphiquement vers Black-Scholes — applicable à l'évaluation d'instruments financiers simples.<br>",
         tags: ["Finance", "Excel"],
         stack: ["VBA"],
         company: "Projet universitaire — Master 1",
@@ -1441,23 +1469,13 @@
       },
       {
         title: "Analyse et réglementation des produits bancaires",
-        cardSummary: "Panorama structuré des produits bancaires : épargne, crédits et assurances.",
-        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 1 MBFA) réalisé dans le cadre d’un module de <strong>réglementation bancaire</strong>, visant à structurer et vulgariser le fonctionnement et le cadre réglementaire des principaux <strong>produits bancaires</strong> (épargne, crédit, assurance).<br><br>🎯 <strong>Objectifs :</strong><ul><li>Classer et présenter les produits par grandes familles : <strong>épargne court/moyen/long terme</strong>, <strong>crédit</strong> et <strong>assurance</strong></li><li>Décrire pour chaque produit : <strong>caractéristiques</strong>, <strong>avantages</strong>, <strong>inconvénients</strong> et <strong>fiscalité</strong> (approche « fiche produit »)</li><li>Construire une base claire pour <strong>comparer</strong> et <strong>orienter</strong> vers une solution selon l’objectif (liquidité, rendement, horizon, protection)</li></ul><br>📊 <strong>Données utilisées :</strong><ul><li>Support de cours et <strong>synthèse documentaire</strong> sur la réglementation et les caractéristiques produits</li><li>Périmètre : épargne (Livret A/LDDS/LEP, CAT, PEL/CEL, PEA/PEA-PME…), placements long terme (assurance-vie, PER, SCPI, actions/obligations, fonds…), crédits (amortissable, in fine, relais, conso, PTZ…), assurances (emprunteur, MRH, RC, GAV, santé…)</li></ul><br>🛠️ <strong>Méthodologie & outils :</strong><ul><li>Approche « <strong>catalogue produit</strong> » : une fiche standard par produit (fonctionnement, conditions, fiscalité, points de vigilance)</li><li>Organisation par <strong>usage</strong> : horizon d’investissement, liquidité, risque, objectif client</li><li>Outils : <strong>Suite Office</strong> (structuration, mise en forme, synthèse pédagogique)</li></ul><br>",
+        cardSummary: "Panorama structuré des principaux produits bancaires — épargne, crédits et assurances — avec analyse comparative des caractéristiques, de la fiscalité et du cadre réglementaire.",
+        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 1) visant à structurer et vulgariser le fonctionnement et le cadre réglementaire des principaux produits bancaires — épargne, crédit et assurance.<br><br>🛠️ <strong>Ce que j'ai fait :</strong><ul><li>Classification des produits par famille : épargne court/moyen/long terme, crédit, assurance</li><li>Rédaction de fiches produit standardisées : fonctionnement, avantages, fiscalité, points de vigilance</li><li>Organisation par usage : horizon, liquidité, risque et objectif client</li></ul><br>✅ <strong>Résultat :</strong> Une base de référence structurée pour comparer et orienter le choix d'un produit selon l'objectif client, le niveau de risque et les contraintes réglementaires.<br>",
         tags: ["Finance", "Banque", "Assurance", "PowerPoint"],
         stack: ["Synthèse documentaire"],
         company: "Projet universitaire — Master 1",
-        impact: "Une base claire pour comparer des produits bancaires selon les usages, la fiscalité et les contraintes réglementaires.",
+        impact: "Une base de référence structurée pour comparer et orienter le choix d'un produit selon l'objectif client, le niveau de risque et les contraintes réglementaires.",
         pdf: "Produits_bancaires.pdf"
-      },
-      {
-        title: "Eco Connect — Application RSE & pilotage de l’engagement collaborateurs",
-        cardSummary: "Conception d’une application mobile RSE intégrant gamification, KPI d’engagement et suivi de la participation.",
-        detailedDescription: "🧩 <strong>Contexte :</strong><br>Dans le cadre d’un <strong>projet universitaire (Concours RSE)</strong>, nous avons conçu <strong>EcoConnect</strong>, une application mobile destinée à sensibiliser et impliquer les collaborateurs (cas d’usage : <strong>Carsat MP</strong>) via une approche <strong>ludique</strong> et engageante (gamification). L’objectif est d’activer des mécaniques inspirées d’applications à forte rétention (progression, défis, récompenses, social).<br><br>🎯 <strong>Objectifs :</strong><ul><li>Inciter les collaborateurs à <strong>tester</strong> l’application et à adopter des pratiques responsables</li><li><strong>Maintenir l’engagement</strong> dans le temps grâce à des missions quotidiennes et des défis long terme</li><li>Créer une dynamique collective via <strong>classements</strong>, <strong>interaction sociale</strong> et <strong>récompenses</strong></li></ul><br>📊 <strong>Données / KPI utilisés :</strong><ul><li>Définition d’indicateurs de suivi : <strong>adoption</strong>, <strong>participation</strong>, <strong>engagement</strong>, <strong>communication</strong>, <strong>reconnaissance / récompenses</strong></li><li>Analyse de benchmarks d’applications gamifiées pour structurer les parcours utilisateurs</li></ul><br>🛠️ <strong>Méthodologie & outils :</strong><ul><li><strong>Gamification :</strong> conception des mécaniques (missions, points, badges, classements, communauté)</li><li><strong>Conception produit :</strong> définition des parcours utilisateurs et des règles fonctionnelles</li><li><strong>Prototype / maquettes :</strong> proposition d’écrans clés et d’une interface utilisateur</li><li><strong>Plan de déploiement :</strong> conception → développement → lancement → suivi et amélioration continue</li></ul><br>",
-        tags: ["RSE", "Communication"],
-        stack: ["Application mobile"],
-        company: "Concours RSE",
-        impact: "Une réflexion concrète sur la façon de suivre l’engagement RSE avec des indicateurs simples et des mécaniques de participation.",
-        pdf: "RSE-projet.pdf"
       }
     ];
 
@@ -1473,8 +1491,8 @@
 
     const featuredProjectTitles = new Set([
       "Reporting KPIs - Power BI",
-      "Modélisation Solvabilité 2 — BE, SCR et VaR",
-      "Scoring de crédit — Régression logistique et interprétation du risque"
+      "Scoring de crédit — Régression logistique et interprétation du risque",
+      "Gestion de portefeuille sous contrainte de risque — CAC 40"
     ]);
 
     let showAllProjects = false;
@@ -1561,27 +1579,27 @@
     }
 
     document.querySelectorAll('.formation-card').forEach((card) => {
-      const chips = Array.from(card.querySelectorAll('.formation-chips .skill-chip'));
+      const subjects = Array.from(card.querySelectorAll('.formation-subject'));
       const toggleBtn = card.querySelector('.formation-toggle-btn');
       const featuredCount = Number(card.dataset.featuredCount || 5);
-      if (!toggleBtn || chips.length <= featuredCount) {
+      if (!toggleBtn || subjects.length <= featuredCount) {
         if (toggleBtn) toggleBtn.style.display = 'none';
         return;
       }
 
-      const extraChips = chips.slice(featuredCount);
-      extraChips.forEach((chip) => chip.style.display = 'none');
-      toggleBtn.textContent = `Voir les autres matières (${extraChips.length})`;
+      const extraSubjects = subjects.slice(featuredCount);
+      extraSubjects.forEach((subject) => subject.style.display = 'none');
+      toggleBtn.textContent = `Voir les autres matières (${extraSubjects.length})`;
 
       let isExpanded = false;
       toggleBtn.addEventListener('click', () => {
         isExpanded = !isExpanded;
-        extraChips.forEach((chip) => {
-          chip.style.display = isExpanded ? 'inline-flex' : 'none';
+        extraSubjects.forEach((subject) => {
+          subject.style.display = isExpanded ? 'block' : 'none';
         });
         toggleBtn.textContent = isExpanded
           ? 'Masquer les matières'
-          : `Voir les autres matières (${extraChips.length})`;
+          : `Voir les autres matières (${extraSubjects.length})`;
       });
     });
 
@@ -1647,15 +1665,16 @@
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const id = `#${entry.target.id}`;
-        navLinks.forEach((link) => {
-          link.classList.toggle('is-active', link.getAttribute('href') === id);
-        });
+        if (entry.isIntersecting) {
+          navLinks.forEach((link) => link.classList.remove('is-active'));
+          const activeLink = navLinks.find((link) => link.getAttribute('href') === '#' + entry.target.id);
+          if (activeLink) activeLink.classList.add('is-active');
+        }
       });
-    }, { threshold: 0.35 });
+    }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
 
     sections.forEach((section) => observer.observe(section));
+
   </script>
 </body>
 </html>
