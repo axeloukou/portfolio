@@ -150,7 +150,8 @@
       font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase;
       color: var(--glow); border: 1px solid var(--line); padding: 6px 12px; margin-bottom: 16px;
     }
-    h1 { font-size: clamp(28px, 3.6vw, 39px); line-height: 1.22; margin-bottom: 0; }
+    h1 { font-size: clamp(28px, 3.6vw, 39px); line-height: 1.22; margin-bottom: 14px; }
+    .lead { color: var(--muted); font-size: 16.5px; max-width: 62ch; margin-bottom: 0; line-height: 1.7; }
 
     /* full-width ticker banner, sits above the kicker, no box/border */
     .hero-ticker { height: 26px; overflow: hidden; position: relative; margin-bottom: 26px; }
@@ -357,6 +358,7 @@
       .nav { width: 100%; border-top: 1px solid var(--line); padding-top: 10px; margin-top: 8px; }
       .rings-row { grid-template-columns: repeat(2, 1fr); }
       .skills-grid { grid-template-columns: 1fr; }
+      .hero-ticker .ticker-track { animation-duration: 12s; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -413,6 +415,7 @@
         <div>
           <span class="kicker">Disponible pour un CDI</span>
           <h1 id="hero-title">Data Analyst Finance & Assurance — je traduis la donnée brute en décisions claires, pour les managers et la direction.</h1>
+          <p class="lead">Jeune diplômé en Risque & Assurance avec une expérience concrète chez Generali France, je combine culture finance, maîtrise des outils BI et capacité à livrer des analyses exploitables rapidement.</p>
         </div>
 
         <aside class="quick-info" aria-label="Compétences techniques">
