@@ -150,9 +150,7 @@
       font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase;
       color: var(--glow); border: 1px solid var(--line); padding: 6px 12px; margin-bottom: 16px;
     }
-    h1 { font-size: clamp(28px, 3.6vw, 39px); line-height: 1.22; margin-bottom: 14px; }
-    .lead { color: var(--muted); font-size: 16.5px; max-width: 62ch; margin-bottom: 24px; line-height: 1.7; }
-    .hero-cta { display: flex; gap: 10px; flex-wrap: wrap; }
+    h1 { font-size: clamp(28px, 3.6vw, 39px); line-height: 1.22; margin-bottom: 0; }
 
     /* full-width ticker banner, sits above the kicker, no box/border */
     .hero-ticker { height: 26px; overflow: hidden; position: relative; margin-bottom: 26px; }
@@ -175,7 +173,7 @@
 
     /* skills cloud — replaces the old quick-info box */
     .quick-info { padding: 0; }
-    .skills-cloud { position: relative; height: 260px; }
+    .skills-cloud { position: relative; height: 340px; }
     .cloud-word {
       position: absolute;
       font-family: 'IBM Plex Mono', monospace;
@@ -415,11 +413,6 @@
         <div>
           <span class="kicker">Disponible pour un CDI</span>
           <h1 id="hero-title">Data Analyst Finance & Assurance — je traduis la donnée brute en décisions claires, pour les managers et la direction.</h1>
-          <p class="lead">Jeune diplômé en Risque & Assurance avec une expérience concrète chez Generali France, je combine culture finance, maîtrise des outils BI et capacité à livrer des analyses exploitables rapidement.</p>
-          <div class="hero-cta">
-            <a href="#experiences" class="btn">Voir l’expérience clé</a>
-            <a href="#projets" class="btn ghost">Voir les projets</a>
-          </div>
         </div>
 
         <aside class="quick-info" aria-label="Compétences techniques">
@@ -886,31 +879,46 @@
     /* ---------- skills cloud ---------- */
 
     const cloudTerms = [
-      { text: "Power BI", size: 24, hue: "accent", top: 6, left: 4 },
-      { text: "SQL", size: 24, hue: "accent", top: 10, left: 62 },
-      { text: "Python", size: 22, hue: "accent", top: 50, left: 2 },
-      { text: "R", size: 22, hue: "accent", top: 70, left: 46 },
-      { text: "Excel / VBA", size: 17, hue: "data", top: 30, left: 28 },
-      { text: "DAX", size: 17, hue: "data", top: 4, left: 76 },
-      { text: "Snowflake", size: 17, hue: "data", top: 60, left: 64 },
-      { text: "Dataiku", size: 17, hue: "data", top: 82, left: 10 },
-      { text: "Power Query", size: 13, hue: "muted", top: 40, left: 74 },
-      { text: "Tableau", size: 13, hue: "muted", top: 20, left: 44 },
-      { text: "Qlik Sense", size: 13, hue: "muted", top: 88, left: 54 },
-      { text: "Power Automate", size: 13, hue: "muted", top: 2, left: 34 },
-      { text: "Salesforce", size: 13, hue: "muted", top: 46, left: 8 }
+      { text: "SQL", size: 24, hue: "accent", top: 4, left: 58 },
+      { text: "Python", size: 22, hue: "accent", top: 46, left: 2 },
+      { text: "R", size: 22, hue: "accent", top: 70, left: 36 },
+      { text: "Power BI", size: 24, hue: "accent", top: 8, left: 24 },
+      { text: "Excel", size: 22, hue: "accent", top: 50, left: 56 },
+
+      { text: "DAX", size: 17, hue: "data", top: 4, left: 80 },
+      { text: "Power Query", size: 15, hue: "data", top: 36, left: 76 },
+      { text: "VBA", size: 16, hue: "data", top: 26, left: 46 },
+      { text: "Snowflake", size: 16, hue: "data", top: 60, left: 70 },
+      { text: "Dataiku DSS", size: 15, hue: "data", top: 82, left: 4 },
+      { text: "R Shiny", size: 15, hue: "data", top: 18, left: 2 },
+      { text: "SAS", size: 15, hue: "data", top: 88, left: 56 },
+
+      { text: "langage M", size: 12, hue: "muted", top: 60, left: 20 },
+      { text: "Power Pivot", size: 12, hue: "muted", top: 14, left: 52 },
+      { text: "Macros", size: 12, hue: "muted", top: 34, left: 62 },
+      { text: "SAP BusinessObjects", size: 11, hue: "muted", top: 44, left: 0 },
+      { text: "Web Intelligence", size: 11, hue: "muted", top: 24, left: 20 },
+      { text: "Tableau", size: 13, hue: "muted", top: 0, left: 44 },
+      { text: "Looker Studio", size: 11, hue: "muted", top: 78, left: 66 },
+      { text: "Qlik Sense", size: 12, hue: "muted", top: 92, left: 28 },
+      { text: "QlikView", size: 12, hue: "muted", top: 8, left: 66 },
+      { text: "SAP S/4HANA", size: 11, hue: "muted", top: 66, left: 42 },
+      { text: "Salesforce (CRM)", size: 11, hue: "muted", top: 92, left: 0 },
+      { text: "Power Automate", size: 11, hue: "muted", top: 52, left: 28 },
+      { text: "Power Apps", size: 12, hue: "muted", top: 32, left: 32 }
     ];
 
+    const cloudStatic = reduceMotion || window.matchMedia('(max-width: 700px)').matches;
     const skillsCloud = document.getElementById('skillsCloud');
-    if (reduceMotion) skillsCloud.classList.add('static');
+    if (cloudStatic) skillsCloud.classList.add('static');
 
     skillsCloud.innerHTML = cloudTerms.map((t, i) => {
       const dur = (4 + (i % 5) * 0.6).toFixed(1);
       const ddur = (5 + (i % 4) * 0.8).toFixed(1);
       const delay = (-(i * 0.7)).toFixed(1);
       const ddelay = (-(i * 1.1)).toFixed(1);
-      const hueClass = t.hue === 'accent' ? 'accent' : (t.hue === 'data' ? 'data' : '');
-      const style = reduceMotion
+      const hueClass = t.hue === 'accent' ? 'accent' : (t.hue === 'data' ? 'data' : 'muted');
+      const style = cloudStatic
         ? `font-size:${t.size}px;`
         : `font-size:${t.size}px; top:${t.top}%; left:${t.left}%; --dur:${dur}s; --ddur:${ddur}s; --delay:${delay}s; --ddelay:${ddelay}s;`;
       return `<span class="cloud-word ${hueClass}" style="${style}">${t.text}</span>`;
