@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Axel LOUKOU | Data Analyst — Finance & Assurance</title>
   <meta name="description" content="Axel LOUKOU, Data Analyst spécialisé en Finance & Assurance. Power BI, SQL, Python, Excel/VBA. Expérience chez Generali France. Disponible pour CDI.">
+  <link rel="canonical" href="https://axeloukou.github.io/portfolio/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f4c81'/%3E%3Ctext x='32' y='43' font-family='Arial, sans-serif' font-size='26' font-weight='700' fill='white' text-anchor='middle'%3EAL%3C/text%3E%3C/svg%3E">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Axel LOUKOU | Data Analyst — Finance & Assurance">
+  <meta property="og:description" content="Axel LOUKOU, Data Analyst spécialisé en Finance & Assurance. Power BI, SQL, Python, Excel/VBA. Expérience chez Generali France. Disponible pour CDI.">
+  <meta property="og:url" content="https://axeloukou.github.io/portfolio/">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Axel LOUKOU | Data Analyst — Finance & Assurance">
+  <meta name="twitter:description" content="Axel LOUKOU, Data Analyst spécialisé en Finance & Assurance. Power BI, SQL, Python, Excel/VBA. Expérience chez Generali France. Disponible pour CDI.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -910,7 +920,7 @@
         <span>Axel LOUKOU</span>
       </a>
 
-      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="siteNav">☰</button>
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="siteNav" aria-label="Ouvrir le menu de navigation">☰</button>
 
       <nav id="siteNav" class="nav-wrap" aria-label="Navigation principale">
         <ul class="nav">
@@ -1323,14 +1333,14 @@
   <section class="cv-print" aria-hidden="true">
     <h1>Axel LOUKOU</h1>
     <p>Data Analyst | Finance & Assurance</p>
-    <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="26475e434a49534d495366414b474f4a0845494b">[email&#160;protected]</a> | +33 7 66 02 91 71 | linkedin.com/in/axel-loukou</p>
+    <p><a href="#" class="js-email-link" data-user="axeloukou" data-domain="gmail.com">axeloukou@gmail.com</a> | +33 7 66 02 91 71 | linkedin.com/in/axel-loukou</p>
     <p>Mobilité: toute la France | Disponibilité: immédiate</p>
 
     <h2>Profil</h2>
     <p>Data Analyst spécialisé en Finance & Assurance. Expérience chez Generali France sur Power BI, SQL et l'analyse de performance IARD/Vie.</p>
 
     <h2>Expérience clé</h2>
-    <p><strong>Generali France</strong> - Gestionnaire de données (Direction Financière / IRAG), avril 2025 à septembre 2025</p>
+    <p><strong>Generali France</strong> - Gestionnaire de données (Direction Financière / IRAG), avril 2025 à octobre 2025</p>
     <ul>
       <li>Automatisation et fiabilisation du reporting de performance (Power BI, Excel/VBA, Snowflake).</li>
       <li>Suivi des KPI commerciaux et financiers, analyse d’écarts et synthèse pour le pilotage.</li>
@@ -1378,7 +1388,7 @@
       <section class="footer-block">
         <h3>Coordonnees</h3>
         <ul>
-          <li><a href="/cdn-cgi/l/email-protection#d0b1a8b5bcbfa5bbbfa590b7bdb1b9bcfeb3bfbd"><span class="__cf_email__" data-cfemail="fe9f869b92918b95918bbe99939f9792d09d9193">[email&#160;protected]</span></a></li>
+          <li><a href="#" class="js-email-link" data-user="axeloukou" data-domain="gmail.com">axeloukou@gmail.com</a></li>
           <li><a href="tel:+33766029171">+33 7 66 02 91 71</a></li>
           <li><a href="http://www.linkedin.com/in/axel-loukou" target="_blank" rel="noopener">linkedin.com/in/axel-loukou</a></li>
         </ul>
@@ -1395,7 +1405,13 @@
     <p class="footer-note">© 2026 Axel LOUKOU | Tous droits réservés</p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
+    document.querySelectorAll('.js-email-link').forEach((el) => {
+      const address = `${el.dataset.user}@${el.dataset.domain}`;
+      el.href = `mailto:${address}`;
+      el.textContent = address;
+    });
+
     const projectsData = [
       {
         title: "Reporting KPIs - Power BI",
@@ -1535,9 +1551,31 @@
       }
     }
 
-    function openProjectModal(index) {
+    let lastFocusedElement = null;
+
+    function getFocusableElements(container) {
+      return Array.from(container.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'));
+    }
+
+    function trapModalFocus(event) {
+      if (event.key !== 'Tab') return;
+      const focusable = getFocusableElements(projectModal.querySelector('.modal-panel'));
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+
+    function openProjectModal(index, triggerEl) {
       const project = projectsData[index];
       if (!project) return;
+      lastFocusedElement = triggerEl || document.activeElement;
       modalTitle.textContent = project.title;
       modalMeta.textContent = project.company;
       const detailed = project.detailedDescription || project.details || "";
@@ -1562,11 +1600,15 @@
       modalLinks.style.display = modalLinks.innerHTML ? 'flex' : 'none';
       projectModal.classList.add('open');
       projectModal.setAttribute('aria-hidden', 'false');
+      document.addEventListener('keydown', trapModalFocus);
+      modalClose.focus();
     }
 
     function closeProjectModal() {
       projectModal.classList.remove('open');
       projectModal.setAttribute('aria-hidden', 'true');
+      document.removeEventListener('keydown', trapModalFocus);
+      if (lastFocusedElement) lastFocusedElement.focus();
     }
 
     renderProjects();
@@ -1633,7 +1675,7 @@
     projectsGrid.addEventListener('click', (event) => {
       const btn = event.target.closest('button[data-index]');
       if (!btn) return;
-      openProjectModal(Number(btn.dataset.index));
+      openProjectModal(Number(btn.dataset.index), btn);
     });
 
     modalClose.addEventListener('click', closeProjectModal);
