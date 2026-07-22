@@ -154,32 +154,46 @@
     .lead { color: var(--muted); font-size: 16.5px; max-width: 62ch; margin-bottom: 24px; line-height: 1.7; }
     .hero-cta { display: flex; gap: 10px; flex-wrap: wrap; }
 
-    .quick-info { padding: 4px 0 0; }
-    .quick-title {
-      font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); font-weight: 700;
-      margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;
-    }
-
-    .ticker-frame { height: 58px; overflow: hidden; position: relative; display: flex; align-items: center; margin: 0 0 14px; }
-    .ticker-frame::before, .ticker-frame::after { content: ""; position: absolute; top: 0; bottom: 0; width: 24px; z-index: 2; }
-    .ticker-frame::before { left: 0; background: linear-gradient(90deg, var(--bg3), transparent); }
-    .ticker-frame::after { right: 0; background: linear-gradient(270deg, var(--bg3), transparent); }
-    .ticker-track { display: flex; gap: 36px; white-space: nowrap; padding-left: 14px; animation: tickerScroll 22s linear infinite; }
-    .ticker-frame:hover .ticker-track { animation-play-state: paused; }
+    /* full-width ticker banner, sits above the kicker, no box/border */
+    .hero-ticker { height: 26px; overflow: hidden; position: relative; margin-bottom: 26px; }
+    .hero-ticker::before, .hero-ticker::after { content: ""; position: absolute; top: 0; bottom: 0; width: 40px; z-index: 2; }
+    .hero-ticker::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
+    .hero-ticker::after { right: 0; background: linear-gradient(270deg, var(--bg), transparent); }
+    .hero-ticker .ticker-track { display: flex; gap: 36px; white-space: nowrap; animation: tickerScroll 24s linear infinite; }
+    .hero-ticker:hover .ticker-track { animation-play-state: paused; }
     @keyframes tickerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    .ticker-item { display: flex; align-items: baseline; gap: 8px; font-size: 13.5px; }
-    .ticker-item strong { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); }
-    .ticker-item span { color: var(--muted); }
-
-    .ticker-frame.static { height: auto; overflow: visible; display: block; margin: 0; }
-    .ticker-frame.static::before, .ticker-frame.static::after { display: none; }
-    .ticker-frame.static .fact { padding: 10px 14px; border-bottom: 1px solid var(--line-soft); font-size: 13px; }
-    .ticker-frame.static .fact:last-child { border-bottom: none; }
-    .ticker-frame.static .fact strong { display: block; color: var(--ink); margin-bottom: 2px; }
-    .ticker-frame.static .fact span { color: var(--muted); }
+    .hero-ticker .ticker-item { display: flex; align-items: baseline; gap: 8px; font-size: 12.5px; }
+    .hero-ticker .ticker-item strong { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); }
+    .hero-ticker .ticker-item span { color: var(--muted); }
+    .hero-ticker.static { height: auto; overflow: visible; }
+    .hero-ticker.static::before, .hero-ticker.static::after { display: none; }
+    .hero-ticker.static .ticker-track { animation: none; flex-wrap: wrap; gap: 8px 28px; }
 
     @media (prefers-reduced-motion: reduce) {
-      .ticker-track { animation: none; }
+      .hero-ticker .ticker-track { animation: none; flex-wrap: wrap; }
+    }
+
+    /* skills cloud — replaces the old quick-info box */
+    .quick-info { padding: 0; }
+    .skills-cloud { position: relative; height: 260px; }
+    .cloud-word {
+      position: absolute;
+      font-family: 'IBM Plex Mono', monospace;
+      white-space: nowrap;
+      animation: cloudPulse var(--dur) ease-in-out infinite, cloudDrift var(--ddur) ease-in-out infinite;
+      animation-delay: var(--delay), var(--ddelay);
+    }
+    .cloud-word.accent { color: var(--accent); }
+    .cloud-word.data { color: var(--data); }
+    .cloud-word.muted { color: var(--muted); }
+    @keyframes cloudPulse { 0%, 100% { transform: scale(0.86); opacity: 0.7; } 50% { transform: scale(1.16); opacity: 1; } }
+    @keyframes cloudDrift { 0%, 100% { margin: 0; } 50% { margin: -6px 0 0 5px; } }
+
+    .skills-cloud.static { height: auto; display: flex; flex-wrap: wrap; gap: 10px 16px; }
+    .skills-cloud.static .cloud-word { position: static; animation: none; opacity: 1; transform: none; margin: 0; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cloud-word { animation: none; }
     }
 
     /* ---------- gauge + rings ---------- */
@@ -395,6 +409,8 @@
 
   <main id="top">
     <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-ticker" id="factsTicker" aria-label="Informations clés pour le recrutement"></div>
+
       <div class="hero-card">
         <div>
           <span class="kicker">Disponible pour un CDI</span>
@@ -406,11 +422,8 @@
           </div>
         </div>
 
-        <aside class="quick-info panel" aria-label="Informations rapides">
-          <div style="padding: 14px 14px 0;">
-            <p class="quick-title">Informations clés pour le recrutement</p>
-          </div>
-          <div class="ticker-frame" id="factsTicker"></div>
+        <aside class="quick-info" aria-label="Compétences techniques">
+          <div class="skills-cloud" id="skillsCloud"></div>
         </aside>
       </div>
     </section>
@@ -441,9 +454,9 @@
           </ul>
         </div>
       </div>
-      <p style="margin-top:16px; color:var(--muted); font-size:14px; max-width:70ch;"><strong style="color:var(--ink);">En résumé :</strong> je suis un profil Data Analyst avec une vraie culture Finance & Assurance, capable de prendre en charge la donnée de bout en bout, de l'extraction à la restitution visuelle pour la direction.</p>
+      <p style="margin-top:16px; color:var(--muted); font-size:14px;"><strong style="color:var(--ink);">En résumé :</strong> je suis un profil Data Analyst avec une vraie culture Finance & Assurance, capable de prendre en charge la donnée de bout en bout, de l'extraction à la restitution visuelle pour la direction.</p>
 
-      <div class="panel" style="margin-top:20px; padding:20px 22px; border-left: 3px solid var(--accent);">
+      <div style="margin-top:20px; padding-top:20px; border-top: 1px solid var(--line-soft);">
         <p style="font-family:'Bitter',serif; font-style:italic; font-size:15px; color:var(--ink); line-height:1.75; margin-bottom:12px;">
           « Dès son arrivée, Axel s'est distingué par sa curiosité intellectuelle, son esprit d'initiative et sa capacité à être force de proposition. Il a mené à bien l'ensemble des tâches confiées, en particulier dans la création et l'automatisation d'outils. Axel a piloté ses projets de bout en bout, assurant une coordination fluide avec les différentes directions du groupe. Son autonomie, sa rigueur et sa capacité à collaborer témoignent d'une réelle maturité professionnelle. Il possède toutes les compétences nécessaires pour intégrer le monde professionnel, et nous espérons vivement qu'il poursuivra son parcours au sein de Generali, où il représente une véritable valeur ajoutée. »
         </p>
@@ -869,6 +882,39 @@
       const doubledFacts = heroFacts.concat(heroFacts);
       factsTicker.innerHTML = `<div class="ticker-track">${doubledFacts.map((f) => `<span class="ticker-item"><strong>${f.label}</strong><span>${f.value}</span></span>`).join('')}</div>`;
     }
+
+    /* ---------- skills cloud ---------- */
+
+    const cloudTerms = [
+      { text: "Power BI", size: 24, hue: "accent", top: 6, left: 4 },
+      { text: "SQL", size: 24, hue: "accent", top: 10, left: 62 },
+      { text: "Python", size: 22, hue: "accent", top: 50, left: 2 },
+      { text: "R", size: 22, hue: "accent", top: 70, left: 46 },
+      { text: "Excel / VBA", size: 17, hue: "data", top: 30, left: 28 },
+      { text: "DAX", size: 17, hue: "data", top: 4, left: 76 },
+      { text: "Snowflake", size: 17, hue: "data", top: 60, left: 64 },
+      { text: "Dataiku", size: 17, hue: "data", top: 82, left: 10 },
+      { text: "Power Query", size: 13, hue: "muted", top: 40, left: 74 },
+      { text: "Tableau", size: 13, hue: "muted", top: 20, left: 44 },
+      { text: "Qlik Sense", size: 13, hue: "muted", top: 88, left: 54 },
+      { text: "Power Automate", size: 13, hue: "muted", top: 2, left: 34 },
+      { text: "Salesforce", size: 13, hue: "muted", top: 46, left: 8 }
+    ];
+
+    const skillsCloud = document.getElementById('skillsCloud');
+    if (reduceMotion) skillsCloud.classList.add('static');
+
+    skillsCloud.innerHTML = cloudTerms.map((t, i) => {
+      const dur = (4 + (i % 5) * 0.6).toFixed(1);
+      const ddur = (5 + (i % 4) * 0.8).toFixed(1);
+      const delay = (-(i * 0.7)).toFixed(1);
+      const ddelay = (-(i * 1.1)).toFixed(1);
+      const hueClass = t.hue === 'accent' ? 'accent' : (t.hue === 'data' ? 'data' : '');
+      const style = reduceMotion
+        ? `font-size:${t.size}px;`
+        : `font-size:${t.size}px; top:${t.top}%; left:${t.left}%; --dur:${dur}s; --ddur:${ddur}s; --delay:${delay}s; --ddelay:${ddelay}s;`;
+      return `<span class="cloud-word ${hueClass}" style="${style}">${t.text}</span>`;
+    }).join('');
 
     /* ---------- projects data ---------- */
 
