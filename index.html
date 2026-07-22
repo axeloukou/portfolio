@@ -188,8 +188,12 @@
     @keyframes cloudPulse { 0%, 100% { transform: scale(0.86); opacity: 0.7; } 50% { transform: scale(1.16); opacity: 1; } }
     @keyframes cloudDrift { 0%, 100% { margin: 0; } 50% { margin: -6px 0 0 5px; } }
 
-    .skills-cloud.static { height: auto; display: flex; flex-wrap: wrap; gap: 10px 16px; }
-    .skills-cloud.static .cloud-word { position: static; animation: none; opacity: 1; transform: none; margin: 0; }
+    .skills-cloud.static { height: auto; display: flex; flex-wrap: wrap; gap: 10px 18px; align-content: flex-start; }
+    .skills-cloud.static .cloud-word {
+      position: static; margin: 0;
+      animation: cloudPulse var(--dur) ease-in-out infinite;
+      animation-delay: var(--delay);
+    }
 
     @media (prefers-reduced-motion: reduce) {
       .cloud-word { animation: none; }
@@ -922,7 +926,7 @@
       const ddelay = (-(i * 1.1)).toFixed(1);
       const hueClass = t.hue === 'accent' ? 'accent' : (t.hue === 'data' ? 'data' : 'muted');
       const style = cloudStatic
-        ? `font-size:${t.size}px;`
+        ? `font-size:${t.size}px; --dur:${dur}s; --delay:${delay}s;`
         : `font-size:${t.size}px; top:${t.top}%; left:${t.left}%; --dur:${dur}s; --ddur:${ddur}s; --delay:${delay}s; --ddelay:${ddelay}s;`;
       return `<span class="cloud-word ${hueClass}" style="${style}">${t.text}</span>`;
     }).join('');
