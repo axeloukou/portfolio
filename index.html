@@ -143,7 +143,7 @@
     /* ---------- hero ---------- */
 
     .hero { padding: 42px 0 22px; border-bottom: none; }
-    .hero-card { display: grid; grid-template-columns: 1.3fr 0.9fr; gap: 30px; align-items: start; }
+    .hero-card { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr); gap: 30px; align-items: start; }
 
     .kicker {
       display: inline-block;
@@ -159,10 +159,28 @@
       font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); font-weight: 700;
       margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;
     }
-    .facts { display: grid; gap: 1px; background: var(--line-soft); border: 1px solid var(--line); }
-    .fact { background: var(--bg3); padding: 12px 14px; }
-    .fact strong { display: block; font-size: 13.5px; margin-bottom: 3px; color: var(--ink); }
-    .fact span { font-size: 13px; color: var(--muted); }
+
+    .ticker-frame { height: 58px; overflow: hidden; position: relative; display: flex; align-items: center; margin: 0 0 14px; }
+    .ticker-frame::before, .ticker-frame::after { content: ""; position: absolute; top: 0; bottom: 0; width: 24px; z-index: 2; }
+    .ticker-frame::before { left: 0; background: linear-gradient(90deg, var(--bg3), transparent); }
+    .ticker-frame::after { right: 0; background: linear-gradient(270deg, var(--bg3), transparent); }
+    .ticker-track { display: flex; gap: 36px; white-space: nowrap; padding-left: 14px; animation: tickerScroll 22s linear infinite; }
+    .ticker-frame:hover .ticker-track { animation-play-state: paused; }
+    @keyframes tickerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .ticker-item { display: flex; align-items: baseline; gap: 8px; font-size: 13.5px; }
+    .ticker-item strong { font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent); }
+    .ticker-item span { color: var(--muted); }
+
+    .ticker-frame.static { height: auto; overflow: visible; display: block; margin: 0; }
+    .ticker-frame.static::before, .ticker-frame.static::after { display: none; }
+    .ticker-frame.static .fact { padding: 10px 14px; border-bottom: 1px solid var(--line-soft); font-size: 13px; }
+    .ticker-frame.static .fact:last-child { border-bottom: none; }
+    .ticker-frame.static .fact strong { display: block; color: var(--ink); margin-bottom: 2px; }
+    .ticker-frame.static .fact span { color: var(--muted); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ticker-track { animation: none; }
+    }
 
     /* ---------- gauge + rings ---------- */
 
@@ -312,7 +330,7 @@
     .cv-print { display: none; }
 
     @media (max-width: 980px) {
-      .hero-card, .footer-grid { grid-template-columns: 1fr; }
+      .hero-card, .footer-grid { grid-template-columns: minmax(0, 1fr); }
       .overview { grid-template-columns: 1fr; }
       .gauge-wrap { order: -1; }
       .formation-grid, .certifications-grid { grid-template-columns: 1fr; }
@@ -392,12 +410,7 @@
           <div style="padding: 14px 14px 0;">
             <p class="quick-title">Informations clés pour le recrutement</p>
           </div>
-          <div class="facts">
-            <div class="fact"><strong>Cible de poste</strong><span>Data Analyst | Finance & Assurance</span></div>
-            <div class="fact"><strong>Disponibilité & mobilité</strong><span>Disponibilité immédiate · Toute la France</span></div>
-            <div class="fact"><strong>Compétences techniques clés</strong><span>Power BI (DAX, Power Query), Excel/VBA, SQL, Snowflake, Python, R</span></div>
-            <div class="fact"><strong>Environnements métiers</strong><span>Assurance, Finance, Banque — pilotage de la performance</span></div>
-          </div>
+          <div class="ticker-frame" id="factsTicker"></div>
         </aside>
       </div>
     </section>
@@ -445,40 +458,46 @@
         <p>Une expérience terrain — BI, automatisation et analyse de performance.</p>
       </div>
 
-      <article class="panel" style="padding:22px 24px;">
-        <h3 style="font-size:19px; margin-bottom:6px;">Data Analyst — Generali France</h3>
-        <p style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--muted); margin-bottom:20px; padding-bottom:16px; border-bottom:1px solid var(--line-soft);">Direction Réseau Agents Généraux (IRAG) · Avril – Octobre 2025</p>
+      <div id="experienceList" class="project-list">
+        <details class="instrument-row">
+          <summary>
+            <span class="row-title">Data Analyst — Generali France</span>
+            <span class="row-tags"><span class="tagchip">IRAG</span><span class="tagchip">Avril – Octobre 2025</span></span>
+            <span class="row-chevron">&#9656;</span>
+          </summary>
+          <div class="row-body">
+            <div style="margin:18px 0 20px;">
+              <h4 style="font-size:15px; color:var(--data); margin-bottom:10px;">Analyse de données & reporting décisionnel</h4>
+              <ul class="arrow-list">
+                <li>Extraction et consolidation de données multi-sources (Snowflake, Portail BI, SharePoint, Excel) pour alimenter des reportings fiables à destination des managers et de la direction.</li>
+                <li>Structuration des jeux de données et contrôle qualité pour sécuriser les indicateurs suivis par les managers et la direction.</li>
+                <li>Conception d'un tableau de bord Power BI complet (DAX, Power Query, modélisation multi-sources) centralisant les KPIs IARD et Vie — commissions, couverture, leads, résiliations, portefeuille — avec filtres dynamiques par région, IDA et période.</li>
+                <li>Production d'analyses comparatives (agents vs moyenne nationale, TCAM fixe et dynamique) et de synthèses visuelles pour les responsables de région et la direction.</li>
+              </ul>
+            </div>
 
-        <div style="margin-bottom:20px;">
-          <h4 style="font-size:15px; color:var(--data); margin-bottom:10px;">Analyse de données & reporting décisionnel</h4>
-          <ul class="arrow-list">
-            <li>Extraction et consolidation de données multi-sources (Snowflake, Portail BI, SharePoint, Excel) pour alimenter des reportings fiables à destination des managers et de la direction.</li>
-            <li>Structuration des jeux de données et contrôle qualité pour sécuriser les indicateurs suivis par les managers et la direction.</li>
-            <li>Conception d'un tableau de bord Power BI complet (DAX, Power Query, modélisation multi-sources) centralisant les KPIs IARD et Vie — commissions, couverture, leads, résiliations, portefeuille — avec filtres dynamiques par région, IDA et période.</li>
-            <li>Production d'analyses comparatives (agents vs moyenne nationale, TCAM fixe et dynamique) et de synthèses visuelles pour les responsables de région et la direction.</li>
-          </ul>
-        </div>
+            <div style="margin-bottom:20px;">
+              <h4 style="font-size:15px; color:var(--data); margin-bottom:10px;">Analyse de performance & KPIs financiers</h4>
+              <ul class="arrow-list">
+                <li>Suivi mensuel et contrôle de cohérence des indicateurs clés du réseau (couverture, activation, leads, GRC, multi-équipement).</li>
+                <li>Refonte complète d'un formulaire Excel/VBA : réduction de 19 à 7 modules VBA, élimination des bugs récurrents, interface simplifiée — gain de temps significatif pour l'équipe SAI sur le traitement des demandes.</li>
+                <li>Analyse de la performance des nouveaux agents sur N années : taux d'activité, résiliations, TCAM, multi-équipement, commissions — avec benchmark national et rapport de synthèse pour la direction.</li>
+                <li>Automatisation du reporting mensuel Impulso (suivi de 10+ KPIs stratégiques sur l'ensemble du réseau) — livraison accélérée et suppression des mises à jour manuelles mensuelles.</li>
+              </ul>
+            </div>
 
-        <div style="margin-bottom:20px;">
-          <h4 style="font-size:15px; color:var(--data); margin-bottom:10px;">Analyse de performance & KPIs financiers</h4>
-          <ul class="arrow-list">
-            <li>Suivi mensuel et contrôle de cohérence des indicateurs clés du réseau (couverture, activation, leads, GRC, multi-équipement).</li>
-            <li>Refonte complète d'un formulaire Excel/VBA : réduction de 19 à 7 modules VBA, élimination des bugs récurrents, interface simplifiée — gain de temps significatif pour l'équipe SAI sur le traitement des demandes.</li>
-            <li>Analyse de la performance des nouveaux agents sur N années : taux d'activité, résiliations, TCAM, multi-équipement, commissions — avec benchmark national et rapport de synthèse pour la direction.</li>
-            <li>Automatisation du reporting mensuel Impulso (suivi de 10+ KPIs stratégiques sur l'ensemble du réseau) — livraison accélérée et suppression des mises à jour manuelles mensuelles.</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 style="font-size:15px; color:var(--data); margin-bottom:10px;">Conduite du changement & accompagnement utilisateurs</h4>
-          <ul class="arrow-list">
-            <li>Animation d'ateliers de recueil de besoins avec les utilisateurs pour cadrer les attentes métier avant les développements.</li>
-            <li>Restitution des analyses et présentation des outils aux équipes pour valider les choix fonctionnels.</li>
-            <li>Formation des utilisateurs à la prise en main des outils (Power BI, Excel/VBA) afin de renforcer l'autonomie des équipes.</li>
-            <li>Rédaction de documentation et de supports pédagogiques (guides, modes opératoires) pour faciliter l'adoption durable des solutions.</li>
-          </ul>
-        </div>
-      </article>
+            <div>
+              <h4 style="font-size:15px; color:var(--data); margin-bottom:10px;">Conduite du changement & accompagnement utilisateurs</h4>
+              <ul class="arrow-list">
+                <li>Animation d'ateliers de recueil de besoins avec les utilisateurs pour cadrer les attentes métier avant les développements.</li>
+                <li>Restitution des analyses et présentation des outils aux équipes pour valider les choix fonctionnels.</li>
+                <li>Formation des utilisateurs à la prise en main des outils (Power BI, Excel/VBA) afin de renforcer l'autonomie des équipes.</li>
+                <li>Rédaction de documentation et de supports pédagogiques (guides, modes opératoires) pour faciliter l'adoption durable des solutions.</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+      </div>
     </section>
 
     <section id="projets" class="container" aria-labelledby="projets-title">
@@ -582,7 +601,7 @@
 
       <div class="formation-grid">
         <article class="panel formation-card" data-featured-count="5">
-          <h3>Master MBFA - Risque, Assurance et Décision</h3>
+          <h3>Master Monnaie, Banque, Finance, Assurance (MBFA)</h3>
           <p class="meta"><span>2023 – 2025 · Université Sorbonne Paris Nord</span></p>
           <ul class="formation-list">
             <li class="formation-subject">Économie de l'assurance</li>
@@ -602,7 +621,7 @@
         </article>
 
         <article class="panel formation-card" data-featured-count="5">
-          <h3>Licence MIASHS</h3>
+          <h3>Licence Mathématiques et Informatique Appliquées aux Sciences Humaines et Sociales (MIASHS)</h3>
           <p class="meta"><span>2020 – 2023 · Université Paris 1 Panthéon-Sorbonne</span></p>
           <ul class="formation-list">
             <li class="formation-subject">Banque et marchés</li>
@@ -624,7 +643,7 @@
         </article>
 
         <article class="panel formation-card" data-featured-count="4">
-          <h3>Licence MIAGE</h3>
+          <h3>Licence Mathématiques et Informatique appliquées à l'Actuariat</h3>
           <p class="meta"><span>2017 – 2020 · Institut Universitaire d'Abidjan</span></p>
           <ul class="formation-list">
             <li class="formation-subject">Audit et contrôle de gestion</li>
@@ -832,6 +851,24 @@
     });
 
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ---------- hero facts ticker ---------- */
+
+    const heroFacts = [
+      { label: "Cible de poste", value: "Data Analyst | Finance & Assurance" },
+      { label: "Disponibilité & mobilité", value: "Disponibilité immédiate · Toute la France" },
+      { label: "Compétences techniques clés", value: "Power BI (DAX, Power Query), Excel/VBA, SQL, Snowflake, Python, R" },
+      { label: "Environnements métiers", value: "Assurance, Finance, Banque — pilotage de la performance" }
+    ];
+
+    const factsTicker = document.getElementById('factsTicker');
+    if (reduceMotion) {
+      factsTicker.classList.add('static');
+      factsTicker.innerHTML = heroFacts.map((f) => `<div class="fact"><strong>${f.label}</strong><span>${f.value}</span></div>`).join('');
+    } else {
+      const doubledFacts = heroFacts.concat(heroFacts);
+      factsTicker.innerHTML = `<div class="ticker-track">${doubledFacts.map((f) => `<span class="ticker-item"><strong>${f.label}</strong><span>${f.value}</span></span>`).join('')}</div>`;
+    }
 
     /* ---------- projects data ---------- */
 
@@ -1077,6 +1114,18 @@
 
     renderProjects();
     renderRings();
+
+    /* ---------- experience accordion ---------- */
+
+    document.querySelectorAll('#experienceList .instrument-row').forEach((row) => {
+      row.addEventListener('toggle', () => {
+        if (row.open) {
+          document.querySelectorAll('#experienceList .instrument-row').forEach((other) => {
+            if (other !== row) other.open = false;
+          });
+        }
+      });
+    });
 
     /* ---------- hero gauge ---------- */
 
