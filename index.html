@@ -6,7 +6,7 @@
   <title>Axel LOUKOU | Data Analyst — Finance & Assurance</title>
   <meta name="description" content="Axel LOUKOU, Data Analyst spécialisé en Finance & Assurance. Power BI, SQL, Python, Excel/VBA. Expérience chez Generali France. Disponible pour CDI.">
   <link rel="canonical" href="https://axeloukou.github.io/portfolio/">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f4c81'/%3E%3Ctext x='32' y='43' font-family='Arial, sans-serif' font-size='26' font-weight='700' fill='white' text-anchor='middle'%3EAL%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%2314110f'/%3E%3Crect x='2' y='2' width='60' height='60' rx='8' fill='none' stroke='%233c3226' stroke-width='2'/%3E%3Ctext x='32' y='43' font-family='Georgia, serif' font-size='25' font-weight='700' fill='%23d9863b' text-anchor='middle'%3EAL%3C/text%3E%3C/svg%3E">
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Axel LOUKOU | Data Analyst — Finance & Assurance">
   <meta property="og:description" content="Axel LOUKOU, Data Analyst spécialisé en Finance & Assurance. Power BI, SQL, Python, Excel/VBA. Expérience chez Generali France. Disponible pour CDI.">
@@ -15,900 +15,339 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Axel LOUKOU | Data Analyst — Finance & Assurance">
   <meta name="twitter:description" content="Axel LOUKOU, Data Analyst spécialisé en Finance & Assurance. Power BI, SQL, Python, Excel/VBA. Expérience chez Generali France. Disponible pour CDI.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+    @font-face { font-family: 'IBM Plex Mono'; font-weight: 400; font-style: normal; font-display: swap; src: url('fonts/ibm-plex-mono-400.woff2') format('woff2'); }
+    @font-face { font-family: 'IBM Plex Mono'; font-weight: 700; font-style: normal; font-display: swap; src: url('fonts/ibm-plex-mono-700.woff2') format('woff2'); }
+    @font-face { font-family: 'IBM Plex Sans'; font-weight: 400; font-style: normal; font-display: swap; src: url('fonts/ibm-plex-sans-400.woff2') format('woff2'); }
+    @font-face { font-family: 'IBM Plex Sans'; font-weight: 600; font-style: normal; font-display: swap; src: url('fonts/ibm-plex-sans-600.woff2') format('woff2'); }
+    @font-face { font-family: 'Bitter'; font-weight: 600; font-style: normal; font-display: swap; src: url('fonts/bitter-600.woff2') format('woff2'); }
+    @font-face { font-family: 'Bitter'; font-weight: 700; font-style: normal; font-display: swap; src: url('fonts/bitter-700.woff2') format('woff2'); }
+
     :root {
-      --bg: #f4f7fb;
-      --panel: #ffffff;
-      --ink: #0f172a;
-      --muted: #4b5563;
-      --line: #d9e3f0;
-      --brand: #0f4c81;
-      --brand-soft: #e7f0f8;
-      --brand-strong: #0b3a62;
-      --ok: #0f766e;
-      --radius: 14px;
-      --shadow: 0 8px 26px rgba(12, 35, 59, 0.08);
+      --bg: #14110f;
+      --bg2: #1b1613;
+      --bg3: #211b16;
+      --line: #3c3226;
+      --line-soft: rgba(60, 50, 38, 0.55);
+      --ink: #f3ede2;
+      --muted: #ab9c86;
+      --accent: #d9863b;
+      --glow: #f0a95c;
+      --data: #6f9cb0;
+      --good: #86a878;
       --max: 1120px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 84px;
-    }
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
 
     body {
-      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
-      background:
-        radial-gradient(circle at 100% 0%, rgba(15, 76, 129, 0.1), transparent 34%),
-        radial-gradient(circle at 0% 20%, rgba(15, 76, 129, 0.08), transparent 26%),
-        var(--bg);
+      font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
       color: var(--ink);
       line-height: 1.6;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(217, 134, 59, 0.09), transparent 40%),
+        radial-gradient(circle at 100% 30%, rgba(111, 156, 176, 0.07), transparent 35%),
+        repeating-linear-gradient(115deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 3px),
+        var(--bg);
     }
 
-    .container {
-      width: min(100% - 40px, var(--max));
-      margin: 0 auto;
-    }
+    .container { width: min(100% - 40px, var(--max)); margin: 0 auto; }
 
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--line);
-    }
+    a { color: inherit; }
+    :focus-visible { outline: 2px solid var(--glow); outline-offset: 2px; }
 
-    .topbar-inner {
-      width: min(100% - 40px, var(--max));
-      margin: 0 auto;
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-    }
+    h1, h2, h3, h4 { font-family: 'Bitter', Georgia, serif; font-weight: 700; line-height: 1.25; text-wrap: balance; }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: var(--ink);
-      font-weight: 800;
-      font-size: 17px;
-      letter-spacing: 0.01em;
-    }
+    /* ---------- reusable utilities ---------- */
 
-    .brand-mark {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: linear-gradient(145deg, var(--brand), var(--brand-strong));
-      color: white;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-    }
+    .notch { clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px); }
+    .notch-lg { clip-path: polygon(9px 0, 100% 0, 100% calc(100% - 9px), calc(100% - 9px) 100%, 0 100%, 0 9px); }
 
-    .nav-toggle {
-      display: none;
+    .panel {
+      background: var(--bg3);
       border: 1px solid var(--line);
-      background: white;
-      border-radius: 10px;
-      padding: 8px 11px;
-      font-size: 18px;
-      cursor: pointer;
-      color: var(--brand);
+      border-radius: 5px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), inset 0 -8px 14px rgba(0,0,0,0.28);
     }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      list-style: none;
-    }
+    .arrow-list { list-style: none; display: grid; gap: 9px; margin: 0; padding: 0; }
+    .arrow-list li { display: flex; gap: 9px; align-items: baseline; font-size: 14.5px; line-height: 1.65; color: var(--ink); }
+    .arrow-list li::before { content: "\25B8"; color: var(--accent); flex-shrink: 0; }
 
-    .nav a {
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--muted);
-      padding: 8px 11px;
-      border-radius: 9px;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-
-    .nav a:hover,
-    .nav a.is-active {
-      background: var(--brand-soft);
-      color: var(--brand);
-    }
-
-    .hero {
-      padding: 42px 0 22px;
-    }
-
-    .hero-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: calc(var(--radius) + 4px);
-      box-shadow: var(--shadow);
-      padding: 34px;
-      display: grid;
-      grid-template-columns: 1.35fr 0.95fr;
-      gap: 28px;
-      align-items: start;
-    }
-
-    .kicker {
-      display: inline-flex;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--brand);
-      background: var(--brand-soft);
-      border-radius: 999px;
-      padding: 6px 10px;
-      margin-bottom: 12px;
-    }
-
-    h1 {
-      font-size: clamp(28px, 4vw, 41px);
-      line-height: 1.15;
-      margin-bottom: 12px;
-    }
-
-    .lead {
-      color: var(--muted);
-      font-size: 17px;
-      max-width: 65ch;
-      margin-bottom: 22px;
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
+    .tagchip {
+      display: inline-flex; align-items: center;
+      font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;
+      border: 1px solid var(--line); color: var(--muted);
+      padding: 5px 10px;
     }
 
     .btn {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12.5px; letter-spacing: 0.04em; text-transform: uppercase;
+      padding: 12px 18px;
       text-decoration: none;
-      border-radius: 10px;
-      padding: 11px 14px;
-      font-size: 14px;
-      font-weight: 700;
-      transition: transform 0.2s ease, background 0.2s ease;
+      border: 1px solid var(--accent);
+      color: var(--ink);
+      background: linear-gradient(180deg, rgba(217,134,59,0.16), rgba(217,134,59,0.04));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -2px 4px rgba(0,0,0,0.3);
+      cursor: pointer;
+      display: inline-flex; align-items: center;
     }
+    .btn.ghost { border-color: var(--line); background: transparent; color: var(--muted); box-shadow: none; }
+    .btn:hover { filter: brightness(1.15); }
 
-    .btn-primary {
-      background: var(--brand);
-      color: white;
+    section { padding: 46px 0; border-bottom: 1px solid var(--line-soft); }
+    section:last-of-type { border-bottom: none; }
+
+    .section-head { margin-bottom: 22px; }
+    .section-eyebrow {
+      font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--data); margin: 0 0 8px;
     }
+    .section-head h2 { font-size: clamp(24px, 3vw, 30px); margin-bottom: 6px; }
+    .section-head p { color: var(--muted); font-size: 14.5px; max-width: 62ch; }
 
-    .btn-secondary {
-      background: var(--brand-soft);
-      color: var(--brand);
+    /* ---------- header ---------- */
+
+    .topbar {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(20, 17, 15, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
     }
-
-    .btn:hover {
-      transform: translateY(-1px);
+    .topbar-inner {
+      width: min(100% - 40px, var(--max)); margin: 0 auto; min-height: 64px;
+      display: flex; align-items: center; justify-content: space-between; gap: 14px;
     }
-
-    .quick-info {
-      background: #fbfdff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 16px;
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-weight: 700; font-size: 15px; }
+    .brand-mark {
+      width: 32px; height: 32px;
+      border: 1px solid var(--line); background: var(--bg3); color: var(--accent);
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: 'Bitter', serif; font-size: 14px; font-weight: 700;
     }
+    .nav-toggle {
+      display: none; border: 1px solid var(--line); background: var(--bg3);
+      padding: 7px 11px; font-size: 17px; cursor: pointer; color: var(--accent);
+    }
+    .nav { display: flex; align-items: center; gap: 4px; list-style: none; flex-wrap: wrap; }
+    .nav a {
+      text-decoration: none; font-size: 13px; font-weight: 600; color: var(--muted);
+      padding: 8px 10px; transition: background 0.2s ease, color 0.2s ease;
+    }
+    .nav a:hover, .nav a.is-active { background: rgba(217,134,59,0.1); color: var(--accent); }
 
+    /* ---------- hero ---------- */
+
+    .hero { padding: 42px 0 22px; border-bottom: none; }
+    .hero-card { display: grid; grid-template-columns: 1.3fr 0.9fr; gap: 30px; align-items: start; }
+
+    .kicker {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase;
+      color: var(--glow); border: 1px solid var(--line); padding: 6px 12px; margin-bottom: 16px;
+    }
+    h1 { font-size: clamp(28px, 3.6vw, 39px); line-height: 1.22; margin-bottom: 14px; }
+    .lead { color: var(--muted); font-size: 16.5px; max-width: 62ch; margin-bottom: 24px; line-height: 1.7; }
+    .hero-cta { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .quick-info { padding: 4px 0 0; }
     .quick-title {
-      font-size: 13px;
-      color: var(--muted);
-      font-weight: 700;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
+      font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); font-weight: 700;
+      margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .facts { display: grid; gap: 1px; background: var(--line-soft); border: 1px solid var(--line); }
+    .fact { background: var(--bg3); padding: 12px 14px; }
+    .fact strong { display: block; font-size: 13.5px; margin-bottom: 3px; color: var(--ink); }
+    .fact span { font-size: 13px; color: var(--muted); }
+
+    /* ---------- gauge + rings ---------- */
+
+    .overview { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 34px; align-items: center; margin-bottom: 34px; }
+
+    .gauge-wrap { display: flex; justify-content: center; }
+    .gauge-frame { position: relative; width: 100%; max-width: 210px; }
+    .gauge-frame canvas { display: block; width: 100%; height: auto; }
+    .gauge-readout {
+      position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%);
+      font-family: 'IBM Plex Mono', monospace; font-weight: 700; text-align: center; width: 82%;
+    }
+    .gauge-readout .val { display: block; font-size: 27px; color: var(--ink); font-variant-numeric: tabular-nums; }
+    .gauge-readout .lbl { display: block; font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); margin-top: 4px; line-height: 1.3; }
+
+    .rings-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .stat-tile {
+      display: flex; flex-direction: column; align-items: center; gap: 9px; text-align: center;
+      background: none; border: none; padding: 8px 4px; width: 100%; font: inherit; color: inherit; cursor: pointer;
+      border-radius: 4px; transition: background 0.15s ease, transform 0.15s ease;
+    }
+    .stat-tile:hover { background: rgba(217, 134, 59, 0.06); transform: translateY(-2px); }
+    .ring-wrap { position: relative; width: 74px; height: 74px; max-width: 100%; }
+    .ring-wrap canvas { display: block; width: 100%; height: 100%; }
+    .stat-num {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 0 6px;
+      font-family: 'IBM Plex Mono', monospace; font-weight: 700; font-size: 13px; color: var(--ink);
+      font-variant-numeric: tabular-nums; line-height: 1.1; margin: 0;
+    }
+    .stat-cap { font-size: 11px; color: var(--muted); line-height: 1.4; max-width: 15ch; margin: 0; }
+    .rings-caption { font-size: 11.5px; color: var(--muted); text-align: center; margin-top: 12px; }
+
+    /* ---------- projects accordion ---------- */
+
+    .filter-bar { min-height: 30px; display: flex; align-items: center; margin-bottom: 14px; }
+    .filter-chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'IBM Plex Mono', monospace; font-size: 12px;
+      border: 1px solid var(--accent); color: var(--glow); padding: 5px 8px 5px 12px;
+    }
+    .filter-chip button { background: none; border: none; color: inherit; font: inherit; cursor: pointer; padding: 2px 4px; line-height: 1; font-size: 14px; }
+    .filter-chip button:hover { color: var(--ink); }
+
+    .project-list { display: grid; gap: 10px; }
+    .instrument-row {
+      background: var(--bg3); border: 1px solid var(--line); border-radius: 5px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), inset 0 -8px 14px rgba(0,0,0,0.28);
+      transition: opacity 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .instrument-row.is-match { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), inset 0 1px 0 rgba(255,255,255,0.02), inset 0 -8px 14px rgba(0,0,0,0.28); }
+    .instrument-row.is-dimmed { opacity: 0.35; }
+
+    .instrument-row summary {
+      list-style: none; cursor: pointer;
+      display: flex; align-items: center; gap: 14px; padding: 16px 18px; flex-wrap: wrap;
+    }
+    .instrument-row summary::-webkit-details-marker { display: none; }
+    .row-title { font-family: 'Bitter', Georgia, serif; font-weight: 600; font-size: 16px; flex: 1; min-width: 200px; }
+    .row-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .row-chevron { font-family: 'IBM Plex Mono', monospace; color: var(--accent); transition: transform 0.2s ease; flex-shrink: 0; }
+    .instrument-row[open] .row-chevron { transform: rotate(90deg); }
+
+    .row-body { padding: 0 18px 22px 18px; border-top: 1px solid var(--line-soft); }
+    .row-context { color: var(--muted); font-size: 13.5px; line-height: 1.6; margin: 18px 0; max-width: 60ch; }
+    .row-facts { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .fact-chip {
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+      min-width: 96px; padding: 10px 12px;
+      border: 1px solid var(--line); background: var(--bg);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.02), inset 0 -5px 9px rgba(0,0,0,0.26);
+    }
+    .fact-num { font-family: 'IBM Plex Mono', monospace; font-weight: 700; font-size: 16px; color: var(--accent); font-variant-numeric: tabular-nums; }
+    .fact-lbl { font-size: 10px; letter-spacing: 0.03em; text-transform: uppercase; color: var(--muted); text-align: center; line-height: 1.3; }
+
+    .row-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 18px; }
+    .row-gallery img { width: 100%; display: block; border: 1px solid var(--line); background: var(--bg); }
+
+    .row-result { display: flex; align-items: baseline; gap: 8px; color: var(--ink); font-size: 14px; line-height: 1.6; margin: 0 0 16px; max-width: 60ch; }
+    .result-mark { color: var(--good); font-weight: 700; flex-shrink: 0; }
+    .row-links { display: flex; gap: 8px; flex-wrap: wrap; }
+    .row-link { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; border: 1px solid var(--line); color: var(--accent); padding: 6px 11px; text-decoration: none; }
+    .row-link:hover { background: rgba(217, 134, 59, 0.08); }
+
+    /* ---------- skills ---------- */
+
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .skill-panel { padding: 18px 20px; }
+    .skill-panel-head {
+      font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.05em; text-transform: uppercase;
+      color: var(--data); margin: 0 0 13px;
     }
 
-    .facts {
-      display: grid;
-      gap: 8px;
-    }
+    /* ---------- formation & certifications ---------- */
 
-    .fact {
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: white;
-      padding: 10px;
-    }
+    .formation-grid, .certifications-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: stretch; }
+    .certifications-grid { grid-template-columns: repeat(2, 1fr); }
 
-    .fact strong {
-      display: block;
-      font-size: 14px;
-      margin-bottom: 2px;
+    .formation-card, .cert-card { padding: 18px 20px; display: flex; flex-direction: column; }
+    .formation-card h3, .cert-card h3 { font-size: 17px; line-height: 1.35; margin-bottom: 6px; }
+    .formation-card .meta, .cert-card .meta {
+      font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); margin-bottom: 14px;
+      display: flex; gap: 8px; flex-wrap: wrap;
     }
-
-    .fact span {
-      font-size: 13px;
-      color: var(--muted);
+    .cert-card[data-cert-featured="true"] { order: -1; }
+    .cert-card.strategic { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), inset 0 1px 0 rgba(255,255,255,0.02); }
+    .cert-badge {
+      display: inline-flex; align-self: flex-start;
+      font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--glow); border: 1px solid var(--line); padding: 4px 9px; margin-bottom: 10px;
     }
+    .cert-card h3 a { color: var(--accent); text-decoration: none; }
+    .cert-card h3 a:hover { text-decoration: underline; }
 
-    main {
-      padding-bottom: 40px;
-    }
-
-    section {
-      padding: 18px 0;
-    }
-
-    .section-head {
-      margin-bottom: 14px;
-    }
-
-    .section-head h2 {
-      font-size: clamp(24px, 3vw, 30px);
-      margin-bottom: 4px;
-    }
-
-    .section-head p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-left: 4px solid #b8d0e8;
-      border-radius: var(--radius);
-      padding: 20px;
-      box-shadow: var(--shadow);
-    }
-
-    .card h3 {
-      font-size: 19px;
-      margin-bottom: 4px;
-    }
-
-    .meta {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 12px;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .bullets {
-      padding-left: 18px;
-      display: grid;
-      gap: 8px;
-      color: #1f2937;
-      font-size: 14px;
-    }
-
-    .profile-columns {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .profile-block {
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: #fbfdff;
-      padding: 14px;
-    }
-
-    .profile-block h3 {
-      font-size: 16px;
-      color: var(--brand);
-      margin-bottom: 8px;
-    }
-
-    .profile-note {
-      margin-top: 12px;
-      padding-top: 12px;
-      border-top: 1px solid var(--line);
-      font-size: 14px;
-      color: #1f2937;
-    }
-
-    .experience-meta {
-      padding-bottom: 10px;
-      margin-bottom: 12px;
-    }
-
-    .experience-section {
-      margin-top: 10px;
-      padding-left: 14px;
-      border-left: 3px solid var(--line);
-    }
-
-    .experience-section h4 {
-      font-size: 15px;
-      color: var(--brand);
-      margin-bottom: 6px;
-    }
-
-    .project-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .project {
-      border: 1px solid var(--line);
-      border-left: 4px solid #b8d0e8;
-      border-radius: 12px;
-      background: var(--panel);
-      padding: 16px;
-    }
-
-    .project h3 {
-      font-size: 18px;
-      margin-bottom: 5px;
-    }
-
-    .project p {
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .tags {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-
-    .tag {
-      font-size: 12px;
-      color: var(--brand-strong);
-      background: var(--brand-soft);
-      border-radius: 999px;
-      padding: 5px 9px;
-      font-weight: 600;
-    }
-
-    .project-actions {
-      margin-top: 10px;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .projects-toggle-wrap {
-      margin-top: 12px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .project-btn {
-      border: 0;
-      cursor: pointer;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 700;
-      border-radius: 9px;
-      padding: 8px 10px;
-    }
-
-    .project-btn.primary {
-      background: var(--brand);
-      color: white;
-    }
-
-    .project-btn.ghost {
-      background: var(--brand-soft);
-      color: var(--brand);
-    }
-
-    .project-btn:hover {
-      filter: brightness(0.97);
-    }
-
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(10, 16, 27, 0.58);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 60;
-      padding: 18px;
-    }
-
-    .modal.open {
-      display: flex;
-    }
-
-    .modal-panel {
-      width: min(960px, 100%);
-      max-height: 88vh;
-      overflow: auto;
-      background: #ffffff;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      box-shadow: 0 24px 50px rgba(8, 22, 38, 0.35);
-      padding: 20px;
-    }
-
-    .modal-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: start;
-      margin-bottom: 12px;
-    }
-
-    .modal-head h3 {
-      font-size: 22px;
-      line-height: 1.2;
-    }
-
-    .modal-close {
-      border: 1px solid var(--line);
-      background: white;
-      color: var(--muted);
-      width: 34px;
-      height: 34px;
-      border-radius: 9px;
-      cursor: pointer;
-      font-size: 20px;
-      line-height: 1;
-    }
-
-    .modal-meta {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-
-    .modal-content p {
-      font-size: 14px;
-      color: #1f2937;
-      margin-bottom: 8px;
-    }
-
-    .modal-content ul {
-      padding-left: 18px;
-      display: grid;
-      gap: 6px;
-      margin-bottom: 10px;
-      font-size: 14px;
-      color: #1f2937;
-    }
-
-    .modal-gallery {
-      margin-top: 10px;
-      display: grid;
-      gap: 10px;
-    }
-
-    .modal-image {
-      width: 100%;
-      border-radius: 10px;
-      border: 1px solid var(--line);
-      background: #f8fbff;
-      object-fit: cover;
-    }
-
-    .modal-links {
-      margin-bottom: 10px;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    details {
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: white;
-      padding: 12px 14px;
-    }
-
-    summary {
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--brand);
-    }
-
-    details[open] summary {
-      margin-bottom: 12px;
-    }
-
-    .skills-wrap {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      align-items: start;
-    }
-
-    .skill-block {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: white;
-      padding: 20px;
-      height: 100%;
-      box-shadow: 0 8px 20px rgba(12, 35, 59, 0.05);
-    }
-
-    .skill-block h3 {
-      font-size: 19px;
-      margin-bottom: 16px;
-      color: #123c62;
-      line-height: 1.3;
-    }
-
-    .skill-list {
-      list-style: none;
-      display: grid;
-      gap: 14px;
-    }
-
-    .skill-item strong {
-      display: block;
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--brand);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 6px;
-    }
-
-    .skill-item span {
-      display: block;
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.55;
-    }
-
-    .formation-toggle-wrap {
-      margin-top: 10px;
-    }
-
-    .edu-list {
-      display: grid;
-      gap: 10px;
-    }
-
-    .formation-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      align-items: stretch;
-    }
-
-    .formation-card {
-      border-left: 4px solid #b8d0e8;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      padding: 18px;
-    }
-
-    .formation-card h3 {
-      font-size: 18px;
-      line-height: 1.35;
-      margin-bottom: 8px;
-    }
-
-    .formation-card .meta {
-      margin-bottom: 14px;
-    }
-
-    .formation-card .meta span {
-      font-size: 14px;
-    }
-
-    .formation-list {
-      list-style: none;
-      display: grid;
-      gap: 8px;
-      margin: 0;
-      padding: 0;
-    }
-
+    .formation-list { list-style: none; display: grid; gap: 8px; margin: 0 0 12px; padding: 0; }
     .formation-subject {
-      display: block;
-      border: 1px solid #d9e3f0;
-      border-radius: 10px;
-      background: #f8fbff;
-      padding: 9px 11px;
-      font-size: 14px;
-      color: #163454;
-      line-height: 1.45;
+      display: block; border: 1px solid var(--line); background: var(--bg);
+      padding: 9px 11px; font-size: 13.5px; color: var(--ink); line-height: 1.45;
     }
+    .toggle-wrap { margin-top: auto; padding-top: 6px; display: flex; }
+    .toggle-wrap.center { justify-content: center; }
+    .small-btn {
+      font-family: 'IBM Plex Mono', monospace; font-size: 12px; border: 1px solid var(--line); color: var(--muted);
+      background: transparent; padding: 8px 12px; cursor: pointer;
+    }
+    .small-btn:hover { color: var(--ink); border-color: var(--accent); }
 
-    .certifications-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      align-items: stretch;
-    }
-
-    .cert-card {
-      border-left: 4px solid #b8d0e8;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .cert-card[data-cert-featured="true"] {
-      order: -1;
-    }
-
-    .cert-card.strategic {
-      border-left-color: var(--brand);
-      background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
-      border-top: 1px solid #d4e6f8;
-    }
-
-    .cert-badge-inline {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 999px;
-      border: 1px solid #cfe0f3;
-      background: #f7fbff;
-      color: var(--brand);
-      padding: 4px 9px;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      margin-bottom: 8px;
-    }
-
-    .cert-card h3 {
-      font-size: 16px;
-      margin-bottom: 6px;
-      line-height: 1.35;
-    }
-
-    .cert-card h3 a {
-      color: var(--brand);
-      text-decoration: none;
-    }
-
-    .cert-card h3 a:hover {
-      text-decoration: underline;
-    }
-
-    .edu-item {
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: white;
-      padding: 13px;
-    }
-
-    .edu-item strong {
-      display: block;
-      font-size: 14px;
-    }
-
-    .edu-item span {
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .cert-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 9px;
-      margin-top: 10px;
-    }
-
-    .cert {
-      border: 1px dashed #b7c8de;
-      border-radius: 10px;
-      background: #f9fcff;
-      padding: 10px;
-      font-size: 13px;
-    }
-
-    .cert strong {
-      display: block;
-      margin-bottom: 2px;
-      color: #0f3254;
-    }
+    /* ---------- footer ---------- */
 
     footer {
-      margin-top: 16px;
-      border-top: 1px solid var(--line);
-      background: #0f2032;
-      color: #d4dde8;
-      padding: 30px 0;
+      margin-top: 0; border-top: 1px solid var(--line);
+      background: var(--bg2); color: var(--muted); padding: 40px 0 26px;
     }
-
-    .footer-grid {
-      width: min(100% - 40px, var(--max));
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.2fr 1fr 1fr;
-      gap: 18px;
-    }
-
+    .footer-grid { width: min(100% - 40px, var(--max)); margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 20px; }
     .footer-block h3 {
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 7px;
-      color: #a8bfd8;
+      font-family: 'IBM Plex Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em;
+      margin-bottom: 10px; color: var(--data); font-weight: 700;
     }
-
-    .footer-block p,
-    .footer-block a,
-    .footer-block li {
-      font-size: 14px;
-      color: #d4dde8;
-      text-decoration: none;
-      list-style: none;
-    }
-
-    .footer-block ul {
-      display: grid;
-      gap: 6px;
-    }
-
-    .footer-block a:hover {
-      color: white;
-    }
-
+    .footer-block p, .footer-block a, .footer-block li { font-size: 13.5px; color: var(--muted); text-decoration: none; list-style: none; }
+    .footer-block ul { display: grid; gap: 7px; }
+    .footer-block a:hover { color: var(--glow); }
     .footer-note {
-      width: min(100% - 40px, var(--max));
-      margin: 18px auto 0;
-      border-top: 1px solid rgba(212, 221, 232, 0.22);
-      padding-top: 12px;
-      font-size: 12px;
-      color: #9db1c7;
-      text-align: center;
+      width: min(100% - 40px, var(--max)); margin: 24px auto 0; border-top: 1px solid var(--line-soft);
+      padding-top: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.04em;
+      color: var(--muted); text-align: center;
     }
 
-    .cv-print {
-      display: none;
-    }
+    .cv-print { display: none; }
 
     @media (max-width: 980px) {
-      .hero-card,
-      .grid-2,
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .cert-list {
-        grid-template-columns: 1fr;
-      }
-
-      .formation-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .certifications-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .skills-wrap {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .profile-columns {
-        grid-template-columns: 1fr;
-      }
-
+      .hero-card, .footer-grid { grid-template-columns: 1fr; }
+      .overview { grid-template-columns: 1fr; }
+      .gauge-wrap { order: -1; }
+      .formation-grid, .certifications-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 860px) {
-      .topbar-inner {
-        flex-wrap: wrap;
-        padding: 10px 0;
-      }
+      .topbar-inner { flex-wrap: wrap; padding: 10px 0; }
+      .nav-toggle { display: inline-flex; }
+      .nav-wrap { width: 100%; display: none; }
+      .nav-wrap.open { display: block; }
+      .nav { width: 100%; border-top: 1px solid var(--line); padding-top: 10px; margin-top: 8px; }
+      .rings-row { grid-template-columns: repeat(2, 1fr); }
+      .skills-grid { grid-template-columns: 1fr; }
+    }
 
-      .nav-toggle {
-        display: inline-flex;
-      }
-
-      .nav-wrap {
-        width: 100%;
-        display: none;
-      }
-
-      .nav-wrap.open {
-        display: block;
-      }
-
-      .nav {
-        width: 100%;
-        flex-wrap: wrap;
-        border-top: 1px solid var(--line);
-        padding-top: 10px;
-        margin-top: 8px;
-      }
-
-      .hero-card {
-        padding: 22px;
-      }
-
-      .skills-wrap {
-        grid-template-columns: 1fr;
-      }
+    @media (prefers-reduced-motion: reduce) {
+      .stat-tile, .instrument-row, .row-chevron { transition: none; }
     }
 
     @media print {
-      @page {
-        size: A4;
-        margin: 10mm;
-      }
-
-      body {
-        background: #fff;
-        color: #111;
-      }
-
-      header,
-      main,
-      footer,
-      #projectModal {
-        display: none !important;
-      }
-
+      @page { size: A4; margin: 10mm; }
+      body { background: #fff; color: #111; }
+      header, main, footer { display: none !important; }
       .cv-print {
         display: block !important;
-        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
-        font-size: 11px;
-        line-height: 1.35;
+        font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+        font-size: 11px; line-height: 1.35;
       }
-
-      .cv-print h1 {
-        font-size: 21px;
-        line-height: 1.15;
-        margin-bottom: 4px;
-      }
-
-      .cv-print h2 {
-        font-size: 12px;
-        margin: 8px 0 4px;
-        text-transform: uppercase;
-        letter-spacing: 0.03em;
-        border-bottom: 1px solid #cbd5e1;
-      }
-
-      .cv-print p {
-        margin: 0 0 4px;
-      }
-
-      .cv-print ul {
-        margin: 0;
-        padding-left: 15px;
-      }
-
-      .cv-print li {
-        margin-bottom: 2px;
-      }
-
-      .cv-print a {
-        color: #0f4c81;
-        text-decoration: none;
-      }
+      .cv-print h1 { font-size: 21px; line-height: 1.15; margin-bottom: 4px; }
+      .cv-print h2 { font-size: 12px; margin: 8px 0 4px; text-transform: uppercase; letter-spacing: 0.03em; border-bottom: 1px solid #cbd5e1; }
+      .cv-print p { margin: 0 0 4px; }
+      .cv-print ul { margin: 0; padding-left: 15px; }
+      .cv-print li { margin-bottom: 2px; }
+      .cv-print a { color: #9a5b2e; text-decoration: none; }
     }
   </style>
 </head>
@@ -933,7 +372,6 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-
     </div>
   </header>
 
@@ -941,34 +379,24 @@
     <section class="hero container" aria-labelledby="hero-title">
       <div class="hero-card">
         <div>
-          <span class="kicker">DISPONIBLE POUR UN CDI</span>
+          <span class="kicker">Disponible pour un CDI</span>
           <h1 id="hero-title">Data Analyst Finance & Assurance — je traduis la donnée brute en décisions claires, pour les managers et la direction.</h1>
           <p class="lead">Jeune diplômé en Risque & Assurance avec une expérience concrète chez Generali France, je combine culture finance, maîtrise des outils BI et capacité à livrer des analyses exploitables rapidement.</p>
           <div class="hero-cta">
-            <a href="#experiences" class="btn btn-primary">Voir l’expérience clé</a>
-            <a href="#projets" class="btn btn-secondary">Voir les projets</a>
+            <a href="#experiences" class="btn">Voir l’expérience clé</a>
+            <a href="#projets" class="btn ghost">Voir les projets</a>
           </div>
         </div>
 
-        <aside class="quick-info" aria-label="Informations rapides">
-          <p class="quick-title">Informations clés pour le recrutement</p>
+        <aside class="quick-info panel" aria-label="Informations rapides">
+          <div style="padding: 14px 14px 0;">
+            <p class="quick-title">Informations clés pour le recrutement</p>
+          </div>
           <div class="facts">
-            <div class="fact">
-              <strong>Cible de poste</strong>
-              <span>Data Analyst | Finance & Assurance</span>
-            </div>
-            <div class="fact">
-              <strong>Disponibilité & mobilité</strong>
-              <span>Disponibilité immédiate · Toute la France</span>
-            </div>
-            <div class="fact">
-              <strong>Compétences techniques clés</strong>
-              <span>Power BI (DAX, Power Query), Excel/VBA, SQL, Snowflake, Python, R</span>
-            </div>
-            <div class="fact">
-              <strong>Environnements métiers</strong>
-              <span>Assurance, Finance, Banque — pilotage de la performance</span>
-            </div>
+            <div class="fact"><strong>Cible de poste</strong><span>Data Analyst | Finance & Assurance</span></div>
+            <div class="fact"><strong>Disponibilité & mobilité</strong><span>Disponibilité immédiate · Toute la France</span></div>
+            <div class="fact"><strong>Compétences techniques clés</strong><span>Power BI (DAX, Power Query), Excel/VBA, SQL, Snowflake, Python, R</span></div>
+            <div class="fact"><strong>Environnements métiers</strong><span>Assurance, Finance, Banque — pilotage de la performance</span></div>
           </div>
         </aside>
       </div>
@@ -976,185 +404,193 @@
 
     <section id="profil" class="container" aria-labelledby="profil-title">
       <div class="section-head">
-        <h2 id="profil-title">Profil</h2>
-        <p>Data Analyst junior — voici ce que je peux apporter à votre équipe :</p>
+        <p class="section-eyebrow">Profil</p>
+        <h2 id="profil-title">Ce que j'apporte à une équipe</h2>
+        <p>Data Analyst junior avec une vraie culture Finance & Assurance.</p>
       </div>
-      <div class="card">
-        <div class="profile-columns">
-          <div class="profile-block">
-            <h3>Données & Reporting</h3>
-            <ul class="bullets">
-              <li>Construire des pipelines de données propres depuis des sources hétérogènes (SQL, Snowflake, Excel) jusqu’à des reportings fiables et à jour.</li>
-              <li>Concevoir des tableaux de bord Power BI lisibles et actionnables — DAX, modélisation, filtres dynamiques — pour que les décideurs aient l’information au bon moment.</li>
-              <li>Automatiser les traitements répétitifs (Python, VBA, Power Query) pour fiabiliser les processus et réduire les erreurs.</li>
-              <li>Restituer des analyses complexes de façon claire et pédagogique pour des interlocuteurs non techniques.</li>
-            </ul>
-          </div>
-          <div class="profile-block">
-            <h3>Finance & Assurance</h3>
-            <ul class="bullets">
-              <li>Lire et construire des KPIs métiers (taux de couverture, TCAM, COR, portefeuille IARD/Vie) sans avoir besoin qu’on m’explique ce qu’ils mesurent.</li>
-              <li>Mobiliser des notions solides d’actuariat, de Solvabilité II et de modélisation du risque sur des problématiques financières ou assurantielles.</li>
-              <li>Identifier les anomalies dans les données et alerter les équipes métier avant qu’elles impactent les décisions.</li>
-              <li>M’intégrer rapidement dans un environnement Finance ou Assurance, grâce à ma formation et mon expérience du secteur.</li>
-            </ul>
-          </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;" class="profile-columns">
+        <div class="panel" style="padding:18px 20px;">
+          <p class="skill-panel-head">Données & Reporting</p>
+          <ul class="arrow-list">
+            <li>Construire des pipelines de données propres depuis des sources hétérogènes (SQL, Snowflake, Excel) jusqu'à des reportings fiables et à jour.</li>
+            <li>Concevoir des tableaux de bord Power BI lisibles et actionnables — DAX, modélisation, filtres dynamiques — pour que les décideurs aient l'information au bon moment.</li>
+            <li>Automatiser les traitements répétitifs (Python, VBA, Power Query) pour fiabiliser les processus et réduire les erreurs.</li>
+            <li>Restituer des analyses complexes de façon claire et pédagogique pour des interlocuteurs non techniques.</li>
+          </ul>
         </div>
-        <p class="profile-note"><strong>En résumé :</strong> Je suis un profil Data Analyst avec une vraie culture Finance & Assurance, capable de prendre en charge la donnée de bout en bout, de l’extraction à la restitution visuelle pour la direction.</p>
+        <div class="panel" style="padding:18px 20px;">
+          <p class="skill-panel-head">Finance & Assurance</p>
+          <ul class="arrow-list">
+            <li>Lire et construire des KPIs métiers (taux de couverture, TCAM, COR, portefeuille IARD/Vie) sans avoir besoin qu'on m'explique ce qu'ils mesurent.</li>
+            <li>Mobiliser des notions solides d'actuariat, de Solvabilité II et de modélisation du risque sur des problématiques financières ou assurantielles.</li>
+            <li>Identifier les anomalies dans les données et alerter les équipes métier avant qu'elles impactent les décisions.</li>
+            <li>M'intégrer rapidement dans un environnement Finance ou Assurance, grâce à ma formation et mon expérience du secteur.</li>
+          </ul>
+        </div>
       </div>
+      <p style="margin-top:16px; color:var(--muted); font-size:14px; max-width:70ch;"><strong style="color:var(--ink);">En résumé :</strong> je suis un profil Data Analyst avec une vraie culture Finance & Assurance, capable de prendre en charge la donnée de bout en bout, de l'extraction à la restitution visuelle pour la direction.</p>
 
-      <div class="card" style="margin-top: 14px; border-left: 4px solid var(--brand); background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);">
-        <p style="font-size: 15px; font-style: italic; color: #1f2937; line-height: 1.7; margin-bottom: 10px;">
-          « Dès son arrivée, Axel s’est distingué par sa curiosité intellectuelle, son esprit d’initiative et sa capacité à être force de proposition. Il a mené à bien l’ensemble des tâches confiées, en particulier dans la création et l’automatisation d’outils. Axel a piloté ses projets de bout en bout, assurant une coordination fluide avec les différentes directions du groupe. Son autonomie, sa rigueur et sa capacité à collaborer témoignent d’une réelle maturité professionnelle. Il possède toutes les compétences nécessaires pour intégrer le monde professionnel, et nous espérons vivement qu’il poursuivra son parcours au sein de Generali, où il représente une véritable valeur ajoutée. »
+      <div class="panel" style="margin-top:20px; padding:20px 22px; border-left: 3px solid var(--accent);">
+        <p style="font-family:'Bitter',serif; font-style:italic; font-size:15px; color:var(--ink); line-height:1.75; margin-bottom:12px;">
+          « Dès son arrivée, Axel s'est distingué par sa curiosité intellectuelle, son esprit d'initiative et sa capacité à être force de proposition. Il a mené à bien l'ensemble des tâches confiées, en particulier dans la création et l'automatisation d'outils. Axel a piloté ses projets de bout en bout, assurant une coordination fluide avec les différentes directions du groupe. Son autonomie, sa rigueur et sa capacité à collaborer témoignent d'une réelle maturité professionnelle. Il possède toutes les compétences nécessaires pour intégrer le monde professionnel, et nous espérons vivement qu'il poursuivra son parcours au sein de Generali, où il représente une véritable valeur ajoutée. »
         </p>
-        <p style="font-size: 13px; color: var(--muted); font-weight: 700;">— Alice Erdogan, Responsable de mission &middot; Generali France &middot; Évaluation de stage, Octobre 2025</p>
+        <p style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--muted);">— Alice Erdogan, Responsable de mission · Generali France · Évaluation de stage, Octobre 2025</p>
       </div>
     </section>
 
     <section id="experiences" class="container" aria-labelledby="experiences-title">
       <div class="section-head">
-        <h2 id="experiences-title">Expérience professionnelle</h2>
-        <p>Une expérience terrain chez Generali France — BI, automatisation et analyse de performance.</p>
+        <p class="section-eyebrow">Expérience professionnelle</p>
+        <h2 id="experiences-title">Generali France</h2>
+        <p>Une expérience terrain — BI, automatisation et analyse de performance.</p>
       </div>
 
-      <article class="card">
-        <h3>Data Analyst — Generali France</h3>
-        <p class="meta experience-meta">
-          <span>Direction Réseau Agents Généraux (IRAG) · Generali France · Avril – Octobre 2025</span>
-        </p>
-        <section class="experience-section">
-          <h4>Analyse de données & reporting décisionnel</h4>
-          <ul class="bullets">
+      <article class="panel" style="padding:22px 24px;">
+        <h3 style="font-size:19px; margin-bottom:6px;">Data Analyst — Generali France</h3>
+        <p style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--muted); margin-bottom:20px; padding-bottom:16px; border-bottom:1px solid var(--line-soft);">Direction Réseau Agents Généraux (IRAG) · Avril – Octobre 2025</p>
+
+        <div style="margin-bottom:20px;">
+          <h4 style="font-size:15px; color:var(--data); margin-bottom:10px;">Analyse de données & reporting décisionnel</h4>
+          <ul class="arrow-list">
             <li>Extraction et consolidation de données multi-sources (Snowflake, Portail BI, SharePoint, Excel) pour alimenter des reportings fiables à destination des managers et de la direction.</li>
             <li>Structuration des jeux de données et contrôle qualité pour sécuriser les indicateurs suivis par les managers et la direction.</li>
-            <li>Conception d’un tableau de bord Power BI complet (DAX, Power Query, modélisation multi-sources) centralisant les KPIs IARD et Vie — commissions, couverture, leads, résiliations, portefeuille — avec filtres dynamiques par région, IDA et période.</li>
-            <li>Production d’analyses comparatives (agents vs moyenne nationale, TCAM fixe et dynamique) et de synthèses visuelles pour les responsables de région et la direction.</li>
+            <li>Conception d'un tableau de bord Power BI complet (DAX, Power Query, modélisation multi-sources) centralisant les KPIs IARD et Vie — commissions, couverture, leads, résiliations, portefeuille — avec filtres dynamiques par région, IDA et période.</li>
+            <li>Production d'analyses comparatives (agents vs moyenne nationale, TCAM fixe et dynamique) et de synthèses visuelles pour les responsables de région et la direction.</li>
           </ul>
-        </section>
-        <section class="experience-section">
-          <h4>Analyse de performance & KPIs financiers</h4>
-          <ul class="bullets">
+        </div>
+
+        <div style="margin-bottom:20px;">
+          <h4 style="font-size:15px; color:var(--data); margin-bottom:10px;">Analyse de performance & KPIs financiers</h4>
+          <ul class="arrow-list">
             <li>Suivi mensuel et contrôle de cohérence des indicateurs clés du réseau (couverture, activation, leads, GRC, multi-équipement).</li>
-            <li>Refonte complète d’un formulaire Excel/VBA : réduction de 19 à 7 modules VBA, élimination des bugs récurrents, interface simplifiée — gain de temps significatif pour l’équipe SAI sur le traitement des demandes.</li>
-            <li>Analyse de la performance des nouveaux agents sur N années : taux d’activité, résiliations, TCAM, multi-équipement, commissions — avec benchmark national et rapport de synthèse pour la direction.</li>
-            <li>Automatisation du reporting mensuel Impulso (suivi de 10+ KPIs stratégiques sur l’ensemble du réseau) — livraison accélérée et suppression des mises à jour manuelles mensuelles.</li>
+            <li>Refonte complète d'un formulaire Excel/VBA : réduction de 19 à 7 modules VBA, élimination des bugs récurrents, interface simplifiée — gain de temps significatif pour l'équipe SAI sur le traitement des demandes.</li>
+            <li>Analyse de la performance des nouveaux agents sur N années : taux d'activité, résiliations, TCAM, multi-équipement, commissions — avec benchmark national et rapport de synthèse pour la direction.</li>
+            <li>Automatisation du reporting mensuel Impulso (suivi de 10+ KPIs stratégiques sur l'ensemble du réseau) — livraison accélérée et suppression des mises à jour manuelles mensuelles.</li>
           </ul>
-        </section>
-        <section class="experience-section">
-          <h4>Conduite du changement & accompagnement utilisateurs</h4>
-          <ul class="bullets">
-            <li>Animation d’ateliers de recueil de besoins avec les utilisateurs pour cadrer les attentes métier avant les développements.</li>
+        </div>
+
+        <div>
+          <h4 style="font-size:15px; color:var(--data); margin-bottom:10px;">Conduite du changement & accompagnement utilisateurs</h4>
+          <ul class="arrow-list">
+            <li>Animation d'ateliers de recueil de besoins avec les utilisateurs pour cadrer les attentes métier avant les développements.</li>
             <li>Restitution des analyses et présentation des outils aux équipes pour valider les choix fonctionnels.</li>
-            <li>Formation des utilisateurs à la prise en main des outils (Power BI, Excel/VBA) afin de renforcer l’autonomie des équipes.</li>
-            <li>Rédaction de documentation et de supports pédagogiques (guides, modes opératoires) pour faciliter l’adoption durable des solutions.</li>
+            <li>Formation des utilisateurs à la prise en main des outils (Power BI, Excel/VBA) afin de renforcer l'autonomie des équipes.</li>
+            <li>Rédaction de documentation et de supports pédagogiques (guides, modes opératoires) pour faciliter l'adoption durable des solutions.</li>
           </ul>
-        </section>
+        </div>
       </article>
     </section>
 
     <section id="projets" class="container" aria-labelledby="projets-title">
       <div class="section-head">
+        <p class="section-eyebrow">Projets</p>
         <h2 id="projets-title">Projets</h2>
         <p id="projectsIntro">Chargement des projets...</p>
       </div>
-      <div id="projectsGrid" class="project-list"></div>
-      <div class="projects-toggle-wrap">
-        <button id="projectsToggleBtn" class="project-btn ghost" type="button">Afficher les autres projets</button>
+
+      <div class="overview">
+        <div class="gauge-wrap">
+          <div class="gauge-frame">
+            <canvas id="heroGauge" width="240" height="240"></canvas>
+            <div class="gauge-readout">
+              <span class="val" id="gaugeVal">72%</span>
+              <span class="lbl" id="gaugeLbl">Accuracy scoring crédit</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="rings-row" id="ringsRow"></div>
+          <p class="rings-caption">Le remplissage de l'anneau = part de mes projets qui utilisent cet outil. Clique un anneau pour filtrer.</p>
+        </div>
       </div>
+
+      <div class="filter-bar" id="filterBar"></div>
+      <div id="projectsGrid" class="project-list"></div>
     </section>
 
     <section id="competences" class="container" aria-labelledby="competences-title">
       <div class="section-head">
+        <p class="section-eyebrow">Compétences</p>
         <h2 id="competences-title">Compétences</h2>
-        <p>Outils maîtrisés, savoir-faire métier et posture analytique.</p>
+        <p>Outils, méthodes et savoir-faire — du recueil de besoin à la restitution.</p>
       </div>
 
-      <div class="skills-wrap">
-        <article class="skill-block">
-          <h3>Outils et environnements</h3>
-          <ul class="skill-list">
-            <li class="skill-item">
-              <strong>BI et reporting</strong>
-              <span>Power BI, DAX, Power Query, Excel avancé, VBA</span>
-            </li>
-            <li class="skill-item">
-              <strong>Data et programmation</strong>
-              <span>Python, R, SQL, SAS</span>
-            </li>
-            <li class="skill-item">
-              <strong>Plateformes</strong>
-              <span>Snowflake, SharePoint</span>
-            </li>
-            <li class="skill-item">
-              <strong>Notions</strong>
-              <span>Dataiku, Git / GitHub</span>
-            </li>
+      <div class="skills-grid">
+        <div class="panel skill-panel">
+          <p class="skill-panel-head">Programmation</p>
+          <ul class="arrow-list">
+            <li>SQL (extraction, jointures, agrégations)</li>
+            <li>Python</li>
+            <li>R / R Shiny</li>
+            <li>SAS</li>
           </ul>
-        </article>
-
-        <article class="skill-block">
-          <h3>Savoir-faire — Finance & Assurance</h3>
-          <ul class="skill-list">
-            <li class="skill-item">
-              <strong>KPIs et performance</strong>
-              <span>Construction de KPIs, analyse d’écarts, taux de couverture, TCAM, COR, portefeuille IARD et Vie</span>
-            </li>
-            <li class="skill-item">
-              <strong>Domaine assurance</strong>
-              <span>Économie de l’assurance, actuariat vie et non-vie, Solvabilité II, risque crédit, réassurance</span>
-            </li>
-            <li class="skill-item">
-              <strong>Environnements métier</strong>
-              <span>Assurance, finance, banque, gestion des risques</span>
-            </li>
-            <li class="skill-item">
-              <strong>Restitution</strong>
-              <span>Fiabilisation des données, synthèse pour managers et direction, documentation, formation utilisateurs</span>
-            </li>
+        </div>
+        <div class="panel skill-panel">
+          <p class="skill-panel-head">BI & Data Visualisation</p>
+          <ul class="arrow-list">
+            <li>Power BI (DAX, Power Query, langage M)</li>
+            <li>Excel avancé (TCD, formules, Power Pivot, VBA, Macros)</li>
+            <li>SAP BusinessObjects (Web Intelligence)</li>
+            <li>Tableau / Looker Studio</li>
+            <li>Qlik Sense / QlikView</li>
           </ul>
-        </article>
-
-        <article class="skill-block">
-          <h3>Savoir-faire — Data Analyst</h3>
-          <ul class="skill-list">
-            <li class="skill-item">
-              <strong>Préparation des données</strong>
-              <span>Collecte multi-sources, contrôle qualité, structuration des jeux de données</span>
-            </li>
-            <li class="skill-item">
-              <strong>Analyse statistique</strong>
-              <span>Tests statistiques, segmentation, régression, économétrie, machine learning</span>
-            </li>
-            <li class="skill-item">
-              <strong>Visualisation</strong>
-              <span>Data visualisation, tableaux de bord KPI, automatisation de reporting, restitution des analyses</span>
-            </li>
-            <li class="skill-item">
-              <strong>Cadrage métier</strong>
-              <span>Expression de besoin, traduction métier vers analytique</span>
-            </li>
+        </div>
+        <div class="panel skill-panel">
+          <p class="skill-panel-head">Data Engineering & Gestion des données</p>
+          <ul class="arrow-list">
+            <li>Dataiku DSS</li>
+            <li>Snowflake</li>
+            <li>SAP S/4HANA</li>
+            <li>Salesforce (CRM)</li>
           </ul>
-        </article>
+        </div>
+        <div class="panel skill-panel">
+          <p class="skill-panel-head">Automatisation</p>
+          <ul class="arrow-list">
+            <li>Power Automate</li>
+            <li>Power Apps</li>
+            <li>Conception de pipelines ETL / ELT</li>
+          </ul>
+        </div>
+        <div class="panel skill-panel">
+          <p class="skill-panel-head">Compétences professionnelles</p>
+          <ul class="arrow-list">
+            <li>Analyse et interprétation des données</li>
+            <li>Communication & vulgarisation</li>
+            <li>Formation des utilisateurs</li>
+            <li>Résolution de problèmes</li>
+            <li>Esprit analytique, rigueur et curiosité</li>
+          </ul>
+        </div>
+        <div class="panel skill-panel">
+          <p class="skill-panel-head">Langues</p>
+          <ul class="arrow-list">
+            <li>Français (langue maternelle)</li>
+            <li>Anglais (professionnel)</li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <section id="formation" class="container" aria-labelledby="formation-title">
       <div class="section-head">
+        <p class="section-eyebrow">Formation</p>
         <h2 id="formation-title">Formations</h2>
         <p>3 formations universitaires</p>
       </div>
 
       <div class="formation-grid">
-        <article class="card formation-card" data-featured-count="5">
+        <article class="panel formation-card" data-featured-count="5">
           <h3>Master MBFA - Risque, Assurance et Décision</h3>
-          <p class="meta"><span>2023 - 2025 | Université Sorbonne Paris Nord</span></p>
+          <p class="meta"><span>2023 – 2025 · Université Sorbonne Paris Nord</span></p>
           <ul class="formation-list">
-            <li class="formation-subject">Économie de l’assurance</li>
+            <li class="formation-subject">Économie de l'assurance</li>
             <li class="formation-subject">Actuariat vie / non-vie</li>
             <li class="formation-subject">Économétrie avancée et séries temporelles</li>
             <li class="formation-subject">Python et gestion de bases de données</li>
             <li class="formation-subject">VBA sous Excel (avancé)</li>
-            <li class="formation-subject">Modèles d’évaluation d’actifs et de portefeuille</li>
+            <li class="formation-subject">Modèles d'évaluation d'actifs et de portefeuille</li>
             <li class="formation-subject">R et data visualisation</li>
             <li class="formation-subject">Processus stochastiques</li>
             <li class="formation-subject">Probabilités appliquées à la finance et aux risques</li>
@@ -1162,14 +598,12 @@
             <li class="formation-subject">Solvabilité II</li>
             <li class="formation-subject">Risque crédit, réassurance, produits dérivés</li>
           </ul>
-          <div class="formation-toggle-wrap">
-            <button class="project-btn ghost formation-toggle-btn" type="button"></button>
-          </div>
+          <div class="toggle-wrap"><button class="small-btn formation-toggle-btn" type="button"></button></div>
         </article>
 
-        <article class="card formation-card" data-featured-count="5">
+        <article class="panel formation-card" data-featured-count="5">
           <h3>Licence MIASHS</h3>
-          <p class="meta"><span>2020 - 2023 | Université Paris 1 Panthéon-Sorbonne</span></p>
+          <p class="meta"><span>2020 – 2023 · Université Paris 1 Panthéon-Sorbonne</span></p>
           <ul class="formation-list">
             <li class="formation-subject">Banque et marchés</li>
             <li class="formation-subject">Assurance : théorie et pratique</li>
@@ -1186,14 +620,12 @@
             <li class="formation-subject">Développement web</li>
             <li class="formation-subject">Microéconomie / macroéconomie</li>
           </ul>
-          <div class="formation-toggle-wrap">
-            <button class="project-btn ghost formation-toggle-btn" type="button"></button>
-          </div>
+          <div class="toggle-wrap"><button class="small-btn formation-toggle-btn" type="button"></button></div>
         </article>
 
-        <article class="card formation-card" data-featured-count="4">
+        <article class="panel formation-card" data-featured-count="4">
           <h3>Licence MIAGE</h3>
-          <p class="meta"><span>2017 - 2020 | Institut Universitaire d’Abidjan</span></p>
+          <p class="meta"><span>2017 – 2020 · Institut Universitaire d'Abidjan</span></p>
           <ul class="formation-list">
             <li class="formation-subject">Audit et contrôle de gestion</li>
             <li class="formation-subject">Gestion de projet (Agile, MS Project)</li>
@@ -1212,120 +644,119 @@
             <li class="formation-subject">Machine learning</li>
             <li class="formation-subject">Programmation C / Python / Java</li>
           </ul>
-          <div class="formation-toggle-wrap">
-            <button class="project-btn ghost formation-toggle-btn" type="button"></button>
-          </div>
+          <div class="toggle-wrap"><button class="small-btn formation-toggle-btn" type="button"></button></div>
         </article>
       </div>
     </section>
 
     <section id="certifications" class="container" aria-labelledby="certifications-title">
       <div class="section-head">
+        <p class="section-eyebrow">Certifications</p>
         <h2 id="certifications-title">Certifications</h2>
         <p>9 certifications au total, dont 2 affichées par défaut.</p>
       </div>
 
       <div class="certifications-grid">
-        <article class="card cert-card strategic" data-cert-featured="true">
-          <span class="cert-badge-inline">Data science</span>
+        <article class="panel cert-card strategic" data-cert-featured="true">
+          <span class="cert-badge">Data science</span>
           <h3><a href="https://verify.skilljar.com/c/kdbtzbznsk7c" target="_blank" rel="noopener">Dataiku Core Designer</a></h3>
           <p class="meta"><span>Dataiku</span><span>Émise en mars 2026</span></p>
-          <ul class="bullets">
+          <ul class="arrow-list">
             <li>Conception de workflows data dans le Flow (datasets, recipes, dépendances).</li>
             <li>Préparation et fiabilisation des données (nettoyage, standardisation, contrôles qualité).</li>
             <li>Transformation avec recettes visuelles (Prepare, Join, Group, Pivot, Window).</li>
-            <li>Structuration des données pour l’analyse et le feature engineering.</li>
+            <li>Structuration des données pour l'analyse et le feature engineering.</li>
             <li>Restitution et collaboration (dashboards, documentation, partage avec les équipes).</li>
           </ul>
         </article>
 
-        <article class="card cert-card">
-          <span class="cert-badge-inline">Business Intelligence</span>
+        <article class="panel cert-card">
+          <span class="cert-badge">Business Intelligence</span>
           <h3>Réalisez des dashboards avec Power BI</h3>
           <p class="meta"><span>OpenClassrooms</span></p>
-          <ul class="bullets">
+          <ul class="arrow-list">
             <li>Création de tableaux de bord interactifs</li>
             <li>Utilisation de DAX et Power Query</li>
             <li>Visualisation de données avancée</li>
           </ul>
         </article>
 
-        <article class="card cert-card">
-          <span class="cert-badge-inline">Bases de données</span>
+        <article class="panel cert-card">
+          <span class="cert-badge">Bases de données</span>
           <h3>Implémentez vos bases de données relationnelles avec SQL</h3>
           <p class="meta"><span>OpenClassrooms</span></p>
-          <ul class="bullets">
+          <ul class="arrow-list">
             <li>Conception de bases de données</li>
             <li>Requêtes SQL avancées</li>
             <li>Optimisation des performances</li>
           </ul>
         </article>
 
-        <article class="card cert-card">
-          <span class="cert-badge-inline">Excel &amp; VBA</span>
-          <h3>Perfectionnez-vous sur Excel &amp; VBA</h3>
+        <article class="panel cert-card">
+          <span class="cert-badge">Excel & VBA</span>
+          <h3>Perfectionnez-vous sur Excel & VBA</h3>
           <p class="meta"><span>OpenClassrooms</span></p>
-          <ul class="bullets">
+          <ul class="arrow-list">
             <li>Fonctions avancées Excel</li>
             <li>Automatisation avec VBA</li>
             <li>Tableaux croisés dynamiques</li>
           </ul>
         </article>
 
-        <article class="card cert-card">
-          <span class="cert-badge-inline">Programmation</span>
+        <article class="panel cert-card">
+          <span class="cert-badge">Programmation</span>
           <h3>SAS Certification : SAS 9.4 Advanced Programming Performance</h3>
           <p class="meta"><span>SAS Institute</span></p>
-          <ul class="bullets">
+          <ul class="arrow-list">
             <li>Étape DATA pour résoudre des problèmes complexes</li>
             <li>Code SAS SQL</li>
           </ul>
         </article>
 
-        <article class="card cert-card" data-cert-featured="true">
-          <span class="cert-badge-inline">Statistiques</span>
+        <article class="panel cert-card" data-cert-featured="true">
+          <span class="cert-badge">Statistiques</span>
           <h3><a href="https://openbadgefactory.com/v1/assertion/4df6f923afa78f6211913717e7fb2ea9c143d69f" target="_blank" rel="noopener">Introduction à la statistique avec R</a></h3>
           <p class="meta"><span>Université Paris-Saclay</span></p>
-          <ul class="bullets">
+          <ul class="arrow-list">
             <li>Tests statistiques</li>
             <li>ACP et classification</li>
             <li>Régression linéaire, multiple et logistique</li>
           </ul>
         </article>
 
-        <article class="card cert-card">
-          <span class="cert-badge-inline">Data Analysis</span>
+        <article class="panel cert-card">
+          <span class="cert-badge">Data Analysis</span>
           <h3>Python pour l'analyse de données</h3>
           <p class="meta"><span>OpenClassrooms</span></p>
-          <ul class="bullets">
+          <ul class="arrow-list">
             <li>Pandas et NumPy</li>
             <li>Nettoyage et manipulation de données</li>
             <li>Visualisation avec Matplotlib et Seaborn</li>
           </ul>
         </article>
 
-        <article class="card cert-card">
-          <span class="cert-badge-inline">Data Science</span>
+        <article class="panel cert-card">
+          <span class="cert-badge">Data Science</span>
           <h3>Python pour la Data Science</h3>
           <p class="meta"><span>OpenClassrooms</span></p>
-          <ul class="bullets">
+          <ul class="arrow-list">
             <li>Machine Learning avec Scikit-learn</li>
             <li>Modèles prédictifs</li>
             <li>Évaluation et optimisation des modèles</li>
           </ul>
         </article>
 
-        <article class="card cert-card">
-          <span class="cert-badge-inline">Langues</span>
+        <article class="panel cert-card">
+          <span class="cert-badge">Langues</span>
           <h3><a href="https://openbadgefactory.com/v1/assertion/0ba2cc2c10761e8283ae96a543f5787d5c9ca9ed" target="_blank" rel="noopener">Unlock Your English</a></h3>
           <p class="meta"><span>Institut Mines-Télécom - IMT</span></p>
-          <ul class="bullets">
+          <ul class="arrow-list">
             <li>Certification en anglais professionnel</li>
           </ul>
         </article>
       </div>
-      <div class="projects-toggle-wrap">
-        <button id="certsToggleBtn" class="project-btn ghost" type="button">Voir plus</button>
+      <div class="toggle-wrap center" style="margin-top:16px;">
+        <button id="certsToggleBtn" class="small-btn" type="button">Voir plus</button>
       </div>
     </section>
   </main>
@@ -1340,22 +771,22 @@
     <p>Data Analyst spécialisé en Finance & Assurance. Expérience chez Generali France sur Power BI, SQL et l'analyse de performance IARD/Vie.</p>
 
     <h2>Expérience clé</h2>
-    <p><strong>Generali France</strong> - Gestionnaire de données (Direction Financière / IRAG), avril 2025 à octobre 2025</p>
+    <p><strong>Generali France</strong> - Data Analyst (Direction Réseau Agents Généraux / IRAG), avril 2025 à octobre 2025</p>
     <ul>
       <li>Automatisation et fiabilisation du reporting de performance (Power BI, Excel/VBA, Snowflake).</li>
-      <li>Suivi des KPI commerciaux et financiers, analyse d’écarts et synthèse pour le pilotage.</li>
-      <li>Animation d’ateliers besoins utilisateurs, formation et documentation des outils.</li>
+      <li>Suivi des KPI commerciaux et financiers, analyse d'écarts et synthèse pour le pilotage.</li>
+      <li>Animation d'ateliers besoins utilisateurs, formation et documentation des outils.</li>
     </ul>
 
     <h2>Compétences clés</h2>
     <p><strong>Data & BI:</strong> Power BI, DAX, Power Query, SQL, Snowflake, Dataiku, ETL/ELT</p>
-    <p><strong>Contrôle de gestion:</strong> reporting, analyse d’écarts, suivi de performance, prévisions</p>
+    <p><strong>Contrôle de gestion:</strong> reporting, analyse d'écarts, suivi de performance, prévisions</p>
     <p><strong>Outils:</strong> Power BI (DAX, Power Query), Excel avancé, VBA, Python, R, SQL, Snowflake</p>
 
     <h2>Formation</h2>
     <p><strong>Master MBFA</strong> - Université Sorbonne Paris Nord (2023-2025)</p>
     <p><strong>Licence MIASHS</strong> - Université Paris 1 Panthéon-Sorbonne (2020-2023)</p>
-    <p><strong>Licence MIAGE</strong> - Institut Universitaire d’Abidjan (2017-2020)</p>
+    <p><strong>Licence MIAGE</strong> - Institut Universitaire d'Abidjan (2017-2020)</p>
 
     <h2>Certifications</h2>
     <p>Dataiku Core Designer (2026), Introduction à la statistique avec R, Power BI, SQL, Excel/VBA, Python.</p>
@@ -1367,26 +798,14 @@
     </ul>
   </section>
 
-  <div id="projectModal" class="modal" aria-hidden="true">
-    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <div class="modal-head">
-        <h3 id="modalTitle"></h3>
-        <button id="modalClose" class="modal-close" aria-label="Fermer">x</button>
-      </div>
-      <div id="modalLinks" class="modal-links"></div>
-      <p id="modalMeta" class="modal-meta"></p>
-      <div id="modalBody" class="modal-content"></div>
-    </div>
-  </div>
-
   <footer id="contact" aria-labelledby="contact-title">
     <div class="footer-grid">
       <section class="footer-block">
         <h3 id="contact-title">Contact</h3>
-        <p>Disponible pour un entretien et un demarrage rapide.</p>
+        <p>Disponible pour un entretien et un démarrage rapide.</p>
       </section>
       <section class="footer-block">
-        <h3>Coordonnees</h3>
+        <h3>Coordonnées</h3>
         <ul>
           <li><a href="#" class="js-email-link" data-user="axeloukou" data-domain="gmail.com">axeloukou@gmail.com</a></li>
           <li><a href="tel:+33766029171">+33 7 66 02 91 71</a></li>
@@ -1402,7 +821,7 @@
         </ul>
       </section>
     </div>
-    <p class="footer-note">© 2026 Axel LOUKOU | Tous droits réservés</p>
+    <p class="footer-note">© 2026 Axel LOUKOU · Tous droits réservés</p>
   </footer>
 
   <script>
@@ -1412,213 +831,360 @@
       el.textContent = address;
     });
 
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ---------- projects data ---------- */
+
     const projectsData = [
       {
-        title: "Reporting KPIs - Power BI",
-        cardSummary: "Mise en place d’un reporting Power BI pour suivre les performances commerciales IARD & Vie avec des données fiabilisées.",
-        detailedDescription: "🧩 <strong>Contexte :</strong><br>Chez Generali France, la Direction Réseau Agents Généraux suivait sa performance commerciale via un reporting Excel manuel mis à jour chaque mois — un processus long, source d'erreurs et peu lisible pour les décideurs.<br><br>🛠️ <strong>Ce que j'ai fait :</strong><ul><li>Conception d'un tableau de bord Power BI complet (DAX, Power Query, modélisation multi-sources) centralisant 10+ KPIs stratégiques IARD et Vie — taux de couverture, commissions, résiliations, portefeuille, leads</li><li>Connexion aux sources de données (Snowflake, Portail BI, SharePoint) et fiabilisation des flux via Power Query</li><li>Mise en place de filtres dynamiques par région, IDA, EVA et période pour adapter la vue à chaque utilisateur</li><li>Formation des équipes et rédaction du guide d'utilisation pour assurer la prise en main autonome</li></ul><br>✅ <strong>Résultat :</strong> Un reporting stratégique en production, consulté par les responsables de région et la direction — réduction significative du temps de mise à jour mensuelle et fiabilisation des indicateurs de pilotage.<br>",
-        tags: ["DAX", "SharePoint", "Snowflake", "Excel", "Assurance"],
-        stack: ["Power BI", "Power Query", "BO"],
+        title: "Reporting KPIs — Power BI",
         company: "Generali France",
-        impact: "Un reporting stratégique en production, consulté par les responsables de région et la direction — réduction significative du temps de mise à jour mensuelle et fiabilisation des indicateurs de pilotage.",
-        pdf: "reporting-impulso.pdf"
+        tech: ["powerbi", "sql"],
+        tags: ["DAX", "SQL", "Snowflake", "Assurance"],
+        context: "Reporting Excel manuel devenu tableau de bord Power BI centralisé, alimenté par des requêtes SQL sur Snowflake.",
+        facts: [
+          { num: "3", label: "Sources connectées" },
+          { num: "10+", label: "KPIs suivis" },
+          { num: "4", label: "Filtres dynamiques" }
+        ],
+        result: "En production — consulté par les responsables de région et la direction.",
+        link: { href: "reporting-impulso.pdf", label: "Voir le document" }
       },
       {
-        title: "Gestion de portefeuille sous contrainte de risque — CAC 40",
-        cardSummary: "Projet d’optimisation d’un portefeuille CAC 40 sous contrainte de risque avec une approche CVaR.",
-        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 2) visant à construire et optimiser un portefeuille d'actions CAC 40 selon une approche rendement/risque, en utilisant la CVaR comme mesure de risque extrême.<br><br>🛠️ <strong>Ce que j'ai fait :</strong><ul><li>Calcul des rendements journaliers, volatilités et matrice de covariance sur les actions du CAC 40</li><li>Modélisation des rendements via loi normale multivariée</li><li>Optimisation numérique de l'allocation sous contrainte CVaR avec SciPy</li><li>Visualisation comparative des allocations avant/après optimisation (Matplotlib, Seaborn)</li></ul><br>✅ <strong>Résultat :</strong> Un modèle d'optimisation fonctionnel sous Python, avec allocation CVaR minimisée et comparaison graphique des portefeuilles — applicable à une logique de gestion d'actifs sous contrainte réglementaire.<br>",
-        tags: ["Finance", "Python"],
-        stack: ["Gestion des risques"],
-        company: "Projet universitaire - Master 2",
-        impact: "Ce projet m’a permis d’appliquer concrètement les notions de rendement/risque et de gestion du risque extrême.",
-        github: "https://github.com/axeloukou/axel-notebook/blob/main/CVaR_optimisation.ipynb"
+        title: "Gestion de portefeuille — CAC 40",
+        company: "Projet universitaire — Master 2",
+        tech: ["python"],
+        tags: ["Python", "Finance"],
+        context: "Optimisation d'un portefeuille CAC 40 sous contrainte de risque, approche CVaR.",
+        facts: [],
+        result: "Modèle Python fonctionnel — allocation CVaR minimisée, comparaison graphique des portefeuilles.",
+        link: { href: "https://github.com/axeloukou/axel-notebook/blob/main/CVaR_optimisation.ipynb", label: "Voir sur GitHub", external: true }
       },
       {
-        title: "Modélisation Solvabilité 2 — BE, SCR et VaR",
-        cardSummary: "Construction d’un modèle Excel Solvabilité II pour le calcul du Best Estimate, du SCR et de la VaR, avec prise en compte de la diversification des risques.",
-        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 2 Actuariat) visant à construire un modèle Excel complet conforme au cadre Solvabilité II, couvrant les trois piliers techniques : provisions, capital de solvabilité et mesure du risque extrême.<br><br>🛠️ <strong>Ce que j'ai fait :</strong><ul><li>Calcul du Best Estimate à partir de flux projetés et actualisés — avec scénarios de sensibilité au taux</li><li>Calcul du SCR par module de risque (marché, vie, défaut) et agrégation via matrice de corrélation</li><li>Quantification de l'effet diversification vs corrélation parfaite</li><li>Estimation de la VaR réglementaire à 99,5% par simulation de distribution</li></ul><br>✅ <strong>Résultat :</strong> Un outil paramétrable et exploitable pour simuler différents scénarios de taux, mesurer l'effet diversification et comparer les exigences en capital selon les hypothèses retenues.<br>",
-        tags: ["Solvabilité 2", "Actuariat", "Excel", "Gestion des risques"],
-        stack: ["VBA"],
+        title: "Modélisation Solvabilité 2",
         company: "Projet universitaire — Master 2 (Actuariat)",
-        impact: "Un outil paramétrable et exploitable pour simuler différents scénarios de taux, mesurer l'effet diversification et comparer les exigences en capital selon les hypothèses retenues.",
+        tech: ["vba"],
+        tags: ["VBA", "Solvabilité 2"],
+        context: "Modèle Excel conforme Solvabilité II : Best Estimate, SCR et VaR réglementaire.",
+        facts: [{ num: "99,5%", label: "VaR réglementaire" }],
+        result: "Outil paramétrable pour simuler des scénarios de taux et l'effet diversification.",
         images: ["image3.png", "image4.png", "image5.png", "image6.png"]
       },
       {
-        title: "Tarification auto et impact de la réassurance",
-        cardSummary: "Démarche actuarielle complète de tarification automobile — prime pure, GLM fréquence/sévérité et analyse de l'impact d'un traité de réassurance XL sur la rentabilité du portefeuille.",
-        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 2 Actuariat) visant à reproduire une démarche complète de tarification automobile et à mesurer l'impact d'un traité de réassurance sur la rentabilité et la volatilité du portefeuille.<br><br>🛠️ <strong>Ce que j'ai fait :</strong><ul><li>Calcul de la prime pure et analyse du ratio Sinistre/Prime sur une base de 16 181 observations</li><li>Modélisation GLM fréquence/sévérité : Poisson pour la fréquence, Gamma pour la sévérité</li><li>Prédiction de tarifs par profil de risque</li><li>Simulation d'un traité XL (Excess of Loss) et calcul du Burning-Cost</li></ul><br>✅ <strong>Résultat :</strong> Une tarification par profil de risque avec quantification concrète de l'effet de la réassurance sur le compromis coût/volatilité du portefeuille.<br>",
-        tags: ["Assurance", "Risque", "R"],
-        stack: ["GLM"],
+        title: "Tarification auto & réassurance",
         company: "Projet universitaire — Master 2 (Actuariat)",
-        impact: "Une meilleure compréhension de l’effet de la réassurance sur le compromis coût/volatilité.",
-        pdf: "projet_reassurance_code.html"
+        tech: ["r"],
+        tags: ["R", "Assurance"],
+        context: "Tarification auto par GLM fréquence/sévérité et impact d'un traité de réassurance XL.",
+        facts: [{ num: "16 181", label: "Observations" }],
+        result: "Quantification de l'effet de la réassurance sur le compromis coût/volatilité.",
+        link: { href: "projet_reassurance_code.html", label: "Voir le document" }
       },
       {
         title: "Analyse de survie",
-        cardSummary: "Analyse de survie pour étudier le temps avant événement, comparer des populations et modéliser les facteurs de risque à l’aide des méthodes Kaplan–Meier et du modèle de Cox.",
-        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 2) visant à maîtriser les méthodes d'analyse de survie sous R — applicables à des problématiques d'attrition, de résiliation ou de durée de vie d'un contrat en assurance.<br><br>🛠️ <strong>Ce que j'ai fait :</strong><ul><li>Gestion des données censurées et construction de l'objet Surv(time, status)</li><li>Estimation et comparaison de courbes Kaplan-Meier par groupe avec test log-rank</li><li>Ajustement d'un modèle de Cox et interprétation des hazard ratios</li><li>Validation de l'hypothèse des risques proportionnels via cox.zph() et forest plot</li></ul><br>✅ <strong>Résultat :</strong> Un workflow complet et reproductible sous R — de la gestion de la censure à l'interprétation des hazard ratios, applicable à des problématiques de résiliation ou d'attrition en assurance.<br>",
-        tags: ["R", "Statistiques"],
-        stack: ["Survival Analysis"],
         company: "Projet universitaire — Master 2",
-        impact: "Un workflow complet et reproductible sous R, de la gestion de la censure à l'interprétation des hazard ratios — applicable à des problématiques d'attrition ou de résiliation en assurance.",
-        pdf: "s_survival.pdf"
+        tech: ["r"],
+        tags: ["R", "Statistiques"],
+        context: "Méthodes de survie (Kaplan-Meier, modèle de Cox) appliquées à la résiliation/attrition.",
+        facts: [],
+        result: "Workflow reproductible sous R, de la censure à l'interprétation des hazard ratios.",
+        link: { href: "s_survival.pdf", label: "Voir le document" }
       },
       {
-        title: "Scoring de crédit — Régression logistique et interprétation du risque",
-        cardSummary: "Construction d'un modèle de scoring de crédit par régression logistique sur 1 000 observations — de la préparation des données à l'interprétation des probabilités de défaut.",
-        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 2) visant à construire un modèle de scoring de crédit opérationnel pour estimer le risque de défaut à partir de données socio-économiques et contractuelles.<br><br>🛠️ <strong>Ce que j'ai fait :</strong><ul><li>Préparation et structuration du dataset German Credit (1 000 observations, 21 variables) — encodage, dummies, découpage 70/30</li><li>Entraînement d'un modèle de régression logistique (Logit) et production de probabilités de défaut par profil</li><li>Évaluation des performances : accuracy de 72% sur données de test, matrices de confusion train/test</li><li>Interprétation complète via effets marginaux et odds ratios pour identifier les variables les plus discriminantes</li></ul><br>✅ <strong>Résultat :</strong> Un modèle opérationnel avec une accuracy de 72% sur données de test — interprétation complète des variables discriminantes, applicable à une problématique réelle de risque crédit.<br>",
+        title: "Scoring de crédit",
+        company: "Projet universitaire — Master 1",
+        tech: ["r"],
         tags: ["R", "Machine Learning"],
-        stack: ["Régression Logistique"],
-        company: "Projet universitaire — Master 1",
-        impact: "Une première expérience complète de scoring crédit, de la préparation des données à l’interprétation du modèle.",
-        pdf: "scoring-credit.pdf"
+        context: "Scoring de crédit par régression logistique sur le dataset German Credit.",
+        facts: [
+          { num: "1 000", label: "Observations" },
+          { num: "72%", label: "Accuracy (test)" }
+        ],
+        result: "Modèle opérationnel — variables discriminantes interprétées via odds ratios.",
+        link: { href: "scoring-credit.pdf", label: "Voir le document" }
       },
       {
-        title: "Valorisation d’options — Arbres binomiaux & trinominiaux, convergence vers Black-Scholes",
-        cardSummary: "Implémentation sous Excel/VBA des modèles d’arbres binomiaux et trinominaux pour la valorisation d’options, avec étude de la convergence vers Black–Scholes.",
-        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 1) visant à implémenter des modèles discrets de valorisation d'options sous Excel/VBA et à analyser leur convergence vers le modèle continu de Black-Scholes.<br><br>🛠️ <strong>Ce que j'ai fait :</strong><ul><li>Implémentation des arbres binomiaux (Cox-Ross-Rubinstein) et trinomiaux sous VBA</li><li>Valorisation d'options européennes et américaines avec calcul des probabilités risque-neutre</li><li>Analyse graphique de la convergence vers Black-Scholes en fonction du nombre de pas</li><li>Automatisation complète des calculs et des visualisations</li></ul><br>✅ <strong>Résultat :</strong> Un outil de valorisation automatisé sous VBA, avec convergence démontrée graphiquement vers Black-Scholes — applicable à l'évaluation d'instruments financiers simples.<br>",
-        tags: ["Finance", "Excel"],
-        stack: ["VBA"],
+        title: "Valorisation d'options",
         company: "Projet universitaire — Master 1",
-        impact: "Ce projet m’a aidé à mieux comprendre la valorisation d’options et la logique de convergence vers Black-Scholes.",
+        tech: ["vba"],
+        tags: ["VBA", "Finance"],
+        context: "Arbres binomiaux et trinomiaux sous VBA, convergence vers Black-Scholes.",
+        facts: [],
+        result: "Outil de valorisation automatisé, convergence démontrée graphiquement.",
         images: ["image1.png", "image2.png"]
       },
       {
-        title: "Analyse et réglementation des produits bancaires",
-        cardSummary: "Panorama structuré des principaux produits bancaires — épargne, crédits et assurances — avec analyse comparative des caractéristiques, de la fiscalité et du cadre réglementaire.",
-        detailedDescription: "🧩 <strong>Contexte :</strong><br>Projet universitaire (Master 1) visant à structurer et vulgariser le fonctionnement et le cadre réglementaire des principaux produits bancaires — épargne, crédit et assurance.<br><br>🛠️ <strong>Ce que j'ai fait :</strong><ul><li>Classification des produits par famille : épargne court/moyen/long terme, crédit, assurance</li><li>Rédaction de fiches produit standardisées : fonctionnement, avantages, fiscalité, points de vigilance</li><li>Organisation par usage : horizon, liquidité, risque et objectif client</li></ul><br>✅ <strong>Résultat :</strong> Une base de référence structurée pour comparer et orienter le choix d'un produit selon l'objectif client, le niveau de risque et les contraintes réglementaires.<br>",
-        tags: ["Finance", "Banque", "Assurance", "PowerPoint"],
-        stack: ["Synthèse documentaire"],
+        title: "Produits bancaires & réglementation",
         company: "Projet universitaire — Master 1",
-        impact: "Une base de référence structurée pour comparer et orienter le choix d'un produit selon l'objectif client, le niveau de risque et les contraintes réglementaires.",
-        pdf: "Produits_bancaires.pdf"
+        tech: [],
+        tags: ["Finance", "Banque", "Assurance"],
+        context: "Panorama structuré des produits bancaires — épargne, crédit, assurance.",
+        facts: [],
+        result: "Base de référence pour orienter un choix selon risque et fiscalité.",
+        link: { href: "Produits_bancaires.pdf", label: "Voir le document" }
       }
     ];
 
+    const TECH_LABELS = { r: "R", vba: "Excel / VBA", python: "Python", sql: "SQL", powerbi: "Power BI" };
+    const RING_ORDER = ["r", "python", "sql", "powerbi"];
+
     const projectsGrid = document.getElementById('projectsGrid');
-    const projectsToggleBtn = document.getElementById('projectsToggleBtn');
     const projectsIntro = document.getElementById('projectsIntro');
-    const projectModal = document.getElementById('projectModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalMeta = document.getElementById('modalMeta');
-    const modalBody = document.getElementById('modalBody');
-    const modalLinks = document.getElementById('modalLinks');
-    const modalClose = document.getElementById('modalClose');
-
-    const featuredProjectTitles = new Set([
-      "Reporting KPIs - Power BI",
-      "Scoring de crédit — Régression logistique et interprétation du risque",
-      "Gestion de portefeuille sous contrainte de risque — CAC 40"
-    ]);
-
-    let showAllProjects = false;
+    const ringsRow = document.getElementById('ringsRow');
+    const filterBar = document.getElementById('filterBar');
 
     function renderProjects() {
       projectsGrid.innerHTML = "";
-      const featured = [];
-      const others = [];
 
-      projectsData.forEach((project, index) => {
-        if (featuredProjectTitles.has(project.title)) {
-          featured.push({ project, index });
-        } else {
-          others.push({ project, index });
-        }
-      });
+      projectsData.forEach((project) => {
+        const row = document.createElement('details');
+        row.className = 'instrument-row';
+        row.dataset.tech = project.tech.join(' ');
 
-      const listToRender = showAllProjects ? [...featured, ...others] : featured;
+        const factsHtml = (project.facts && project.facts.length)
+          ? `<div class="row-facts">${project.facts.map((f) => `<div class="fact-chip"><span class="fact-num">${f.num}</span><span class="fact-lbl">${f.label}</span></div>`).join('')}</div>`
+          : '';
 
-      listToRender.forEach(({ project, index }) => {
-        const card = document.createElement('article');
-        card.className = 'project';
-        card.innerHTML = `
-          <h3>${project.title}</h3>
-          <p>${project.cardSummary || project.summary || ""}</p>
-          <div class="tags">${[...(project.stack || []), ...(project.tags || [])].slice(0, 6).map((tag) => `<span class="tag">${tag}</span>`).join('')}</div>
-          <div class="project-actions">
-            <button class="project-btn primary" data-index="${index}">Voir le detail</button>
+        const galleryHtml = (project.images && project.images.length)
+          ? `<div class="row-gallery">${project.images.map((src) => `<img src="${src}" alt="Capture — ${project.title}" loading="lazy">`).join('')}</div>`
+          : '';
+
+        const linkHtml = project.link
+          ? `<div class="row-links"><a class="row-link" href="${project.link.href}"${project.link.external ? ' target="_blank" rel="noopener"' : ' target="_blank" rel="noopener"'}>${project.link.label} ↗</a></div>`
+          : '';
+
+        row.innerHTML = `
+          <summary>
+            <span class="row-title">${project.title}</span>
+            <span class="row-tags">${project.tags.map((t) => `<span class="tagchip">${t}</span>`).join('')}</span>
+            <span class="row-chevron">&#9656;</span>
+          </summary>
+          <div class="row-body">
+            <p class="row-context">${project.context}</p>
+            ${factsHtml}
+            ${galleryHtml}
+            <p class="row-result"><span class="result-mark">✓</span> ${project.result}</p>
+            ${linkHtml}
           </div>
         `;
-        projectsGrid.appendChild(card);
+
+        projectsGrid.appendChild(row);
+
+        row.addEventListener('toggle', () => {
+          if (row.open) {
+            projectsGrid.querySelectorAll('.instrument-row').forEach((other) => {
+              if (other !== row) other.open = false;
+            });
+          }
+        });
       });
 
       if (projectsIntro) {
-        projectsIntro.textContent = `${projectsData.length} projets au total, dont ${featured.length} affichés par défaut.`;
-      }
-
-      if (projectsToggleBtn) {
-        projectsToggleBtn.textContent = showAllProjects ? "Masquer les autres projets" : "Afficher les autres projets";
+        projectsIntro.textContent = `${projectsData.length} projets — universitaires et professionnel — classés par outil utilisé.`;
       }
     }
 
-    let lastFocusedElement = null;
+    function drawRing(canvas, fill) {
+      const ctx = canvas.getContext('2d');
+      const w = canvas.width, h = canvas.height;
+      const cx = w / 2, cy = h / 2, r = w / 2 - 8;
+      const start = -Math.PI / 2;
+      ctx.clearRect(0, 0, w, h);
 
-    function getFocusableElements(container) {
-      return Array.from(container.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'));
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(60,50,38,0.7)';
+      ctx.lineWidth = 6;
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, start, start + fill * Math.PI * 2);
+      ctx.strokeStyle = '#d9863b';
+      ctx.lineWidth = 6;
+      ctx.lineCap = 'round';
+      ctx.shadowColor = '#d9863b';
+      ctx.shadowBlur = 6;
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+
+      const endAngle = start + fill * Math.PI * 2;
+      ctx.beginPath();
+      ctx.arc(cx + r * Math.cos(endAngle), cy + r * Math.sin(endAngle), 3, 0, Math.PI * 2);
+      ctx.fillStyle = '#f0a95c';
+      ctx.fill();
     }
 
-    function trapModalFocus(event) {
-      if (event.key !== 'Tab') return;
-      const focusable = getFocusableElements(projectModal.querySelector('.modal-panel'));
-      if (!focusable.length) return;
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
+    function renderRings() {
+      ringsRow.innerHTML = "";
+      const total = projectsData.length;
+
+      RING_ORDER.forEach((key) => {
+        const count = projectsData.filter((p) => p.tech.indexOf(key) !== -1).length;
+        const fill = total ? count / total : 0;
+
+        const tile = document.createElement('button');
+        tile.type = 'button';
+        tile.className = 'stat-tile';
+        tile.dataset.filter = key;
+        tile.dataset.filterLabel = TECH_LABELS[key];
+        tile.innerHTML = `
+          <div class="ring-wrap">
+            <canvas class="ring" width="84" height="84"></canvas>
+            <p class="stat-num">${count}</p>
+          </div>
+          <p class="stat-cap">${count > 1 ? 'Projets' : 'Projet'} ${TECH_LABELS[key]}</p>
+        `;
+        ringsRow.appendChild(tile);
+        drawRing(tile.querySelector('canvas'), fill);
+
+        tile.addEventListener('click', () => applyFilter(key, TECH_LABELS[key]));
+      });
     }
 
-    function openProjectModal(index, triggerEl) {
-      const project = projectsData[index];
-      if (!project) return;
-      lastFocusedElement = triggerEl || document.activeElement;
-      modalTitle.textContent = project.title;
-      modalMeta.textContent = project.company;
-      const detailed = project.detailedDescription || project.details || "";
-      const resultBlock = project.impact
-        ? `<p><strong>Resultat :</strong> ${project.impact}</p>`
-        : "";
-      const imagesBlock = Array.isArray(project.images) && project.images.length
-        ? `<div class="modal-gallery">${project.images.map((img) => `<img src="${img}" alt="Capture du projet" class="modal-image" loading="lazy">`).join("")}</div>`
-        : "";
-      modalBody.innerHTML = `${detailed}${resultBlock}${imagesBlock}`;
-      modalLinks.innerHTML = "";
-      const docLink = project.documentUrl || project.pdf;
-      if (docLink) {
-        modalLinks.innerHTML += `<a class="project-btn primary" href="${docLink}" target="_blank" rel="noopener">Voir le document</a>`;
-      }
-      if (project.github) {
-        modalLinks.innerHTML += `<a class="project-btn ghost" href="${project.github}" target="_blank" rel="noopener">Voir sur GitHub</a>`;
-      }
-      if (project.demo) {
-        modalLinks.innerHTML += `<a class="project-btn ghost" href="${project.demo}" target="_blank" rel="noopener">Voir la démo</a>`;
-      }
-      modalLinks.style.display = modalLinks.innerHTML ? 'flex' : 'none';
-      projectModal.classList.add('open');
-      projectModal.setAttribute('aria-hidden', 'false');
-      document.addEventListener('keydown', trapModalFocus);
-      modalClose.focus();
+    function clearFilter() {
+      projectsGrid.querySelectorAll('.instrument-row').forEach((row) => {
+        row.classList.remove('is-match', 'is-dimmed');
+      });
+      filterBar.innerHTML = '';
     }
 
-    function closeProjectModal() {
-      projectModal.classList.remove('open');
-      projectModal.setAttribute('aria-hidden', 'true');
-      document.removeEventListener('keydown', trapModalFocus);
-      if (lastFocusedElement) lastFocusedElement.focus();
+    function applyFilter(tech, label) {
+      const rows = projectsGrid.querySelectorAll('.instrument-row');
+      rows.forEach((row) => {
+        const techs = row.dataset.tech.split(' ').filter(Boolean);
+        const match = techs.indexOf(tech) !== -1;
+        row.classList.toggle('is-match', match);
+        row.classList.toggle('is-dimmed', !match);
+      });
+
+      filterBar.innerHTML = '';
+      const chip = document.createElement('span');
+      chip.className = 'filter-chip';
+      chip.textContent = 'Filtré : ' + label + ' ';
+      const clearBtn = document.createElement('button');
+      clearBtn.type = 'button';
+      clearBtn.setAttribute('aria-label', 'Effacer le filtre');
+      clearBtn.textContent = '×';
+      clearBtn.addEventListener('click', clearFilter);
+      chip.appendChild(clearBtn);
+      filterBar.appendChild(chip);
+
+      document.getElementById('projectsGrid').scrollIntoView({
+        behavior: reduceMotion ? 'auto' : 'smooth',
+        block: 'start'
+      });
     }
 
     renderProjects();
+    renderRings();
 
-    if (projectsToggleBtn) {
-      projectsToggleBtn.addEventListener('click', () => {
-        showAllProjects = !showAllProjects;
-        renderProjects();
-      });
+    /* ---------- hero gauge ---------- */
+
+    const heroCanvas = document.getElementById('heroGauge');
+    const gaugeVal = document.getElementById('gaugeVal');
+    const gaugeLbl = document.getElementById('gaugeLbl');
+    const gctx = heroCanvas.getContext('2d');
+    const GW = heroCanvas.width, GH = heroCanvas.height;
+    const GCX = GW / 2, GCY = GH / 2 + 14, GR = 96;
+    const ARC_START = Math.PI * 0.75, ARC_END = Math.PI * 2.25;
+
+    function valueToAngle(pct) { return ARC_START + (pct / 100) * (ARC_END - ARC_START); }
+
+    function drawHeroGauge(pct) {
+      gctx.clearRect(0, 0, GW, GH);
+
+      gctx.beginPath();
+      gctx.arc(GCX, GCY, GR, ARC_START, ARC_END);
+      gctx.strokeStyle = 'rgba(60,50,38,0.8)';
+      gctx.lineWidth = 10;
+      gctx.stroke();
+
+      gctx.beginPath();
+      gctx.arc(GCX, GCY, GR, ARC_START, valueToAngle(pct));
+      gctx.strokeStyle = '#d9863b';
+      gctx.lineWidth = 10;
+      gctx.shadowColor = '#d9863b';
+      gctx.shadowBlur = 10;
+      gctx.stroke();
+      gctx.shadowBlur = 0;
+
+      for (let i = 0; i <= 10; i++) {
+        const a = ARC_START + (i / 10) * (ARC_END - ARC_START);
+        const inner = GR - 16, outer = i % 5 === 0 ? GR - 28 : GR - 22;
+        gctx.beginPath();
+        gctx.moveTo(GCX + inner * Math.cos(a), GCY + inner * Math.sin(a));
+        gctx.lineTo(GCX + outer * Math.cos(a), GCY + outer * Math.sin(a));
+        gctx.strokeStyle = 'rgba(171,156,134,0.55)';
+        gctx.lineWidth = 1.5;
+        gctx.stroke();
+      }
+
+      const needleAngle = valueToAngle(pct);
+      const nx = GCX + (GR - 6) * Math.cos(needleAngle);
+      const ny = GCY + (GR - 6) * Math.sin(needleAngle);
+      gctx.beginPath();
+      gctx.moveTo(GCX, GCY);
+      gctx.lineTo(nx, ny);
+      gctx.strokeStyle = '#f0a95c';
+      gctx.lineWidth = 2.5;
+      gctx.stroke();
+
+      gctx.beginPath();
+      gctx.arc(GCX, GCY, 6, 0, Math.PI * 2);
+      gctx.fillStyle = '#f3ede2';
+      gctx.fill();
+      gctx.beginPath();
+      gctx.arc(GCX, GCY, 6, 0, Math.PI * 2);
+      gctx.strokeStyle = '#3c3226';
+      gctx.lineWidth = 1.5;
+      gctx.stroke();
     }
+
+    const rCount = projectsData.filter((p) => p.tech.indexOf('r') !== -1).length;
+    const rShare = Math.round((rCount / projectsData.length) * 1000) / 10;
+
+    const gaugeStats = [
+      { value: 72, label: 'Accuracy scoring crédit', display: '72%' },
+      { value: 63, label: 'Réduction modules VBA', display: '19 → 7' },
+      { value: rShare, label: 'Projets utilisant R', display: rCount + ' / ' + projectsData.length }
+    ];
+
+    if (reduceMotion) {
+      drawHeroGauge(gaugeStats[0].value);
+    } else {
+      let displayed = 0, targetIndex = 0;
+      drawHeroGauge(0);
+
+      function animateTo(target, cb) {
+        const startVal = displayed;
+        let t0 = null;
+        function step(ts) {
+          if (!t0) t0 = ts;
+          const p = Math.min(1, (ts - t0) / 900);
+          const eased = 1 - Math.pow(1 - p, 3);
+          displayed = startVal + (target - startVal) * eased;
+          drawHeroGauge(displayed);
+          if (p < 1) requestAnimationFrame(step);
+          else if (cb) cb();
+        }
+        requestAnimationFrame(step);
+      }
+
+      function cycle() {
+        const stat = gaugeStats[targetIndex];
+        gaugeVal.textContent = stat.display;
+        gaugeLbl.textContent = stat.label;
+        animateTo(stat.value, () => {
+          setTimeout(() => {
+            targetIndex = (targetIndex + 1) % gaugeStats.length;
+            cycle();
+          }, 2600);
+        });
+      }
+      cycle();
+    }
+
+    /* ---------- formation toggle ---------- */
 
     document.querySelectorAll('.formation-card').forEach((card) => {
       const subjects = Array.from(card.querySelectorAll('.formation-subject'));
@@ -1645,15 +1211,15 @@
       });
     });
 
+    /* ---------- certifications toggle ---------- */
+
     const certsGrid = document.querySelector('.certifications-grid');
     const certsToggleBtn = document.getElementById('certsToggleBtn');
     if (certsGrid && certsToggleBtn) {
       const certCards = Array.from(certsGrid.querySelectorAll('.cert-card'));
       const hiddenCards = certCards.filter((card) => card.dataset.certFeatured !== 'true');
 
-      hiddenCards.forEach((card) => {
-        card.style.display = 'none';
-      });
+      hiddenCards.forEach((card) => { card.style.display = 'none'; });
       certsToggleBtn.textContent = `Voir plus (${hiddenCards.length})`;
 
       let certsExpanded = false;
@@ -1662,9 +1228,7 @@
         hiddenCards.forEach((card) => {
           card.style.display = certsExpanded ? 'flex' : 'none';
         });
-        certsToggleBtn.textContent = certsExpanded
-          ? 'Masquer'
-          : `Voir plus (${hiddenCards.length})`;
+        certsToggleBtn.textContent = certsExpanded ? 'Masquer' : `Voir plus (${hiddenCards.length})`;
       });
 
       if (hiddenCards.length === 0) {
@@ -1672,26 +1236,12 @@
       }
     }
 
-    projectsGrid.addEventListener('click', (event) => {
-      const btn = event.target.closest('button[data-index]');
-      if (!btn) return;
-      openProjectModal(Number(btn.dataset.index), btn);
-    });
-
-    modalClose.addEventListener('click', closeProjectModal);
-    projectModal.addEventListener('click', (event) => {
-      if (event.target === projectModal) closeProjectModal();
-    });
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeProjectModal();
-    });
+    /* ---------- nav ---------- */
 
     const navToggle = document.getElementById('navToggle');
     const navWrap = document.getElementById('siteNav');
     const navLinks = Array.from(document.querySelectorAll('.nav a'));
-    const sections = navLinks
-      .map((link) => document.querySelector(link.getAttribute('href')))
-      .filter(Boolean);
+    const sections = navLinks.map((link) => document.querySelector(link.getAttribute('href'))).filter(Boolean);
 
     navToggle.addEventListener('click', () => {
       const isOpen = navWrap.classList.toggle('open');
@@ -1716,7 +1266,6 @@
     }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
 
     sections.forEach((section) => observer.observe(section));
-
   </script>
 </body>
 </html>
