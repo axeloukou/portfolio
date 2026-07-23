@@ -295,12 +295,15 @@
     .formation-grid, .certifications-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: stretch; }
     .certifications-grid { grid-template-columns: repeat(2, 1fr); }
 
-    .formation-card, .cert-card { padding: 18px 20px; display: flex; flex-direction: column; }
-    .formation-card h3, .cert-card h3 { font-size: 17px; line-height: 1.35; margin-bottom: 6px; }
-    .formation-card .meta, .cert-card .meta {
+    .cert-card { padding: 18px 20px; display: flex; flex-direction: column; }
+    .cert-card h3 { font-size: 17px; line-height: 1.35; margin-bottom: 6px; }
+    .cert-card .meta {
       font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); margin-bottom: 14px;
       display: flex; gap: 8px; flex-wrap: wrap;
     }
+
+    .formation-card { display: flex; flex-direction: column; }
+    .row-body .formation-list { margin-top: 18px; }
     .cert-card[data-cert-featured="true"] { order: -1; }
     .cert-card.strategic { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), inset 0 1px 0 rgba(255,255,255,0.02); }
     .cert-badge {
@@ -703,71 +706,83 @@
       </div>
 
       <div class="formation-grid">
-        <article class="panel formation-card" data-featured-count="5" data-stage="2">
-          <h3>Master Monnaie, Banque, Finance, Assurance (MBFA)</h3>
-          <p class="meta"><span>2023 – 2025 · Université Sorbonne Paris Nord</span></p>
-          <ul class="formation-list">
-            <li class="formation-subject">Économie de l'assurance</li>
-            <li class="formation-subject">Actuariat vie / non-vie</li>
-            <li class="formation-subject">Économétrie avancée et séries temporelles</li>
-            <li class="formation-subject">Python et gestion de bases de données</li>
-            <li class="formation-subject">VBA sous Excel (avancé)</li>
-            <li class="formation-subject">Modèles d'évaluation d'actifs et de portefeuille</li>
-            <li class="formation-subject">R et data visualisation</li>
-            <li class="formation-subject">Processus stochastiques</li>
-            <li class="formation-subject">Probabilités appliquées à la finance et aux risques</li>
-            <li class="formation-subject">Simulation Monte-Carlo (Python / Excel)</li>
-            <li class="formation-subject">Solvabilité II</li>
-            <li class="formation-subject">Risque crédit, réassurance, produits dérivés</li>
-          </ul>
-          <div class="toggle-wrap"><button class="small-btn formation-toggle-btn" type="button"></button></div>
-        </article>
+        <details class="instrument-row formation-card" data-stage="2">
+          <summary>
+            <h3 class="row-title">Master Monnaie, Banque, Finance, Assurance (MBFA)</h3>
+            <span class="row-tags"><span class="tagchip">2023 – 2025</span><span class="tagchip">Université Sorbonne Paris Nord</span></span>
+            <span class="row-chevron">&#9656;</span>
+          </summary>
+          <div class="row-body">
+            <ul class="formation-list">
+              <li class="formation-subject">Économie de l'assurance</li>
+              <li class="formation-subject">Actuariat vie / non-vie</li>
+              <li class="formation-subject">Économétrie avancée et séries temporelles</li>
+              <li class="formation-subject">Python et gestion de bases de données</li>
+              <li class="formation-subject">VBA sous Excel (avancé)</li>
+              <li class="formation-subject">Modèles d'évaluation d'actifs et de portefeuille</li>
+              <li class="formation-subject">R et data visualisation</li>
+              <li class="formation-subject">Processus stochastiques</li>
+              <li class="formation-subject">Probabilités appliquées à la finance et aux risques</li>
+              <li class="formation-subject">Simulation Monte-Carlo (Python / Excel)</li>
+              <li class="formation-subject">Solvabilité II</li>
+              <li class="formation-subject">Risque crédit, réassurance, produits dérivés</li>
+            </ul>
+          </div>
+        </details>
 
-        <article class="panel formation-card" data-featured-count="5" data-stage="1">
-          <h3>Licence Mathématiques et Informatique Appliquées aux Sciences Humaines et Sociales (MIASHS)</h3>
-          <p class="meta"><span>2020 – 2023 · Université Paris 1 Panthéon-Sorbonne</span></p>
-          <ul class="formation-list">
-            <li class="formation-subject">Banque et marchés</li>
-            <li class="formation-subject">Assurance : théorie et pratique</li>
-            <li class="formation-subject">Modèles mathématiques en finance</li>
-            <li class="formation-subject">Probabilités</li>
-            <li class="formation-subject">Statistiques</li>
-            <li class="formation-subject">Fondements des mathématiques</li>
-            <li class="formation-subject">Algèbre linéaire</li>
-            <li class="formation-subject">Analyse réelle / analyse dans Rn</li>
-            <li class="formation-subject">Optimisation</li>
-            <li class="formation-subject">Méthodes numériques</li>
-            <li class="formation-subject">Informatique</li>
-            <li class="formation-subject">Programmation orientée objet</li>
-            <li class="formation-subject">Développement web</li>
-            <li class="formation-subject">Microéconomie / macroéconomie</li>
-          </ul>
-          <div class="toggle-wrap"><button class="small-btn formation-toggle-btn" type="button"></button></div>
-        </article>
+        <details class="instrument-row formation-card" data-stage="1">
+          <summary>
+            <h3 class="row-title">Licence Mathématiques et Informatique Appliquées aux Sciences Humaines et Sociales (MIASHS)</h3>
+            <span class="row-tags"><span class="tagchip">2020 – 2023</span><span class="tagchip">Université Paris 1 Panthéon-Sorbonne</span></span>
+            <span class="row-chevron">&#9656;</span>
+          </summary>
+          <div class="row-body">
+            <ul class="formation-list">
+              <li class="formation-subject">Banque et marchés</li>
+              <li class="formation-subject">Assurance : théorie et pratique</li>
+              <li class="formation-subject">Modèles mathématiques en finance</li>
+              <li class="formation-subject">Probabilités</li>
+              <li class="formation-subject">Statistiques</li>
+              <li class="formation-subject">Fondements des mathématiques</li>
+              <li class="formation-subject">Algèbre linéaire</li>
+              <li class="formation-subject">Analyse réelle / analyse dans Rn</li>
+              <li class="formation-subject">Optimisation</li>
+              <li class="formation-subject">Méthodes numériques</li>
+              <li class="formation-subject">Informatique</li>
+              <li class="formation-subject">Programmation orientée objet</li>
+              <li class="formation-subject">Développement web</li>
+              <li class="formation-subject">Microéconomie / macroéconomie</li>
+            </ul>
+          </div>
+        </details>
 
-        <article class="panel formation-card" data-featured-count="4" data-stage="0">
-          <h3>Licence Mathématiques et Informatique appliquées à l'Actuariat</h3>
-          <p class="meta"><span>2017 – 2020 · Institut Universitaire d'Abidjan</span></p>
-          <ul class="formation-list">
-            <li class="formation-subject">Audit et contrôle de gestion</li>
-            <li class="formation-subject">Gestion de projet (Agile, MS Project)</li>
-            <li class="formation-subject">Big Data et Cloud Computing</li>
-            <li class="formation-subject">Gestion financière et comptabilité analytique</li>
-            <li class="formation-subject">Analyse</li>
-            <li class="formation-subject">Algèbre</li>
-            <li class="formation-subject">Combinatoire et probabilités</li>
-            <li class="formation-subject">Statistique descriptive</li>
-            <li class="formation-subject">Analyse et modélisation de données</li>
-            <li class="formation-subject">Mathématique financière</li>
-            <li class="formation-subject">Algorithmique</li>
-            <li class="formation-subject">Bases de données et SQL / MS SQL Server</li>
-            <li class="formation-subject">Programmation orientée objet et UML</li>
-            <li class="formation-subject">Informatique décisionnelle</li>
-            <li class="formation-subject">Machine learning</li>
-            <li class="formation-subject">Programmation C / Python / Java</li>
-          </ul>
-          <div class="toggle-wrap"><button class="small-btn formation-toggle-btn" type="button"></button></div>
-        </article>
+        <details class="instrument-row formation-card" data-stage="0">
+          <summary>
+            <h3 class="row-title">Licence Mathématiques et Informatique appliquées à l'Actuariat</h3>
+            <span class="row-tags"><span class="tagchip">2017 – 2020</span><span class="tagchip">Institut Universitaire d'Abidjan</span></span>
+            <span class="row-chevron">&#9656;</span>
+          </summary>
+          <div class="row-body">
+            <ul class="formation-list">
+              <li class="formation-subject">Audit et contrôle de gestion</li>
+              <li class="formation-subject">Gestion de projet (Agile, MS Project)</li>
+              <li class="formation-subject">Big Data et Cloud Computing</li>
+              <li class="formation-subject">Gestion financière et comptabilité analytique</li>
+              <li class="formation-subject">Analyse</li>
+              <li class="formation-subject">Algèbre</li>
+              <li class="formation-subject">Combinatoire et probabilités</li>
+              <li class="formation-subject">Statistique descriptive</li>
+              <li class="formation-subject">Analyse et modélisation de données</li>
+              <li class="formation-subject">Mathématique financière</li>
+              <li class="formation-subject">Algorithmique</li>
+              <li class="formation-subject">Bases de données et SQL / MS SQL Server</li>
+              <li class="formation-subject">Programmation orientée objet et UML</li>
+              <li class="formation-subject">Informatique décisionnelle</li>
+              <li class="formation-subject">Machine learning</li>
+              <li class="formation-subject">Programmation C / Python / Java</li>
+            </ul>
+          </div>
+        </details>
       </div>
     </section>
 
@@ -1441,33 +1456,6 @@
       }
       cycle();
     }
-
-    /* ---------- formation toggle ---------- */
-
-    document.querySelectorAll('.formation-card').forEach((card) => {
-      const subjects = Array.from(card.querySelectorAll('.formation-subject'));
-      const toggleBtn = card.querySelector('.formation-toggle-btn');
-      const featuredCount = Number(card.dataset.featuredCount || 5);
-      if (!toggleBtn || subjects.length <= featuredCount) {
-        if (toggleBtn) toggleBtn.style.display = 'none';
-        return;
-      }
-
-      const extraSubjects = subjects.slice(featuredCount);
-      extraSubjects.forEach((subject) => subject.style.display = 'none');
-      toggleBtn.textContent = `Voir les autres matières (${extraSubjects.length})`;
-
-      let isExpanded = false;
-      toggleBtn.addEventListener('click', () => {
-        isExpanded = !isExpanded;
-        extraSubjects.forEach((subject) => {
-          subject.style.display = isExpanded ? 'block' : 'none';
-        });
-        toggleBtn.textContent = isExpanded
-          ? 'Masquer les matières'
-          : `Voir les autres matières (${extraSubjects.length})`;
-      });
-    });
 
     /* ---------- certifications toggle ---------- */
 
