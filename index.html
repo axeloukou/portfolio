@@ -281,6 +281,38 @@
     .row-link { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; border: 1px solid var(--line); color: var(--accent); padding: 6px 11px; text-decoration: none; }
     .row-link:hover { background: rgba(217, 134, 59, 0.08); }
 
+    /* ---------- project visuals (motion design) ---------- */
+    .project-visual { margin: 4px 0 20px; border: 1px solid var(--line-soft); background: var(--bg); padding: 14px 16px 8px; }
+    .project-visual svg { width: 100%; max-width: 380px; height: auto; display: block; margin: 0 auto; overflow: visible; }
+    .project-visual .pv-fill-accent { fill: var(--accent); }
+    .project-visual .pv-fill-data { fill: var(--data); }
+    .project-visual .pv-fill-good { fill: var(--good); }
+    .project-visual .pv-fill-muted { fill: var(--muted); }
+    .project-visual .pv-stroke-accent { stroke: var(--accent); }
+    .project-visual .pv-stroke-data { stroke: var(--data); }
+    .project-visual .pv-stroke-good { stroke: var(--good); }
+    .project-visual .pv-stroke-line { stroke: var(--line); }
+    .project-visual .pv-label { font-family: 'IBM Plex Mono', monospace; fill: var(--muted); }
+    .project-visual .pv-layer-accent { fill: rgba(217, 134, 59, 0.22); }
+    .project-visual .pv-layer-data { fill: rgba(111, 156, 176, 0.22); }
+
+    .project-visual .pv-draw { stroke-dasharray: 1; stroke-dashoffset: 0; }
+    .pv-animated .pv-draw { animation: pv-draw-in 1.1s ease-out both; }
+    @keyframes pv-draw-in { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+
+    .pv-animated .pv-grow { animation: pv-grow-up .7s cubic-bezier(.2,.8,.2,1) both; }
+    @keyframes pv-grow-up { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+    .pv-animated .pv-fade { animation: pv-fade-in .6s ease-out both; }
+    @keyframes pv-fade-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+    .pv-animated .pv-pop { animation: pv-pop-in .55s cubic-bezier(.34,1.56,.64,1) both; }
+    @keyframes pv-pop-in { from { opacity: 0; transform: scale(.3); } to { opacity: 1; transform: scale(1); } }
+
+    .project-visual .pv-sweep { transform: rotate(var(--pv-to, 0deg)); }
+    .pv-animated .pv-sweep { animation: pv-sweep-in 1.1s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes pv-sweep-in { from { transform: rotate(var(--pv-from, -90deg)); } to { transform: rotate(var(--pv-to, 0deg)); } }
+
     /* ---------- skills ---------- */
 
     .skill-panel-head {
@@ -421,6 +453,9 @@
 
     @media (prefers-reduced-motion: reduce) {
       .stat-tile, .instrument-row, .row-chevron { transition: none; }
+      .pv-animated .pv-draw, .pv-animated .pv-grow, .pv-animated .pv-fade, .pv-animated .pv-pop, .pv-animated .pv-sweep {
+        animation: none;
+      }
     }
 
     @media print {
@@ -1033,7 +1068,8 @@
         company: "Generali France",
         tech: ["powerbi", "sql"],
         tags: ["DAX", "SQL", "Snowflake", "Assurance"],
-        context: "Reporting Excel manuel devenu tableau de bord Power BI centralisé, alimenté par des requêtes SQL sur Snowflake.",
+        visual: "dashboard",
+        context: "Le suivi de la performance reposait sur des fichiers Excel mis à jour à la main, avec un risque d'erreur et un temps de production élevé. J'ai construit un tableau de bord Power BI unique, alimenté automatiquement par des requêtes SQL sur l'entrepôt de données Snowflake, pour donner aux équipes une vision fiable et à jour de leurs indicateurs clés.",
         facts: [
           { num: "3", label: "Sources connectées" },
           { num: "10+", label: "KPIs suivis" },
@@ -1047,7 +1083,8 @@
         company: "Projet universitaire — Master 2",
         tech: ["python"],
         tags: ["Python", "Finance"],
-        context: "Optimisation d'un portefeuille CAC 40 sous contrainte de risque, approche CVaR.",
+        visual: "frontier",
+        context: "Comment répartir un capital entre les valeurs du CAC 40 en limitant le risque de pertes extrêmes ? J'ai modélisé sous Python un portefeuille optimisé selon la CVaR (perte moyenne au-delà d'un seuil de risque), une mesure plus prudente que la simple volatilité, puis comparé les allocations obtenues à un portefeuille équipondéré.",
         facts: [],
         result: "Modèle Python fonctionnel — allocation CVaR minimisée, comparaison graphique des portefeuilles.",
         link: { href: "https://github.com/axeloukou/axel-notebook/blob/main/CVaR_optimisation.ipynb", label: "Voir sur GitHub", external: true }
@@ -1057,7 +1094,8 @@
         company: "Projet universitaire — Master 2 (Actuariat)",
         tech: ["vba"],
         tags: ["VBA", "Solvabilité 2"],
-        context: "Modèle Excel conforme Solvabilité II : Best Estimate, SCR et VaR réglementaire.",
+        visual: "gauge-mini",
+        context: "Les assureurs doivent démontrer qu'ils disposent de fonds propres suffisants pour absorber un choc extrême. J'ai construit sous Excel/VBA un modèle Solvabilité II calculant le Best Estimate des engagements, le capital de solvabilité requis (SCR) et la VaR réglementaire à 99,5%, avec des scénarios de taux et un calcul de l'effet de diversification entre risques.",
         facts: [{ num: "99,5%", label: "VaR réglementaire" }],
         result: "Outil paramétrable pour simuler des scénarios de taux et l'effet diversification.",
         images: ["image3.png", "image4.png", "image5.png", "image6.png"]
@@ -1067,7 +1105,8 @@
         company: "Projet universitaire — Master 2 (Actuariat)",
         tech: ["r"],
         tags: ["R", "Assurance"],
-        context: "Tarification auto par GLM fréquence/sévérité et impact d'un traité de réassurance XL.",
+        visual: "layers",
+        context: "À partir de 16 000 contrats auto, j'ai construit sous R un modèle de tarification par fréquence/sévérité (GLM) pour estimer le coût attendu des sinistres par profil d'assuré, puis mesuré comment un traité de réassurance en excédent de sinistre (XL) réduit la volatilité du portefeuille en transférant la partie la plus coûteuse des sinistres au réassureur.",
         facts: [{ num: "16 181", label: "Observations" }],
         result: "Quantification de l'effet de la réassurance sur le compromis coût/volatilité.",
         link: { href: "projet_reassurance_code.html", label: "Voir le document" }
@@ -1077,7 +1116,8 @@
         company: "Projet universitaire — Master 2",
         tech: ["r"],
         tags: ["R", "Statistiques"],
-        context: "Méthodes de survie (Kaplan-Meier, modèle de Cox) appliquées à la résiliation/attrition.",
+        visual: "survival",
+        context: "Plutôt que de prédire seulement si un client résilie, l'enjeu est de savoir quand. J'ai appliqué sous R les méthodes d'analyse de survie — courbes de Kaplan-Meier et modèle de Cox à risques proportionnels — pour estimer la probabilité de rétention dans le temps et identifier les facteurs qui accélèrent ou retardent la résiliation.",
         facts: [],
         result: "Workflow reproductible sous R, de la censure à l'interprétation des hazard ratios.",
         link: { href: "s_survival.pdf", label: "Voir le document" }
@@ -1087,7 +1127,8 @@
         company: "Projet universitaire — Master 1",
         tech: ["r"],
         tags: ["R", "Machine Learning"],
-        context: "Scoring de crédit par régression logistique sur le dataset German Credit.",
+        visual: "score-gauge",
+        context: "Pour aider à décider d'accorder ou non un crédit, j'ai construit sous R un modèle de scoring par régression logistique sur 1 000 dossiers (German Credit), en identifiant les variables les plus discriminantes via leurs odds ratios et en évaluant la capacité prédictive du modèle.",
         facts: [
           { num: "1 000", label: "Observations" },
           { num: "72%", label: "Accuracy (test)" }
@@ -1100,7 +1141,8 @@
         company: "Projet universitaire — Master 1",
         tech: ["vba"],
         tags: ["VBA", "Finance"],
-        context: "Arbres binomiaux et trinomiaux sous VBA, convergence vers Black-Scholes.",
+        visual: "tree",
+        context: "Comment évaluer le juste prix d'une option quand le prix de l'actif peut évoluer de multiples façons ? J'ai implémenté sous VBA des arbres binomiaux et trinomiaux qui simulent ces trajectoires possibles pas à pas, puis démontré graphiquement leur convergence vers la formule fermée de Black-Scholes lorsque le nombre de pas augmente.",
         facts: [],
         result: "Outil de valorisation automatisé, convergence démontrée graphiquement.",
         images: ["image1.png", "image2.png"]
@@ -1110,12 +1152,117 @@
         company: "Projet universitaire — Master 1",
         tech: [],
         tags: ["Finance", "Banque", "Assurance"],
-        context: "Panorama structuré des produits bancaires — épargne, crédit, assurance.",
+        visual: "flow",
+        context: "Une synthèse structurée des principaux produits bancaires — épargne, crédit et assurance — replacés dans leur cadre réglementaire, pour comprendre comment orienter un choix selon le couple risque/fiscalité de chaque produit.",
         facts: [],
         result: "Base de référence pour orienter un choix selon risque et fiscalité.",
         link: { href: "Produits_bancaires.pdf", label: "Voir le document" }
       }
     ];
+
+    function projectVisualMarkup(key) {
+      switch (key) {
+        case 'dashboard':
+          return `
+            <svg viewBox="0 0 220 96" aria-hidden="true" focusable="false">
+              <line x1="16" y1="82" x2="204" y2="82" class="pv-stroke-line" stroke-width="1"></line>
+              <rect class="pv-grow pv-fill-accent" x="40" y="26" width="26" height="56" style="transform-origin:53px 82px"></rect>
+              <rect class="pv-grow pv-fill-data" x="97" y="42" width="26" height="40" style="transform-origin:110px 82px; animation-delay:.14s"></rect>
+              <rect class="pv-grow pv-fill-accent" x="154" y="34" width="26" height="48" style="transform-origin:167px 82px; animation-delay:.28s"></rect>
+              <circle class="pv-pop pv-fill-good" cx="53" cy="20" r="3" style="animation-delay:.85s"></circle>
+              <circle class="pv-pop pv-fill-good" cx="110" cy="36" r="3" style="animation-delay:.97s"></circle>
+              <circle class="pv-pop pv-fill-good" cx="167" cy="28" r="3" style="animation-delay:1.09s"></circle>
+            </svg>`;
+        case 'frontier':
+          return `
+            <svg viewBox="0 0 220 96" aria-hidden="true" focusable="false">
+              <line x1="16" y1="82" x2="204" y2="82" class="pv-stroke-line" stroke-width="1"></line>
+              <line x1="16" y1="14" x2="16" y2="82" class="pv-stroke-line" stroke-width="1"></line>
+              <g class="pv-fade pv-fill-muted" style="animation-delay:.05s">
+                <circle cx="46" cy="64" r="2.2"></circle><circle cx="60" cy="50" r="2.2"></circle><circle cx="78" cy="58" r="2.2"></circle>
+                <circle cx="92" cy="40" r="2.2"></circle><circle cx="108" cy="46" r="2.2"></circle><circle cx="124" cy="34" r="2.2"></circle>
+                <circle cx="140" cy="38" r="2.2"></circle><circle cx="156" cy="28" r="2.2"></circle><circle cx="172" cy="30" r="2.2"></circle>
+              </g>
+              <path class="pv-draw pv-stroke-data" d="M28 76 Q 90 58 130 34 T 196 16" fill="none" stroke-width="2" pathLength="1" style="animation-delay:.5s"></path>
+              <circle class="pv-pop pv-fill-accent" cx="150" cy="26" r="4" style="animation-delay:1.55s"></circle>
+            </svg>`;
+        case 'gauge-mini':
+          return `
+            <svg viewBox="0 0 220 104" aria-hidden="true" focusable="false">
+              <path class="pv-stroke-line" d="M 30 92 A 80 80 0 0 1 190 92" fill="none" stroke-width="2"></path>
+              <path class="pv-stroke-good" d="M 172 42 A 80 80 0 0 1 190 92" fill="none" stroke-width="3" opacity="0.8"></path>
+              <g class="pv-sweep pv-fill-accent pv-stroke-accent" style="transform-origin:110px 92px; --pv-from:-92deg; --pv-to:80deg;">
+                <line x1="110" y1="92" x2="110" y2="26" stroke-width="3"></line>
+                <circle cx="110" cy="92" r="5"></circle>
+              </g>
+              <text x="110" y="86" text-anchor="middle" class="pv-label" font-size="9">SCR · VaR 99,5%</text>
+            </svg>`;
+        case 'layers':
+          return `
+            <svg viewBox="0 0 220 100" aria-hidden="true" focusable="false">
+              <rect class="pv-fade pv-layer-accent" x="24" y="54" width="172" height="34" style="animation-delay:.05s"></rect>
+              <rect class="pv-fade pv-layer-data" x="24" y="18" width="172" height="36" style="animation-delay:.2s"></rect>
+              <line x1="24" y1="54" x2="196" y2="54" class="pv-fade pv-stroke-good" stroke-width="1.3" stroke-dasharray="4 3" style="animation-delay:.35s"></line>
+              <text x="30" y="76" class="pv-label" font-size="9">Rétention assureur</text>
+              <text x="30" y="34" class="pv-label" font-size="9">Réassurance XL</text>
+              <circle class="pv-pop pv-fill-good" cx="150" cy="34" r="4.5" style="animation-delay:.9s"></circle>
+            </svg>`;
+        case 'survival':
+          return `
+            <svg viewBox="0 0 220 96" aria-hidden="true" focusable="false">
+              <line x1="16" y1="82" x2="204" y2="82" class="pv-stroke-line" stroke-width="1"></line>
+              <line x1="16" y1="14" x2="16" y2="82" class="pv-stroke-line" stroke-width="1"></line>
+              <path class="pv-draw pv-stroke-data" d="M20 20 H70 V38 H108 V54 H146 V66 H196 V74" fill="none" stroke-width="2" pathLength="1"></path>
+              <circle class="pv-pop pv-fill-accent" cx="196" cy="74" r="3.5" style="animation-delay:1.1s"></circle>
+            </svg>`;
+        case 'score-gauge':
+          return `
+            <svg viewBox="0 0 220 80" aria-hidden="true" focusable="false">
+              <defs>
+                <linearGradient id="pvScoreGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="var(--muted)"></stop>
+                  <stop offset="100%" stop-color="var(--good)"></stop>
+                </linearGradient>
+              </defs>
+              <rect class="pv-fade" x="20" y="40" width="180" height="10" fill="url(#pvScoreGrad)" style="animation-delay:.05s"></rect>
+              <line class="pv-draw pv-stroke-accent" x1="150" y1="24" x2="150" y2="40" stroke-width="2" pathLength="1" style="animation-delay:.6s"></line>
+              <circle class="pv-pop pv-fill-accent" cx="150" cy="20" r="4" style="animation-delay:1s"></circle>
+              <text x="150" y="14" text-anchor="middle" class="pv-label" font-size="9">72% accuracy</text>
+            </svg>`;
+        case 'tree':
+          return `
+            <svg viewBox="0 0 220 100" aria-hidden="true" focusable="false">
+              <path class="pv-draw pv-stroke-data" d="M20 50 L90 25" fill="none" stroke-width="1.6" pathLength="1"></path>
+              <path class="pv-draw pv-stroke-data" d="M20 50 L90 75" fill="none" stroke-width="1.6" pathLength="1" style="animation-delay:.1s"></path>
+              <path class="pv-draw pv-stroke-data" d="M90 25 L160 10" fill="none" stroke-width="1.6" pathLength="1" style="animation-delay:.35s"></path>
+              <path class="pv-draw pv-stroke-data" d="M90 25 L160 50" fill="none" stroke-width="1.6" pathLength="1" style="animation-delay:.45s"></path>
+              <path class="pv-draw pv-stroke-data" d="M90 75 L160 50" fill="none" stroke-width="1.6" pathLength="1" style="animation-delay:.45s"></path>
+              <path class="pv-draw pv-stroke-data" d="M90 75 L160 90" fill="none" stroke-width="1.6" pathLength="1" style="animation-delay:.55s"></path>
+              <circle class="pv-pop pv-fill-accent" cx="20" cy="50" r="3.5"></circle>
+              <circle class="pv-pop pv-fill-accent" cx="90" cy="25" r="3.5" style="animation-delay:.25s"></circle>
+              <circle class="pv-pop pv-fill-accent" cx="90" cy="75" r="3.5" style="animation-delay:.25s"></circle>
+              <circle class="pv-pop pv-fill-good" cx="160" cy="10" r="3.5" style="animation-delay:.85s"></circle>
+              <circle class="pv-pop pv-fill-good" cx="160" cy="50" r="3.5" style="animation-delay:.85s"></circle>
+              <circle class="pv-pop pv-fill-good" cx="160" cy="90" r="3.5" style="animation-delay:.85s"></circle>
+            </svg>`;
+        case 'flow':
+          return `
+            <svg viewBox="0 0 220 112" aria-hidden="true" focusable="false">
+              <path class="pv-draw pv-stroke-data" d="M110 56 L40 24" fill="none" stroke-width="1.6" pathLength="1"></path>
+              <path class="pv-draw pv-stroke-data" d="M110 56 L180 24" fill="none" stroke-width="1.6" pathLength="1" style="animation-delay:.15s"></path>
+              <path class="pv-draw pv-stroke-data" d="M110 56 L110 88" fill="none" stroke-width="1.6" pathLength="1" style="animation-delay:.3s"></path>
+              <circle class="pv-pop pv-fill-accent" cx="110" cy="56" r="7"></circle>
+              <circle class="pv-pop pv-fill-good" cx="40" cy="24" r="4" style="animation-delay:.55s"></circle>
+              <circle class="pv-pop pv-fill-good" cx="180" cy="24" r="4" style="animation-delay:.7s"></circle>
+              <circle class="pv-pop pv-fill-good" cx="110" cy="88" r="4" style="animation-delay:.85s"></circle>
+              <text x="40" y="14" text-anchor="middle" class="pv-label" font-size="8">Épargne</text>
+              <text x="180" y="14" text-anchor="middle" class="pv-label" font-size="8">Crédit</text>
+              <text x="110" y="106" text-anchor="middle" class="pv-label" font-size="8">Assurance</text>
+            </svg>`;
+        default:
+          return '';
+      }
+    }
 
     const TECH_LABELS = { r: "R", vba: "Excel / VBA", python: "Python", sql: "SQL", powerbi: "Power BI" };
     const RING_ORDER = ["r", "python", "sql", "powerbi"];
@@ -1145,6 +1292,10 @@
           ? `<div class="row-links"><a class="row-link" href="${project.link.href}"${project.link.external ? ' target="_blank" rel="noopener"' : ' target="_blank" rel="noopener"'}>${project.link.label} ↗</a></div>`
           : '';
 
+        const visualHtml = project.visual
+          ? `<div class="project-visual${reduceMotion ? '' : ' pv-animated'}">${projectVisualMarkup(project.visual)}</div>`
+          : '';
+
         row.innerHTML = `
           <summary>
             <span class="row-title">${project.title}</span>
@@ -1153,6 +1304,7 @@
           </summary>
           <div class="row-body">
             <p class="row-context">${project.context}</p>
+            ${visualHtml}
             ${factsHtml}
             ${galleryHtml}
             <p class="row-result"><span class="result-mark">✓</span> ${project.result}</p>
