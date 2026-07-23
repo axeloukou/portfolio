@@ -311,6 +311,61 @@
     .cert-card h3 a { color: var(--accent); text-decoration: none; }
     .cert-card h3 a:hover { text-decoration: underline; }
 
+    .formation-card.active {
+      border-color: var(--glow);
+      box-shadow: 0 0 0 1px var(--glow), inset 0 1px 0 rgba(255,255,255,0.02), inset 0 -8px 14px rgba(0,0,0,0.28);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .formation-card:not(.active) { transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+
+    /* ---------- journey map (Formation intro) ---------- */
+
+    .journey-panel { margin-bottom: 20px; }
+    .journey-nameplate {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+      padding: 14px 22px;
+      border-bottom: 1px solid var(--line-soft);
+      font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);
+    }
+    .journey-nameplate strong { color: var(--glow); font-weight: 700; }
+    .journey-legend { display: flex; gap: 14px; }
+    .journey-legend span { display: inline-flex; align-items: center; gap: 6px; }
+    .journey-legend i { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
+    .journey-legend .i-ci { background: var(--data); }
+    .journey-legend .i-fr { background: var(--accent); }
+
+    .journey-visual { position: relative; padding: 20px 22px 24px; display: flex; justify-content: center; }
+    .journey-visual svg { width: 100%; max-width: 480px; height: auto; display: block; overflow: hidden; isolation: isolate; }
+
+    .land-shape { fill: #262019; stroke: rgba(60,50,38,0.7); stroke-width: 0.5; }
+    .highlight-ci { fill: rgba(111,156,176,0.32); stroke: var(--data); stroke-width: 1.1; }
+    .highlight-fr { fill: rgba(217,134,59,0.28); stroke: var(--accent); stroke-width: 1.1; }
+    .graticule { stroke: var(--line-soft); stroke-width: 0.5; fill: none; }
+
+    .route-base { fill: none; stroke: var(--line); stroke-width: 1.6; stroke-linecap: round; stroke-dasharray: 3 4; }
+    .route-glow { fill: none; stroke: var(--accent); stroke-width: 1.8; stroke-linecap: round; filter: drop-shadow(0 0 3px rgba(217,134,59,0.6)); }
+
+    .waypoint-dot { fill: var(--bg3); stroke: var(--line); stroke-width: 1.6; }
+    .waypoint-dot.origin { stroke: var(--data); }
+    .waypoint-dot.active { stroke: var(--glow); fill: var(--glow); }
+
+    .vehicle path, .vehicle rect, .vehicle circle { fill: var(--glow); }
+    .vehicle .wheel { fill: var(--bg); stroke: var(--glow); stroke-width: 1; }
+    .vehicle { filter: drop-shadow(0 0 4px rgba(240,169,92,0.85)); }
+
+    .journey-coord {
+      position: absolute; bottom: 2px;
+      font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--muted); letter-spacing: 0.02em;
+    }
+    .journey-coord-start { left: 22px; }
+    .journey-coord-end { right: 22px; }
+    .journey-coord strong { color: var(--data); }
+
+    @media (max-width: 720px) {
+      .journey-coord { position: static; display: block; margin-top: 6px; }
+      .journey-nameplate { flex-direction: column; align-items: flex-start; gap: 6px; }
+    }
+
     .formation-list { list-style: none; display: grid; gap: 8px; margin: 0 0 12px; padding: 0; }
     .formation-subject {
       display: block; border: 1px solid var(--line); background: var(--bg);
@@ -609,11 +664,46 @@
       <div class="section-head">
         <p class="section-eyebrow">Formation</p>
         <h2 id="formation-title">Formations</h2>
-        <p>3 formations universitaires</p>
+        <p>3 formations universitaires — un parcours entre la Côte d'Ivoire et la France.</p>
+      </div>
+
+      <div class="panel journey-panel">
+        <div class="journey-nameplate">
+          <span>Itinéraire académique</span>
+          <span class="journey-legend"><span><i class="i-ci"></i>Côte d'Ivoire</span><span><i class="i-fr"></i>France</span></span>
+          <span>En cours : <strong id="journeyStageReadout">Abidjan</strong></span>
+        </div>
+        <div class="journey-visual">
+          <svg id="journeyMap" viewBox="0 0 620 660" preserveAspectRatio="xMidYMid meet">
+            <path id="journeyGraticule" class="graticule"></path>
+            <g id="journeyCountries"></g>
+            <path id="journeyRouteBase" class="route-base"></path>
+            <path id="journeyRouteGlow" class="route-glow" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"></path>
+            <circle id="journeyDot0" class="waypoint-dot origin" r="6"></circle>
+            <circle id="journeyDot1" class="waypoint-dot" r="6"></circle>
+            <circle id="journeyDot2" class="waypoint-dot" r="6"></circle>
+            <g id="journeyPlane" class="vehicle">
+              <g transform="scale(1.3)">
+                <rect x="-1.6" y="-10" width="3.2" height="20" rx="1.2"></rect>
+                <rect x="-9.5" y="-4.2" width="3" height="8.4" rx="1"></rect>
+                <path d="M 12 0 L 6.5 -2.2 L -9.5 -1.4 L -9.5 1.4 L 6.5 2.2 Z"></path>
+              </g>
+            </g>
+            <g id="journeyCar" class="vehicle">
+              <g transform="scale(1.3)">
+                <path d="M -8 2.5 L -8 -0.5 L -5 -0.5 L -3.5 -3.8 L 3.5 -3.8 L 5 -0.5 L 8 -0.5 L 8 2.5 Z"></path>
+                <circle class="wheel" cx="-4.5" cy="2.8" r="2.1"></circle>
+                <circle class="wheel" cx="4.5" cy="2.8" r="2.1"></circle>
+              </g>
+            </g>
+          </svg>
+          <span class="journey-coord journey-coord-start"><strong>05.34° N, 04.03° W</strong> — Abidjan</span>
+          <span class="journey-coord journey-coord-end"><strong>48.85° N, 2.35° E</strong> — Paris</span>
+        </div>
       </div>
 
       <div class="formation-grid">
-        <article class="panel formation-card" data-featured-count="5">
+        <article class="panel formation-card" data-featured-count="5" data-stage="2">
           <h3>Master Monnaie, Banque, Finance, Assurance (MBFA)</h3>
           <p class="meta"><span>2023 – 2025 · Université Sorbonne Paris Nord</span></p>
           <ul class="formation-list">
@@ -633,7 +723,7 @@
           <div class="toggle-wrap"><button class="small-btn formation-toggle-btn" type="button"></button></div>
         </article>
 
-        <article class="panel formation-card" data-featured-count="5">
+        <article class="panel formation-card" data-featured-count="5" data-stage="1">
           <h3>Licence Mathématiques et Informatique Appliquées aux Sciences Humaines et Sociales (MIASHS)</h3>
           <p class="meta"><span>2020 – 2023 · Université Paris 1 Panthéon-Sorbonne</span></p>
           <ul class="formation-list">
@@ -655,7 +745,7 @@
           <div class="toggle-wrap"><button class="small-btn formation-toggle-btn" type="button"></button></div>
         </article>
 
-        <article class="panel formation-card" data-featured-count="4">
+        <article class="panel formation-card" data-featured-count="4" data-stage="0">
           <h3>Licence Mathématiques et Informatique appliquées à l'Actuariat</h3>
           <p class="meta"><span>2017 – 2020 · Institut Universitaire d'Abidjan</span></p>
           <ul class="formation-list">
@@ -856,6 +946,7 @@
     <p class="footer-note">© 2026 Axel LOUKOU · Tous droits réservés</p>
   </footer>
 
+  <script src="vendor/topojson-client.min.js"></script>
   <script>
     document.querySelectorAll('.js-email-link').forEach((el) => {
       const address = `${el.dataset.user}@${el.dataset.domain}`;
@@ -1433,6 +1524,186 @@
     }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
 
     sections.forEach((section) => observer.observe(section));
+
+    /* ---------- academic journey map (Formation intro) ---------- */
+
+    (function initJourneyMap() {
+      const svgEl = document.getElementById('journeyMap');
+      if (!svgEl || typeof topojson === 'undefined') return;
+
+      fetch('data/countries-110m.json')
+        .then((r) => r.json())
+        .then(buildJourneyMap)
+        .catch(() => {});
+
+      function buildJourneyMap(countriesTopology) {
+        const svgNS = 'http://www.w3.org/2000/svg';
+        const VB_W = 620, VB_H = 660;
+        const LON_MIN = -32, LON_MAX = 34;
+        const LAT_MIN = -4, LAT_MAX = 56;
+
+        function project(lon, lat) {
+          const x = (lon - LON_MIN) / (LON_MAX - LON_MIN) * VB_W;
+          const y = (LAT_MAX - lat) / (LAT_MAX - LAT_MIN) * VB_H;
+          return [x, y];
+        }
+
+        function ringPath(ring) {
+          return ring.map(([lon, lat], i) => {
+            const [x, y] = project(lon, lat);
+            return (i === 0 ? 'M' : 'L') + x.toFixed(1) + ' ' + y.toFixed(1);
+          }).join(' ') + 'Z';
+        }
+
+        function geomPath(geom) {
+          if (!geom) return '';
+          if (geom.type === 'Polygon') return geom.coordinates.map(ringPath).join(' ');
+          if (geom.type === 'MultiPolygon') return geom.coordinates.map((poly) => poly.map(ringPath).join(' ')).join(' ');
+          return '';
+        }
+
+        const countriesGeo = topojson.feature(countriesTopology, countriesTopology.objects.countries);
+        const countriesGroup = document.getElementById('journeyCountries');
+        countriesGeo.features.forEach((f) => {
+          const d = geomPath(f.geometry);
+          if (!d) return;
+          const name = f.properties && f.properties.name;
+          const cls = name === "Côte d'Ivoire" ? 'land-shape highlight-ci' : (name === 'France' ? 'land-shape highlight-fr' : 'land-shape');
+          const el = document.createElementNS(svgNS, 'path');
+          el.setAttribute('d', d);
+          el.setAttribute('class', cls);
+          countriesGroup.appendChild(el);
+        });
+
+        let graticuleD = '';
+        for (let lon = Math.ceil(LON_MIN / 10) * 10; lon <= LON_MAX; lon += 10) {
+          const [x1, y1] = project(lon, LAT_MAX);
+          const [x2, y2] = project(lon, LAT_MIN);
+          graticuleD += `M ${x1.toFixed(1)} ${y1.toFixed(1)} L ${x2.toFixed(1)} ${y2.toFixed(1)} `;
+        }
+        for (let lat = Math.ceil(LAT_MIN / 10) * 10; lat <= LAT_MAX; lat += 10) {
+          const [x1, y1] = project(LON_MIN, lat);
+          const [x2, y2] = project(LON_MAX, lat);
+          graticuleD += `M ${x1.toFixed(1)} ${y1.toFixed(1)} L ${x2.toFixed(1)} ${y2.toFixed(1)} `;
+        }
+        document.getElementById('journeyGraticule').setAttribute('d', graticuleD);
+
+        const ABIDJAN = [-4.03, 5.34];
+        const PARIS = [2.35, 48.85];
+        const [ax, ay] = project(ABIDJAN[0], ABIDJAN[1]);
+        const [px, py] = project(PARIS[0], PARIS[1]);
+
+        const dx = px - ax, dy = py - ay;
+        const dist = Math.hypot(dx, dy) || 1;
+        const nx = -dy / dist, ny = dx / dist;
+        const bow = dist * 0.14;
+        const c1x = ax + dx * 0.25 + nx * bow, c1y = ay + dy * 0.25 + ny * bow;
+        const c2x = ax + dx * 0.75 + nx * bow, c2y = ay + dy * 0.75 + ny * bow;
+        const curveD = `M ${ax.toFixed(1)} ${ay.toFixed(1)} C ${c1x.toFixed(1)} ${c1y.toFixed(1)}, ${c2x.toFixed(1)} ${c2y.toFixed(1)}, ${px.toFixed(1)} ${py.toFixed(1)}`;
+
+        const px2 = px + 12, py2 = py - 3;
+        const lineD = `L ${px2.toFixed(1)} ${py2.toFixed(1)}`;
+
+        const routeBase = document.getElementById('journeyRouteBase');
+        const routeGlow = document.getElementById('journeyRouteGlow');
+        routeBase.setAttribute('d', curveD + ' ' + lineD);
+        routeGlow.setAttribute('d', curveD + ' ' + lineD);
+
+        const curvePathEl = document.createElementNS(svgNS, 'path');
+        curvePathEl.setAttribute('d', curveD);
+        const curveLength = curvePathEl.getTotalLength();
+
+        const linePathEl = document.createElementNS(svgNS, 'path');
+        linePathEl.setAttribute('d', `M ${px.toFixed(1)} ${py.toFixed(1)} ${lineD}`);
+        const lineLength = linePathEl.getTotalLength();
+
+        const dots = [document.getElementById('journeyDot0'), document.getElementById('journeyDot1'), document.getElementById('journeyDot2')];
+        dots[0].setAttribute('cx', ax); dots[0].setAttribute('cy', ay);
+        dots[1].setAttribute('cx', px); dots[1].setAttribute('cy', py);
+        dots[2].setAttribute('cx', px2); dots[2].setAttribute('cy', py2);
+
+        const plane = document.getElementById('journeyPlane');
+        const car = document.getElementById('journeyCar');
+        const stageReadout = document.getElementById('journeyStageReadout');
+        const formationCards = Array.from(document.querySelectorAll('.formation-card[data-stage]'));
+        const stageNames = ['Abidjan', 'Paris — Licence', 'Paris — Master'];
+
+        function pointAndAngleOnCurve(t) {
+          const p = curvePathEl.getPointAtLength(t * curveLength);
+          const ahead = curvePathEl.getPointAtLength(Math.min(t + 0.01, 1) * curveLength);
+          return { x: p.x, y: p.y, angle: Math.atan2(ahead.y - p.y, ahead.x - p.x) * 180 / Math.PI };
+        }
+        function pointAndAngleOnLine(t) {
+          const p = linePathEl.getPointAtLength(t * lineLength);
+          const ahead = linePathEl.getPointAtLength(Math.min(t + 0.05, 1) * lineLength);
+          return { x: p.x, y: p.y, angle: Math.atan2(ahead.y - p.y, ahead.x - p.x) * 180 / Math.PI };
+        }
+        function placeVehicle(el, pos) {
+          el.setAttribute('transform', `translate(${pos.x}, ${pos.y}) rotate(${pos.angle})`);
+        }
+        function setActiveStage(i) {
+          dots.forEach((d, di) => d.classList.toggle('active', di === i));
+          formationCards.forEach((c) => c.classList.toggle('active', Number(c.dataset.stage) === i));
+          if (stageReadout) stageReadout.textContent = stageNames[i];
+        }
+
+        if (reduceMotion) {
+          placeVehicle(car, pointAndAngleOnLine(1));
+          plane.style.opacity = '0';
+          car.style.opacity = '1';
+          setActiveStage(2);
+          routeGlow.style.strokeDashoffset = '0';
+          return;
+        }
+
+        plane.style.transition = 'opacity 0.35s ease';
+        car.style.transition = 'opacity 0.35s ease';
+        car.style.opacity = '0';
+        placeVehicle(plane, pointAndAngleOnCurve(0));
+        setActiveStage(0);
+
+        function animate(duration, onFrame, onDone) {
+          const start = performance.now();
+          function step(now) {
+            const p = Math.min(1, (now - start) / duration);
+            const eased = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+            onFrame(eased);
+            if (p < 1) requestAnimationFrame(step);
+            else if (onDone) onDone();
+          }
+          requestAnimationFrame(step);
+        }
+
+        function cycle() {
+          setTimeout(() => {
+            animate(1700, (e) => placeVehicle(plane, pointAndAngleOnCurve(e)), () => {
+              setActiveStage(1);
+              setTimeout(() => {
+                plane.style.opacity = '0';
+                car.style.opacity = '1';
+                placeVehicle(car, pointAndAngleOnLine(0));
+                animate(900, (e) => placeVehicle(car, pointAndAngleOnLine(e)), () => {
+                  setActiveStage(2);
+                  setTimeout(() => {
+                    car.style.opacity = '0';
+                    setTimeout(() => {
+                      plane.style.opacity = '1';
+                      placeVehicle(plane, pointAndAngleOnCurve(0));
+                      setActiveStage(0);
+                      cycle();
+                    }, 400);
+                  }, 2000);
+                });
+              }, 2000);
+            });
+          }, 2200);
+        }
+        cycle();
+
+        routeGlow.style.transition = 'stroke-dashoffset 8s linear';
+        requestAnimationFrame(() => { routeGlow.style.strokeDashoffset = '0'; });
+      }
+    })();
   </script>
 </body>
 </html>
